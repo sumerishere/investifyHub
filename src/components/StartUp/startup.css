@@ -1,0 +1,160 @@
+.container{
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid red; */
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+.f{
+    width: 100%;
+    height: 400px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fcont{
+    width: 40%;
+    height: max-content;
+    /* border: 2px solid black; */
+}
+.fcont1{
+    width: 40%;
+}
+.imgi{
+    width: 50%;
+    height: 190px;
+    background-color: rgb(206, 208, 210);
+    border-radius: 10px;
+}
+.imgi img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.p{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.ra{
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(212, 212, 212);
+}
+.s{
+    width: 100%;
+    height: 100%;
+}
+.nav1{
+    width: 50%;
+    height: 70px;
+    background-color: rgb(255, 188, 4);
+    /* position: fixed; */
+}
+.ul{
+    width: 100%;
+    height: 100%;
+}
+.link{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-weight: bold;
+}
+.pitch{
+    width: 50%;
+    /* border:2px solid skyblue; */
+}
+.pitchcont{
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.pitchcont img{
+    width: 100%;
+}
+.wti{
+    width: 50%;
+}
+.wticont{
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.wticont img{
+    width: 100%;
+}
+.about{
+    width: 50%;
+    height: max-content;
+    /* border: 2px solid green; */
+    margin-left: 30px;
+}
+.abountcont{
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 20px;
+}
+.ceo{
+    width: 220px;
+    height: max-content;
+    /* border: 2px solid seagreen; */
+}
+.cto{
+    width: 220px;
+    height: max-content;
+    /* border: 2px solid seagreen; */
+}
+.board{
+    width: 220px;
+    height: max-content;
+    /* border: 2px solid seagreen; */
+}
+.cimg img{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+}
+ .ld{
+    color: white;
+    background-color: rgb(2, 56, 218);
+ }
+ .term1{
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid rgb(154, 75, 88); */
+    margin-left: 30px;
+ }
+ .termcont{
+    width: 100%;
+ }
+ .over{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 30px;
+    margin-top: 15px;
+ }
+ .common{
+    color: rgb(142, 138, 138);
+ }
+ .cmc{
+    color: #185c65;
+ }
+ .breakd{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 30px;
+    margin-top: 15px;
+ }
