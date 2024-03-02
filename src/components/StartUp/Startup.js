@@ -11,23 +11,11 @@ import {LinkedinOutlined} from '@ant-design/icons'
 
 
 function Startup() {
-  // console.log('the prop',prop.id);
-  // const [sData,setdata] = useState([]);
+
   const {id} = useParams();
   const data = useSelector(selectAllData);
-  // let res=(prop.id>=1)?prop.id:id;
 
 
-  // console.log("The data from store is:", data);
-  // useEffect(()=>{
-  //   async function fun(){
-  //     const data = await fetch('http://localhost:8080/get-all');
-  //     const jsonData = await data.json();
-  //     setdata(jsonData);
-  //     // console.log(jsonData);
-  //     }
-  //   fun();
-  // },[])
   
   const arr =data.find(sData=>(sData.id)==id);
 
@@ -35,7 +23,7 @@ function Startup() {
     <div className='container'>
       <>{ arr && 
         <div className="content">
-          <div className="f">
+          <div className="f" id='f'>
             <div className="fcont">
             <p className='cmc'>{`Get The Peice Of ${arr.companyName}`}</p>
             <h3 className='cmc'>{`${arr.title}`}</h3>
@@ -51,15 +39,17 @@ function Startup() {
                 </div>
               </div>
             </div>
+
           </div>
+
           <div className="s">
             <div className="nav1">
                   <div className="ul">
                     <ul className='link'>
-                      <li><Link to='overview' smooth={true} spy={true} offset={200} duration={500}>Overview</Link></li>
-                      <li><Link>about</Link></li>
-                      <li><Link>term</Link></li>
-                      <li><Link>discussion</Link></li>
+                      <li className='li'><Link to='f' smooth={true} spy={true} offset={-200} duration={500} >Overview</Link></li>
+                      <li className='li'><Link to='about' smooth={true}>about</Link></li>
+                      <li className='li'><Link to='term' smooth={true}>term</Link></li>
+                      <li className='li'><Link>discussion</Link></li>
                     </ul>
                   </div>
             </div>
@@ -70,6 +60,17 @@ function Startup() {
                   <img style={{paddingTop:'20px'}}  src={`data:image/jpeg;base64,${arr.pitchimage}`} alt="pitchimage" />
                 </div>
             </div>
+
+            <div className='fixed-container'>
+              <div id= "equity-btn" >
+                Get Equity <p>$0</p>
+              </div>
+              <div className='fix-content'>
+                <p id='p-t1'>Previously Crowd Funded</p>
+                <p><span id='raised'>Raised</span> Investors</p>
+              </div>
+            </div>
+
             <div className="wti">
               <div className="wticont">
                 <h4>Why To Invest</h4>
@@ -77,7 +78,7 @@ function Startup() {
                 <img style={{paddingTop:'20px'}} src={`data:image/jpeg;base64,${arr.wtiImage}`} alt="WtiImage" />
               </div>
             </div>
-            <div className="about">
+            <div className="about" id='about'>
               <br />
               <h3>About</h3>
               <br />
@@ -109,7 +110,7 @@ function Startup() {
                 </div>
               </div>
             </div>
-            <div className="term1">
+            <div className="term1" id='term'>
               <br />
               <h2>Term</h2>
               <h5 className='common'>{`${arr.companyName}`}</h5>

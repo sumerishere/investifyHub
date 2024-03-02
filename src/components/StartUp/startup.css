@@ -21,9 +21,11 @@
     /* border: 2px solid black; */
 }
 .fcont1{
+    margin-top: -7%;
     width: 40%;
 }
 .imgi{
+    margin-left: 72px;
     width: 50%;
     height: 190px;
     background-color: rgb(206, 208, 210);
@@ -53,12 +55,12 @@
 .nav1{
     width: 50%;
     height: 70px;
-    background-color: rgb(255, 188, 4);
-    /* position: fixed; */
 }
 .ul{
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 70px;
+    background-color: rgb(70, 59, 30);
+    position: fixed;
 }
 .link{
     width: 100%;
@@ -150,6 +152,7 @@
  }
  .cmc{
     color: #185c65;
+    border-radius: 60px;
  }
  .breakd{
     width: 100%;
@@ -157,4 +160,45 @@
     grid-template-columns: repeat(2,1fr);
     row-gap: 30px;
     margin-top: 15px;
+ }
+
+ li{
+    cursor: pointer;
+ }
+
+ #equity-btn{
+    /* line-height: 40px; */
+    text-align: center;
+    background-color: rgb(58, 54, 54);
+    color:white;
+    width: 350px;
+    height: 46px;
+    margin-left: 15px;
+    border-radius: 8px;
+
+ }
+
+ .fixed-container {
+
+    background-color: rgba(150, 144, 144, 0.852);
+    width: 380px;
+    height: 220px;
+    margin-left: 60%;
+    /* margin-top: -20%; */
+    /* position: fixed; */
+    border-radius: 14px;
+
+ }
+
+ #p-t1{
+    margin-top: 8px;
+    margin-left: 80px;
+ }
+
+ p span{
+    margin-left: 60px;
+ }
+
+ .fix-content{
+
  }

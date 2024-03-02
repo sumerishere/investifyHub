@@ -2,26 +2,38 @@ import { Button, Input } from 'antd'
 import React, { useEffect, useRef, useState } from 'react'
 import {SearchOutlined} from '@ant-design/icons'
 import  './nav.css'
-import {Link, Routes,Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Startup from '../StartUp/Startup';
 
 function Nav() {
-    const[id,setid] = useState();
+    const[id,setId] = useState(null);
     const inpvalue = useRef('');
+    const history = useNavigate()
+
+
     async function fun(){
         let val = inpvalue.current.input.defaultValue;
         val=val.toUpperCase();
         const dt = await fetch(`http://localhost:8080/getbyName?cname=${val}`);
-        const jdata=await dt.json();
-        // console.log('the data',jdata[0].id);
-        setid(jdata[0].id);
+        const data=await dt.json();
+        if (data.length > 0) {
+            console.log(data[0]);
+            setId(data[0].id);
+            history(`/post/${data[0].id}`);
+        } else {
+            setId(null);
+        }
     }
 
   return (
     <div className='nav'>
         <div className="navcontent">
             <div className="left">
-            <div className="logo"><img src="" alt="logo" className='log' /></div>
+            <div className="logo">
+            <p className="title-p">investifyHub📈</p>
+            <p className="sub-text">elevate your investments</p>
+          </div>
         <div className="input">
             <Input placeholder='Explore Investments'  ref={inpvalue} />
             <Button onClick={fun}><SearchOutlined /></Button>
@@ -30,16 +42,15 @@ function Nav() {
             <div className="right">
                 <div className="rcont">
                     <ul>
-                        <li><Link to='/StartUpData' style={{ textDecoration: 'none' }}>Start Investing</Link></li>
-                        <li><Link style={{ textDecoration: 'none' }}>Log In</Link></li>
-                        <li><Link style={{ textDecoration: 'none' }}>Sign Up</Link></li>
+                        <li><Link to='/' style={{ textDecoration: 'none',color:'black' }}>Home</Link></li>
+                        <li className='btn1'><Link to='/StartUpData'  style={{ textDecoration: 'none',color:'black' }}>Start Investing</Link></li>
+                        <li><Link to='Login' style={{ textDecoration: 'none',color:'black' }}>Log In</Link></li>
+                        <li><Link to='InvestorSignUp' style={{ textDecoration: 'none',color:'black' }}>Sign Up</Link></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <Routes>
-        <Route path={`/post/:${id}`} element={<Startup/>}/>
-        </Routes>
+        {id && <Startup id={id}/>}
     </div>
   )
 }
