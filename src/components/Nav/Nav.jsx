@@ -42,10 +42,10 @@ function Nav() {
             <div className="right">
                 <div className="rcont">
                     <ul>
-                        <li><Link to='/' style={{ textDecoration: 'none',color:'black' }}>Home</Link></li>
+                        <li><Link to='/' style={{ textDecoration: 'none',color:'white' }}>Home</Link></li>
                         <li className='btn1'><Link to='/StartUpData'  style={{ textDecoration: 'none',color:'black' }}>Start Investing</Link></li>
-                        <li><Link to='Login' style={{ textDecoration: 'none',color:'black' }}>Log In</Link></li>
-                        <li><Link to='InvestorSignUp' style={{ textDecoration: 'none',color:'black' }}>Sign Up</Link></li>
+                        <li><Link to='Login' style={{ textDecoration: 'none',color:'white' }}>Log In</Link></li>
+                        <li><Link to='InvestorSignUp' style={{ textDecoration: 'none',color:'white' }}>Sign Up</Link></li>
                     </ul>
                 </div>
             </div>

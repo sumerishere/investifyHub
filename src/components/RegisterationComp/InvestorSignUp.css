@@ -5,9 +5,12 @@ h2{
     text-align: center;
     background-color: #60c8e5;
     color: rgb(46, 41, 41);
+    box-shadow: 2px 2px 4px rgba(0.8, 0, 0, 0.6);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
   
   .form-container{
+    box-shadow: 2px 2px 4px rgba(0.9, 0.8, 0.8, 0.5);
     width: 600px;
     margin: 40px auto;
     padding: 20px;

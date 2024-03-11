@@ -1,11 +1,12 @@
 import React from 'react'
 import './login.css'
 import {GoogleOutlined,AppleOutlined} from '@ant-design/icons';
-
+// import {Link} from 'react-scroll';
 
 function Login() {
     return (
         <>
+         <h3>Investor Log-in</h3>
           <div className="login-r">
           <div className="form">
             <div className="flex-column">
@@ -63,7 +64,7 @@ function Login() {
               </div>
               <span className="span">Forgot password?</span>
             </div>
-            <button className="button-submit">Sign In</button>
+            <button className="button-submit">Sign in</button>
             <p className="p">Don't have an account? Or With <span className="span"> Sign Up</span></p>
             <div className="flex-row">
               <button className="btn google"><GoogleOutlined /> Google</button>

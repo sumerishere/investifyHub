@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
+// import React, { useEffect } from 'react'
+// import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {Link} from 'react-scroll';
 import { selectAllData } from '../../redux/slice/startUpDataSlice';
 import './startup.css'
 import {LinkedinOutlined} from '@ant-design/icons'
-
-
+// import { Link } from 'react-router-dom';
 
 
 function Startup() {
@@ -16,8 +15,7 @@ function Startup() {
   const data = useSelector(selectAllData);
 
 
-  
-  const arr =data.find(sData=>(sData.id)==id);
+  const arr =data.find(sData=>(sData.id) == id);
 
   return (
     <div className='container'>
@@ -25,17 +23,17 @@ function Startup() {
         <div className="content">
           <div className="f" id='f'>
             <div className="fcont">
-            <p className='cmc'>{`Get The Peice Of ${arr.companyName}`}</p>
+            <p className='cmc'>{`Get The Piece Of ${arr.companyName}`}</p>
             <h3 className='cmc'>{`${arr.title}`}</h3>
             <p className='common'>{`${arr.desc}`}</p>
             </div>
             <div className="fcont1">
               <div className="imgi">
-              <img  src={`data:image/jpeg;base64,${arr.companyImage}`} alt="image" />
+              <img  src={`data:image/jpeg;base64,${arr.companyImage}`} alt="imge" />
               </div>
               <div className="p">
                 <div className="ra">
-                <h3>{`$${arr.raised}`}</h3>
+                <h4>{`${arr.raised}`}</h4>
                 </div>
               </div>
             </div>
@@ -61,13 +59,18 @@ function Startup() {
                 </div>
             </div>
 
-            <div className='fixed-container'>
+       {/*-------- fixed container -------- */}
+
+            <div id='fixed-container'>
+
               <div id= "equity-btn" >
-                Get Equity <p>$0</p>
+                <Link to='InvestorSignUp' style={{ textDecoration: 'line' }}>Get Equity <p>{`${arr.raised}`}</p></Link>
               </div>
+
               <div className='fix-content'>
                 <p id='p-t1'>Previously Crowd Funded</p>
-                <p><span id='raised'>Raised</span> Investors</p>
+                <p id='raised'>Raised  <span id="investor-span" >Investors</span> </p>
+                <p id='raised-number'>{`${arr.raised}`}  <span id="investor-number" >{`${arr.investor}`} </span></p>
               </div>
             </div>
 
@@ -120,11 +123,11 @@ function Startup() {
                 <div className="over">
                   <div className="ppr">
                     <p className='common'>PRICE PER SHARE</p>
-                    <h4>{`$${arr.ppr}`}</h4>
+                    <h4>{`${arr.ppr}`}</h4>
                   </div>
                   <div className="val">
                     <p className='common'>VALUATION</p>
-                    <h4>{`$${arr.valuation}`}</h4>
+                    <h4>{`${arr.valuation}`}</h4>
                   </div>
                   <div className="dead">
                     <p className='common'>DEADLINE</p>
@@ -140,7 +143,7 @@ function Startup() {
                 <div className="breakd">
                   <div className="mini">
                     <p className='common'>MIN INVESTMENT</p>
-                    <h4>{`$${arr.mininvest}`}</h4>
+                    <h4>{`${arr.mininvest}`}</h4>
                   </div>
                   <div className="oof">
                     <p className='common'>OFFERING TYPE</p>
@@ -148,7 +151,7 @@ function Startup() {
                   </div>
                   <div className="maxi">
                     <p className='common'>MAX INVESTMENT</p>
-                    <h4>{`$${arr.maxInvest}`}</h4>
+                    <h4>{`${arr.maxInvest}`}</h4>
                   </div>
                   <div className="ast">
                     <p className='common'>ASSET TYPE</p>

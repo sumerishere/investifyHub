@@ -1,0 +1,187 @@
+.main-div{
+  background-color: gray;
+}
+
+#header-p {
+  padding-top: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  /* text-align: center; */
+  padding-left: 70px;
+}
+
+.main-div-top {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1px;
+  height: 100%;
+  /* background-color: antiquewhite; */
+  /* margin: 20px; */
+}
+
+.div-1 {
+  
+  width: 350px;
+  height: 280px;
+  /* background-color: blueviolet; */
+}
+
+.div-2 {
+  /* background-color: aquamarine; */
+  width: 350px;
+  height: 280px;
+  
+}
+
+.div-2 ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-top: 18px;
+  padding-left: 70px;
+  width: 100px;
+  height: 100px;
+  line-height: 40px;
+  font-size: 17px;
+}
+
+.div-3 {
+  width: 350px;
+  height: 280px;
+  /* background-color: brown; */
+}
+
+#div-3-ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-top: 18px;
+  padding-left: 70px;
+  width: 280px;
+  height: 100px;
+  line-height: 38px;
+  font-size: 17px;
+}
+
+.div-4 {
+  width: 350px;
+  height: 280px;
+  /* background-color: chocolate; */
+}
+
+#div-4-ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-top: 18px;
+  padding-left: 70px;
+  width: 200px;
+  height: 150px;
+  line-height: 40px;
+  font-size: 17px;
+  list-style: none;
+}
+
+#footer-logo{
+  margin-top: 20%;
+  margin-left: 23%;
+}
+
+/* ----------bottem container */
+.main-div-bottem{
+  display: flex;
+  /* justify-content:center; */
+  align-items: center;
+}
+
+.main-div-bottem-container{
+  height: 100%;
+  background-color: grey;
+  height: 250px;
+  width: 66%;
+  margin-left: 0px;
+
+}
+
+#inp-btn{
+  margin-top: 10%;
+  margin-left: 19%;
+  padding: 4px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(220, 225, 229);
+}
+
+#subscribe-btn{
+  margin-left: 4px;
+  padding: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(31, 88, 117);
+  color: white;
+  border: none;
+}
+
+#subscribe-btn:hover{
+  background-color: rgb(18, 119, 169);
+  /* border: 1px solid white; */
+}
+
+#bottem-ul{
+  padding-top: 23px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  width: 600px;
+  margin-left: 157px;
+  font-weight: 600;
+  
+}
+
+.social-links{
+  background-color: grey;
+  width: 34%;
+  height: 250px;
+ 
+}
+
+#social-links-ul{
+  padding-top: 70px;
+  margin-left: 156px;
+  width: 200px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+#play-store-btn{
+  margin-top: 20px;
+  margin-left: 130px;
+  height: 40px;
+  width: 135px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(22, 106, 148);
+}
+#apple-store-btn{
+  background-color: rgb(22, 106, 148);
+  margin-left: 10px;
+  height: 40px;
+  width: 135px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+}
+
+#apple-store-btn:hover{
+  background-color: rgb(31, 88, 117);
+  
+
+}
+#play-store-btn:hover{
+  background-color: rgb(31, 88, 117);
+
+}

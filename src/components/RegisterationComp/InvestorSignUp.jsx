@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './sign.css'
+import './InvestorSignUp.css'
 
 
 function InvestorSignUp() {
