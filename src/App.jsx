@@ -1,16 +1,15 @@
-import { Link, Route, Router, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import "./App.css";
 import Nav from './components/Nav/Nav';
 import Startup from "./components/StartUp/Startup";
 // import StartUpComp from "./components/StartUp/StartUpComp";
 import Home from "./components/home/Home";
 import StartUpData from "./components/StartUp/StartUpData";
-// import Nav from "./components/Nav/Nav";
 import InvestorSignUp from "./components/RegisterationComp/InvestorSignUp";
 import Login from "./components/Login/Login";
 // import { Footer } from "antd/es/layout/layout";
 import Footer from "./components/Footer/Footer";
-// import InvestorNavbar from "./components/investorsPortfolio/InvestoNavbar";
+import InvestorNavbar from "./components/investorsPortfolio/InvestoNavbar";
 
 function App() {
   const handleClick = () => {
@@ -32,10 +31,10 @@ function App() {
         <Route path="/post/:id" element={<Startup />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/InvestorSignUp" element={<InvestorSignUp />} />
-        {/* <Route path = "/InvestorNavbar" element={ <InvestorNavbar handleClick={handleClick}/> } /> */}
+        <Route path = "/InvestorNavbar" element={ <InvestorNavbar handleClick={handleClick}/> } />
       </Routes>
       <Footer></Footer>
-      {/* <InvestorNavbar handleClick={handleClick} /> */}
+     
     </div>
   );
 }

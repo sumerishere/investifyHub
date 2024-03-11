@@ -3,10 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./startCom.css";
 import Startup from "./Startup";
-import startUpDataSlice, {
-  addData,
-  selectAllData,
-} from "../../redux/slice/startUpDataSlice";
+import startUpDataSlice, {addData,selectAllData,} from "../../redux/slice/startUpDataSlice";
 import { Select } from "antd";
 function StartUpComp() {
   // const dispatch = useDispatch();

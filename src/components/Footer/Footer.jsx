@@ -1,5 +1,5 @@
 import "../Footer/Footer.css";
-import {GoogleOutlined,AppstoreFilled,FacebookFilled, XOutlined,InstagramOutlined,YoutubeOutlined, AppleFilled} from '@ant-design/icons';
+import {GoogleOutlined,FacebookFilled, XOutlined,InstagramOutlined,YoutubeOutlined, AppleFilled} from '@ant-design/icons';
 
 const Footer = () => {
   return (

@@ -13,8 +13,8 @@ const InvestorNavbar = () => {
   };
 
   return (
-    <div className="root-div">
-      <div className="child-div">
+    <div className="">
+      <div className="investor-child-div">
         <img
           className="aside-img"
           src="/hamburger.png"
@@ -22,7 +22,7 @@ const InvestorNavbar = () => {
           onClick={handleClick}
         />
 
-        <div className="nav-div">
+        <div className="investor-nav-div">
           {/* <a className="a-signOut" href="#!">
             Sign Out
           </a> */}

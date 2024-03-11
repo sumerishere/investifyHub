@@ -1,7 +1,7 @@
 import React from "react";
 import "../asideComponent/AsideBar.css";
 // import Hamburger from "/public/profile_Images/hamburger.png";
-
+import { Link } from "react-router-dom";
 const AsideBar = ({ open }) => {
   return (
     <div>
@@ -14,7 +14,9 @@ const AsideBar = ({ open }) => {
             <a href="#!">Settings</a>
           </li>
           <li>
-            <a href="#!">Sign-Out</a>
+            <Link to="/Login" style={{ textDecoration: "none", color: "white" }}>
+              Sign-Out
+            </Link>
           </li>
         </ul>
       </div>

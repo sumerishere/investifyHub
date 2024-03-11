@@ -11,4 +11,5 @@
 
 .backdrop-open{
   display: block;
+  position: fixed;
 }
