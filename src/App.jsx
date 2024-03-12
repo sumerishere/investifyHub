@@ -1,5 +1,8 @@
 import {  Route, Routes } from "react-router-dom";
 import "./App.css";
+import 'chart.js/auto';  //import the CSS for Chart.js
+
+
 import Nav from './components/Nav/Nav';
 import Startup from "./components/StartUp/Startup";
 // import StartUpComp from "./components/StartUp/StartUpComp";

@@ -13,7 +13,7 @@ const InvestorNavbar = () => {
   };
 
   return (
-    <div className="">
+    <div className="portfolio-div">
       <div className="investor-child-div">
         <img
           className="aside-img"
