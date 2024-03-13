@@ -4,6 +4,7 @@ import AsideBar from "./asideComponent/AsideBar";
 import BackDrop from "./asideComponent/BackDrop";
 
 import { useState } from "react";
+import InvestedStartUps from "./Invested-StartUps/InvestedStartUps";
 
 const InvestorNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,6 +41,7 @@ const InvestorNavbar = () => {
       <BackDrop click={handleClick} open={open}></BackDrop>
       <AsideBar open={open}></AsideBar>
       <GraphContainer></GraphContainer>
+      <InvestedStartUps></InvestedStartUps>
     </div>
   );
 };

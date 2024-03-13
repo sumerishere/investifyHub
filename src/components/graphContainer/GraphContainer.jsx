@@ -64,6 +64,7 @@ const GraphContainer = () => {
           "rgba(54, 162, 235, 0.6)",
           "rgba(255, 206, 86, 0.6)",
         ],
+        borderColor: 'grey',
       },
     ],
   };
@@ -79,6 +80,7 @@ const GraphContainer = () => {
           "rgba(54, 162, 235, 0.6)",
           "rgba(255, 206, 86, 0.6)",
         ],
+        borderColor: 'grey',
       },
     ],
   };

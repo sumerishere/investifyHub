@@ -1,0 +1,30 @@
+.invested-list-div{
+
+}
+
+.startup-list{
+  margin-top: 100px;
+  margin-bottom: 80px;
+  margin-left: 18%;
+  list-style: none;
+  background-color: aquamarine;
+  height: 300px;
+  width: 600px;
+}
+
+.startup-list-ul{
+  list-style: none;
+  text-align: start;
+  line-height: 50px;
+  margin-left: 26px;
+  list-style: circle;
+}
+
+#li-startup{
+}
+
+#name-list{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
