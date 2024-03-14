@@ -1,5 +1,6 @@
 import "../graphContainer/GraphContainer.css";
 import { Line, Bar, Doughnut, Pie } from "react-chartjs-2";
+import {SmileTwoTone } from "@ant-design/icons"
 
 const GraphContainer = () => {
   const lineData = {
@@ -88,7 +89,7 @@ const GraphContainer = () => {
   return (
     <div className="">
       <p id="heading-status">Start-Ups Status</p>
-      <p id="welcome-txt">Welcome! Sumer Khan</p>
+      <p id="welcome-txt">Welcome! Sumer Khan <SmileTwoTone /></p>
       <div className="graph-div">
         <div className="child-div1">
           <Line data={lineData} />

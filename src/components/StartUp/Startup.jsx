@@ -2,11 +2,13 @@
 // import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import {Link} from 'react-scroll';
+// import {Link} from 'react-scroll';
 import { selectAllData } from '../../redux/slice/startUpDataSlice';
 import './startup.css'
 import {LinkedinOutlined} from '@ant-design/icons'
 // import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 
 function Startup() {
@@ -44,10 +46,10 @@ function Startup() {
             <div className="nav1">
                   <div className="ul">
                     <ul className='link'>
-                      <li className='li'><Link to='f' smooth={true} spy={true} offset={-200} duration={500} >Overview</Link></li>
-                      <li className='li'><Link to='about' smooth={true}>about</Link></li>
-                      <li className='li'><Link to='term' smooth={true}>term</Link></li>
-                      <li className='li'><Link>discussion</Link></li>
+                      <li className='li'><ScrollLink to='f' smooth={true} spy={true} offset={-200} duration={500} >Overview</ScrollLink></li>
+                      <li className='li'><ScrollLink to='about' smooth={true}>about</ScrollLink></li>
+                      <li className='li'><ScrollLink to='term' smooth={true}>term</ScrollLink></li>
+                      <li className='li'><ScrollLink>discussion</ScrollLink></li>
                     </ul>
                   </div>
             </div>
@@ -64,7 +66,7 @@ function Startup() {
             <div id='fixed-container'>
 
               <div id= "equity-btn" >
-                <Link to='InvestorSignUp' style={{ textDecoration: 'line' }}>Get Equity <p>{`${arr.raised}`}</p></Link>
+                <Link to='/InvestorSignUp' style={{ textDecoration: 'none',color:'white'}}>Get Equity <p>{`${arr.raised}`}</p></Link>
               </div>
 
               <div className='fix-content'>

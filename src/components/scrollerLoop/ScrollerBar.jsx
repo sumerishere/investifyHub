@@ -49,7 +49,7 @@ function ScrollerBar() {
                             <li>{`${data.companyName}`}</li>
                         );
                     })
-                    // data.slice(0, 10).map((item, index) => {
+                    // data.slice(0, 3).map((item, index) => {
                     //   return (
                     //     <li key={index}>{`${item.companyName}`}</li>
                     //   );

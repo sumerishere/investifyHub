@@ -4,8 +4,8 @@ import "./InvestorSignUp.css";
 function InvestorSignUp() {
   const initialFormData = {
     investorName: "",
-    investorEmail: "",
     investorMobileNo: "",
+    investorEmail: "",
     startupName: "",
     investmentAmount: "",
     username: "",
@@ -55,8 +55,8 @@ function InvestorSignUp() {
 
     const requiredFields = [
       "investorName",
-      "investorEmail",
       "investorMobileNo",
+      "investorEmail",
       "startupName",
       "investmentAmount",
       "username",
@@ -73,18 +73,55 @@ function InvestorSignUp() {
           {}
         ),
       });
+      return; //prevent from empty field store in DB.
+
     } else {
-      // Form submission logic here
       console.log("Form submitted:", formData);
       setFormData(initialFormData); // Reset form fields
       setFormErrors({}); // Clear any error messages
     }
+
+    fetch("http://localhost:8080/saveInvestorInfo", {
+
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // "Accept" : "application/json" //explicit specify 
+        },
+        body: JSON.stringify(formData),
+      })
+
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to submit form.");
+        }
+        return response.json(); // Parse response as JSON
+      })
+      .then((data) => {
+          console.log("Success:", data);
+          setFormData(initialFormData); // Reset form fields after successful submission
+          setFormErrors({});
+          //  setErrorMessage(""); // Clear any previous error messages
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        if (error.response && error.response.status === 200) {
+          // Check if response exists
+          error.response.text().then((text) => {
+            console.log("Non-JSON response:", text); // Log non-JSON response as text
+          });
+        } else {
+          console.log("Non-JSON response: No response object available.");
+        }
+        //  setErrorMessage("Failed to submit form. Please try again."); // Set error message on submission failure
+      });
   };
 
   return (
     <div>
       <h2>Investor Registration Form</h2>
       <form className="form-container" onSubmit={handleSubmit}>
+
         <label htmlFor="investorName">
           Investor Name<span className="required">*</span>
         </label>
@@ -98,7 +135,8 @@ function InvestorSignUp() {
         {formErrors.investorName && (
           <p style={{ color: "red" }}>{formErrors.investorName}</p>
         )}
-        <label htmlFor="countryCode">
+
+        {/* <label htmlFor="countryCode">
           Country Code<span className="required">*</span>
         </label>
         <select
@@ -110,11 +148,12 @@ function InvestorSignUp() {
           <option value="+1">+91 (India)</option>
           <option value="+1">+1 (USA)</option>
           <option value="+44">+44 (UK)</option>
-          {/* Add more country codes as needed */}
+
         </select>
         {formErrors.countryCode && (
           <p style={{ color: "red" }}>{formErrors.countryCode}</p>
-        )}
+        )} */}
+
         <label htmlFor="investorMobileNo">
           Investor Mobile No.<span className="required">*</span>
         </label>
@@ -128,6 +167,7 @@ function InvestorSignUp() {
         {formErrors.investorMobileNo && (
           <p style={{ color: "red" }}>{formErrors.investorMobileNo}</p>
         )}
+
         <label htmlFor="investorEmail">
           Investor Email<span className="required">*</span>
         </label>
@@ -141,6 +181,7 @@ function InvestorSignUp() {
         {formErrors.investorEmail && (
           <p style={{ color: "red" }}>{formErrors.investorEmail}</p>
         )}
+
         <label htmlFor="startupName">
           StartUp/Company Full Name<span className="required">*</span>
         </label>
@@ -154,6 +195,7 @@ function InvestorSignUp() {
         {formErrors.startupName && (
           <p style={{ color: "red" }}>{formErrors.startupName}</p>
         )}
+
         <label htmlFor="investmentAmount">
           Investment Amount<span className="required">*</span>
         </label>
@@ -167,6 +209,7 @@ function InvestorSignUp() {
         {formErrors.investmentAmount && (
           <p style={{ color: "red" }}>{formErrors.investmentAmount}</p>
         )}
+
         <label htmlFor="username">
           Create Username<span className="required">*</span>
         </label>
@@ -180,6 +223,7 @@ function InvestorSignUp() {
         {formErrors.username && (
           <p style={{ color: "red" }}>{formErrors.username}</p>
         )}
+
         <label htmlFor="password">
           Create Password<span className="required">*</span>
         </label>
@@ -194,13 +238,16 @@ function InvestorSignUp() {
         {formErrors.password && (
           <p style={{ color: "red" }}>{formErrors.password}</p>
         )}
+
         <input
           type="checkbox"
           id="show-password"
           onChange={handleTogglePassword}
-        />{" "}
+        />
         <span id="show-pass-text">Click to Show Password</span>
+
         <input type="submit" value="Sign-Up" />
+
       </form>
     </div>
   );
@@ -287,36 +334,6 @@ export default InvestorSignUp;
 //       //       setErrorMessage("Failed to submit form. Please try again."); // Set error message on submission failure
 //       //     });
 
-//       const handleSubmit = (event) => {
-//         event.preventDefault();
-
-//         // Check if any required field is empty
-//         const requiredFields = ["investorName", "investorEmail", "investorMobileNo", "startupName", "investmentAmount", "username", "password"];
-//         const emptyFields = requiredFields.filter(field => !formData[field]);
-
-//         if (emptyFields.length > 0) {
-//           // Set error message if any required field is empty
-//           setErrorMessage("Please fill all required fields");
-//         } else {
-//           // Submit the form if all required fields are filled
-//           fetch("http://localhost:8080/investorInfo", {
-//             method: "POST",
-//             headers: {
-//               "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify(formData),
-//           })
-//             .then((response) => response.json())
-//             .then((data) => {
-//               console.log("Success:", data);
-//               setFormData(initialFormData); // Reset form fields after successful submission
-//               setErrorMessage(""); // Clear any previous error messages
-//             })
-//             .catch((error) => {
-//               console.error("Error:", error);
-//               setErrorMessage("Failed to submit form. Please try again."); // Set error message on submission failure
-//             });
-//         }
 //       };
 
 //       return (

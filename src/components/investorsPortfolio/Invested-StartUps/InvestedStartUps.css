@@ -2,28 +2,44 @@
 
 }
 
-.startup-list{
+.startup-list-container{
   margin-top: 100px;
   margin-bottom: 80px;
   margin-left: 18%;
   list-style: none;
   background-color: aquamarine;
   height: 300px;
-  width: 600px;
+  width: 700px;
+}
+.startup-lists{
+  width: 440px;
+  /* height: 200px; */
+  background-color: blueviolet;
+  margin-top: 50px;
+  margin-left: 118px;
 }
 
 .startup-list-ul{
+  
   list-style: none;
   text-align: start;
-  line-height: 50px;
+  /* line-height: 50px; */
   margin-left: 26px;
   list-style: circle;
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+  
 }
 
 #li-startup{
 }
 
-#name-list{
+#header-list{
   text-align: center;
   font-size: 20px;
   font-weight: 500;
