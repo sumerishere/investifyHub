@@ -61,7 +61,7 @@ function Startup() {
                 </div>
             </div>
 
-       {/*-------- fixed container -------- */}
+       {/*-------- fixed Get-Equity container -------- */}
 
             <div id='fixed-container'>
 

@@ -73,7 +73,7 @@ function InvestorSignUp() {
           {}
         ),
       });
-      return; //prevent from empty field store in DB.
+      return; //prevent from empty or half field store in DB.
 
     } else {
       console.log("Form submitted:", formData);
@@ -93,7 +93,7 @@ function InvestorSignUp() {
 
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to submit form.");
+          throw new Error("Failed to submit form. Try Again");
         }
         return response.json(); // Parse response as JSON
       })
@@ -136,7 +136,7 @@ function InvestorSignUp() {
           <p style={{ color: "red" }}>{formErrors.investorName}</p>
         )}
 
-        {/* <label htmlFor="countryCode">
+        <label htmlFor="countryCode">
           Country Code<span className="required">*</span>
         </label>
         <select
@@ -152,7 +152,7 @@ function InvestorSignUp() {
         </select>
         {formErrors.countryCode && (
           <p style={{ color: "red" }}>{formErrors.countryCode}</p>
-        )} */}
+        )}
 
         <label htmlFor="investorMobileNo">
           Investor Mobile No.<span className="required">*</span>

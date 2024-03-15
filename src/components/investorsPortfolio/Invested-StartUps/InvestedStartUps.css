@@ -5,11 +5,15 @@
 .startup-list-container{
   margin-top: 100px;
   margin-bottom: 80px;
-  margin-left: 18%;
+  margin-left: 30%;
   list-style: none;
-  background-color: aquamarine;
+  /* background-color: rgb(99, 102, 101); */
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #2f2b34 0%, #413e3eba 74%);
+  box-shadow: 1px 5px 5px rgb(0, 0, 0, 0.6);
   height: 300px;
   width: 700px;
+  border-radius: 10px;
 }
 .startup-lists{
   width: 440px;
@@ -17,6 +21,7 @@
   background-color: blueviolet;
   margin-top: 50px;
   margin-left: 118px;
+  color: aliceblue;
 }
 
 .startup-list-ul{
@@ -40,7 +45,10 @@
 }
 
 #header-list{
+  padding-top: 14px;
   text-align: center;
   font-size: 20px;
   font-weight: 500;
+  color: aliceblue;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
 }
