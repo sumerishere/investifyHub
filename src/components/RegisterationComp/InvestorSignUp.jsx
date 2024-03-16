@@ -3,10 +3,10 @@ import "./InvestorSignUp.css";
 
 function InvestorSignUp() {
   const initialFormData = {
-    investorName: "",
-    investorMobileNo: "",
-    investorEmail: "",
-    startupName: "",
+    name: "",
+    mobileNo: "",
+    mailId: "",
+    startupname: "",
     investmentAmount: "",
     username: "",
     password: "",
@@ -20,7 +20,7 @@ function InvestorSignUp() {
     const { name, value } = event.target;
 
     // Validate the input fields
-    if (name === "investmentAmount" || name === "investorMobileNo") {
+    if (name === "investmentAmount" || name === "mobileNo") {
       if (/^\d+$/.test(value) || value === "") {
         setFormErrors({
           ...formErrors,
@@ -54,10 +54,10 @@ function InvestorSignUp() {
     event.preventDefault();
 
     const requiredFields = [
-      "investorName",
-      "investorMobileNo",
-      "investorEmail",
-      "startupName",
+      "name",
+      "mobileNo",
+      "mailId",
+      "startupname",
       "investmentAmount",
       "username",
       "password",
@@ -95,7 +95,11 @@ function InvestorSignUp() {
         if (!response.ok) {
           throw new Error("Failed to submit form. Try Again");
         }
-        return response.json(); // Parse response as JSON
+        else{
+          alert("saved investor data");
+          return response.json(); // Parse response as JSON
+        }
+        
       })
       .then((data) => {
           console.log("Success:", data);
@@ -121,19 +125,18 @@ function InvestorSignUp() {
     <div>
       <h2>Investor Registration Form</h2>
       <form className="form-container" onSubmit={handleSubmit}>
-
-        <label htmlFor="investorName">
+        <label htmlFor="name">
           Investor Name<span className="required">*</span>
         </label>
         <input
           type="text"
           placeholder="Enter Your Name"
-          name="investorName"
-          value={formData.investorName}
+          name="name"
+          value={formData.name}
           onChange={handleInputChange}
         />
-        {formErrors.investorName && (
-          <p style={{ color: "red" }}>{formErrors.investorName}</p>
+        {formErrors.name && (
+          <p style={{ color: "red" }}>{formErrors.name}</p>
         )}
 
         <label htmlFor="countryCode">
@@ -154,46 +157,46 @@ function InvestorSignUp() {
           <p style={{ color: "red" }}>{formErrors.countryCode}</p>
         )}
 
-        <label htmlFor="investorMobileNo">
+        <label htmlFor="mobileNo">
           Investor Mobile No.<span className="required">*</span>
         </label>
         <input
           type="text"
           placeholder="Enter Your Mobile No."
-          name="investorMobileNo"
-          value={formData.investorMobileNo}
+          name="mobileNo"
+          value={formData.mobileNo}
           onChange={handleInputChange}
         />
-        {formErrors.investorMobileNo && (
-          <p style={{ color: "red" }}>{formErrors.investorMobileNo}</p>
+        {formErrors.mobileNo && (
+          <p style={{ color: "red" }}>{formErrors.mobileNo}</p>
         )}
 
-        <label htmlFor="investorEmail">
+        <label htmlFor="mailId">
           Investor Email<span className="required">*</span>
         </label>
         <input
           type="text"
           placeholder="Enter Your Email"
-          name="investorEmail"
-          value={formData.investorEmail}
+          name="mailId"
+          value={formData.mailId}
           onChange={handleInputChange}
         />
-        {formErrors.investorEmail && (
-          <p style={{ color: "red" }}>{formErrors.investorEmail}</p>
+        {formErrors.mailId && (
+          <p style={{ color: "red" }}>{formErrors.mailId}</p>
         )}
 
-        <label htmlFor="startupName">
+        <label htmlFor="startupname">
           StartUp/Company Full Name<span className="required">*</span>
         </label>
         <input
           type="text"
           placeholder="Enter StartUp/Company  Name "
-          name="startupName"
-          value={formData.startupName}
+          name="startupname"
+          value={formData.startupname}
           onChange={handleInputChange}
         />
-        {formErrors.startupName && (
-          <p style={{ color: "red" }}>{formErrors.startupName}</p>
+        {formErrors.startupname && (
+          <p style={{ color: "red" }}>{formErrors.startupname}</p>
         )}
 
         <label htmlFor="investmentAmount">
