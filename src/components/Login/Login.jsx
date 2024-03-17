@@ -1,15 +1,24 @@
 import React from "react";
 import "./login.css";
 import { GoogleOutlined, AppleOutlined } from "@ant-design/icons";
-// import {Link} from 'react-scroll';
 import { Link } from "react-router-dom";
-// import InvestorNavbar from "../investorsPortfolio/InvestorNavbar";
-
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+
+  // const notify = (event) =>{ 
+  //   event.preventDefault();
+  //   toast.success("Login Successfully!",{
+  //     position: "top-center",
+  //     autoClose: 3000
+  //   });
+  // }
+
   return (
     <>
       <h3>Investor Log-in</h3>
+      
       <div className="login-r">
         <div className="form">
           <div className="flex-column">
@@ -67,17 +76,37 @@ function Login() {
             </div>
             <span className="span">Forgot password?</span>
           </div>
-          <button className="button-submit">
-            <Link to="/InvestorNavbar" style={{ textDecoration: "none", color: "white" }}>Sign in </Link>
+
+          <button className="button-submit" 
+          // onClick={notify} 
+          >
+            <Link
+              to="/InvestorNavbar"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              Sign in
+            </Link>
+            {/* Sign-in */}
           </button>
-          <p className="p">
+          {/* <ToastContainer/> */}
+
+          <p className="p-or-text">
             Don't have an account? Or With
-            <span className="span"><Link to='/InvestorSignUp' style={{ textDecoration: 'none',color:'blue' }}>Sign Up</Link></span>
+            <span className="span-sign-up">
+              <Link
+                to="/InvestorSignUp"
+                style={{ textDecoration: "none", color: "blue" }}
+              >
+                Sign Up
+              </Link>
+            </span>
           </p>
+
           <div className="flex-row">
             <button className="btn google">
               <GoogleOutlined /> Google
             </button>
+
             <button className="btn apple">
               <AppleOutlined /> Apple
             </button>

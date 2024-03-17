@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./InvestorSignUp.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function InvestorSignUp() {
+const InvestorSignUp = () =>{
+
   const initialFormData = {
     name: "",
     mobileNo: "",
@@ -50,7 +53,7 @@ function InvestorSignUp() {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (event) => {
+  var handleSubmit = (event) => {
     event.preventDefault();
 
     const requiredFields = [
@@ -93,12 +96,21 @@ function InvestorSignUp() {
 
       .then((response) => {
         if (!response.ok) {
+          toast.error("Failed! to Submit",{
+            position: "top-center",
+            autoClose: 5000   
+          })
           throw new Error("Failed to submit form. Try Again");
         }
-        else{
-          alert("saved investor data");
-          return response.json(); // Parse response as JSON
-        }
+
+          //-------------Pop-up-------//
+         toast.success("Congratulations! On Your First Investment 😊", {
+          position: "top-center",
+          autoClose: 5000            
+         });
+         // alert("saved investor data");
+        return response.json(); // Parse response as JSON
+          
         
       })
       .then((data) => {
@@ -119,12 +131,14 @@ function InvestorSignUp() {
         }
         //  setErrorMessage("Failed to submit form. Please try again."); // Set error message on submission failure
       });
-  };
+    };
+
 
   return (
     <div>
+      <ToastContainer/>
       <h2>Investor Registration Form</h2>
-      <form className="form-container" onSubmit={handleSubmit}>
+      <form className="form-container"  onSubmit={handleSubmit}>
         <label htmlFor="name">
           Investor Name<span className="required">*</span>
         </label>
