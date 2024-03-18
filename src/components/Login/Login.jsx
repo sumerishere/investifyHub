@@ -1,11 +1,19 @@
 import React from "react";
 import "./login.css";
 import { GoogleOutlined, AppleOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { Link, useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+  
+
+  // const navigate = useNavigate();
+
+  // const handleSignIn = () => {
+  //   // Redirect to InvestorNavbar with a state indicating that the pop-up should be shown
+  //   navigate("/InvestorNavbar", { showPopup: true });
+  // };
 
   // const notify = (event) =>{ 
   //   event.preventDefault();
@@ -79,6 +87,7 @@ function Login() {
 
           <button className="button-submit" 
           // onClick={notify} 
+          // onClick={handleSignIn}
           >
             <Link
               to="/InvestorNavbar"

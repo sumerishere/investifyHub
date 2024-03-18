@@ -56,33 +56,33 @@ const InvestorSignUp = () =>{
   var handleSubmit = (event) => {
     event.preventDefault();
 
-    const requiredFields = [
-      "name",
-      "mobileNo",
-      "mailId",
-      "startupname",
-      "investmentAmount",
-      "username",
-      "password",
-    ];
+    // const requiredFields = [
+    //   "name",
+    //   "mobileNo",
+    //   "mailId",
+    //   "startupname",
+    //   "investmentAmount",
+    //   "username",
+    //   "password",
+    // ];
 
-    const emptyFields = requiredFields.filter((field) => !formData[field]);
+    // const emptyFields = requiredFields.filter((field) => !formData[field]);
 
-    if (emptyFields.length > 0) {
-      setFormErrors({
-        ...formErrors,
-        ...emptyFields.reduce(
-          (acc, curr) => ({ ...acc, [curr]: "This field is required." }),
-          {}
-        ),
-      });
-      return; //prevent from empty or half field store in DB.
+    // if (emptyFields.length > 0) {
+    //   setFormErrors({
+    //     ...formErrors,
+    //     ...emptyFields.reduce(
+    //       (acc, curr) => ({ ...acc, [curr]: "This field is required." }),
+    //       {}
+    //     ),
+    //   });
+    //   return; //prevent from empty or half field store in DB.
 
-    } else {
+    // } else {
       console.log("Form submitted:", formData);
       setFormData(initialFormData); // Reset form fields
       setFormErrors({}); // Clear any error messages
-    }
+    // }
 
     fetch("http://localhost:8080/saveInvestorInfo", {
 
@@ -98,7 +98,7 @@ const InvestorSignUp = () =>{
         if (!response.ok) {
           toast.error("Failed! to Submit",{
             position: "top-center",
-            autoClose: 5000   
+            autoClose: 3000   
           })
           throw new Error("Failed to submit form. Try Again");
         }
@@ -119,6 +119,7 @@ const InvestorSignUp = () =>{
           setFormErrors({});
           //  setErrorMessage(""); // Clear any previous error messages
       })
+
       .catch((error) => {
         console.error("Error:", error);
         if (error.response && error.response.status === 200) {
@@ -126,7 +127,8 @@ const InvestorSignUp = () =>{
           error.response.text().then((text) => {
             console.log("Non-JSON response:", text); // Log non-JSON response as text
           });
-        } else {
+        } 
+        else {
           console.log("Non-JSON response: No response object available.");
         }
         //  setErrorMessage("Failed to submit form. Please try again."); // Set error message on submission failure
@@ -146,6 +148,7 @@ const InvestorSignUp = () =>{
           type="text"
           placeholder="Enter Your Name"
           name="name"
+          required="true"
           value={formData.name}
           onChange={handleInputChange}
         />
@@ -176,6 +179,7 @@ const InvestorSignUp = () =>{
         </label>
         <input
           type="text"
+          required="true"
           placeholder="Enter Your Mobile No."
           name="mobileNo"
           value={formData.mobileNo}
@@ -192,6 +196,7 @@ const InvestorSignUp = () =>{
           type="text"
           placeholder="Enter Your Email"
           name="mailId"
+          required="true"
           value={formData.mailId}
           onChange={handleInputChange}
         />
@@ -206,6 +211,7 @@ const InvestorSignUp = () =>{
           type="text"
           placeholder="Enter StartUp/Company  Name "
           name="startupname"
+          required="true"
           value={formData.startupname}
           onChange={handleInputChange}
         />
@@ -220,6 +226,7 @@ const InvestorSignUp = () =>{
           type="text"
           placeholder="Enter Amount"
           name="investmentAmount"
+          required="true"
           value={formData.investmentAmount}
           onChange={handleInputChange}
         />
@@ -234,6 +241,7 @@ const InvestorSignUp = () =>{
           type="text"
           placeholder="Enter New Username"
           name="username"
+          required="true"
           value={formData.username}
           onChange={handleInputChange}
         />
@@ -248,6 +256,7 @@ const InvestorSignUp = () =>{
           type={showPassword ? "text" : "password"}
           placeholder="Enter New Password"
           name="password"
+          required="true"
           id="pass-id"
           value={formData.password}
           onChange={handleInputChange}
