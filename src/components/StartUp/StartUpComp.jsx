@@ -5,6 +5,8 @@ import "./startCom.css";
 import Startup from "./Startup";
 import startUpDataSlice, {addData,selectAllData,} from "../../redux/slice/startUpDataSlice";
 import { Select } from "antd";
+
+
 function StartUpComp() {
   // const dispatch = useDispatch();
   const data = useSelector(selectAllData);

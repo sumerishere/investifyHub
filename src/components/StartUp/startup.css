@@ -106,6 +106,10 @@
     margin-left: 20px;
 }
 
+.pitchcont p{
+    margin-top: 16px;
+}
+
 .pitchcont img {
     width: 100%;
 }
@@ -119,7 +123,9 @@
     margin-top: 40px;
     margin-left: 20px;
 }
-
+.wticont p{
+    margin-top: 16px;
+}
 .wticont img {
     width: 100%;
 }
@@ -179,6 +185,9 @@
     width: 100%;
 }
 
+#comp-name{
+    margin-top: 10px;
+}
 .over {
     width: 100%;
     display: grid;

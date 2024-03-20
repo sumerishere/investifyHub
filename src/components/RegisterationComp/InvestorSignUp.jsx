@@ -96,11 +96,11 @@ const InvestorSignUp = () =>{
 
       .then((response) => {
         if (!response.ok) {
-          toast.error("Failed! to Submit",{
+         
+          throw new Error( toast.error("Failed! to Submit, Try Again",{
             position: "top-center",
             autoClose: 3000   
-          })
-          throw new Error("Failed to submit form. Try Again");
+          }));
         }
 
           //-------------Pop-up-------//

@@ -86,7 +86,7 @@
     padding-left: 10px;
 }
 
-.title-p {
+#title-p {
     padding-left: 10px;
     margin-top: 20px;
     /* margin-right: 0px; */
@@ -94,7 +94,7 @@
     font-weight: 700;
     color: #2c9aa9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-
+    cursor: pointer;
 }
 
 .sub-text {

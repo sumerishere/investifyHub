@@ -7,10 +7,10 @@ import { useNavigate } from 'react-router-dom';
 import Startup from '../StartUp/Startup';
 
 function Nav() {
+
     const[id,setId] = useState(null);
     const inpvalue = useRef('');
     const history = useNavigate()
-
 
     async function fun(){
         let val = inpvalue.current.input.defaultValue;
@@ -31,7 +31,12 @@ function Nav() {
         <div className="navcontent">
             <div className="left">
             <div className="logo">
-            <p className="title-p">investifyHub📈</p>
+            <p id="title-p">
+                <Link to="/" style={{ textDecoration: "none",color:"#2c9aa9"}}>
+                 investifyHub📈
+                </Link>
+            </p>
+
             <p className="sub-text">elevate your investments</p>
           </div>
         <div className="input">
@@ -42,10 +47,18 @@ function Nav() {
             <div className="right">
                 <div className="rcont">
                     <ul>
-                        <li><Link to='/' style={{ textDecoration: 'none',color:'white' }}>Home</Link></li>
-                        <li className='btn1'><Link to='/StartUpData'  style={{ textDecoration: 'none',color:'black' }}>Start Investing</Link></li>
-                        <li><Link to='Login' style={{ textDecoration: 'none',color:'white' }}>Log In</Link></li>
-                        <li><Link to='InvestorSignUp' style={{ textDecoration: 'none',color:'white' }}>Sign Up</Link></li>
+                        <li>
+                            <Link to='/' style={{ textDecoration: 'none',color:'white' }}>Home</Link></li>
+
+                        <li className='btn1'>
+                            <Link to='/StartUpData'  style={{ textDecoration: 'none',color:'black' }}>Start Investing</Link></li>
+
+                        <li>
+                            <Link to='Login' style={{ textDecoration: 'none',color:'white' }}>Log In</Link></li>
+
+                        <li>
+                            <Link to='InvestorSignUp' style={{ textDecoration: 'none',color:'white' }}>Sign Up</Link></li>
+
                     </ul>
                 </div>
             </div>

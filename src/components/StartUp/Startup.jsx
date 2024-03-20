@@ -47,15 +47,15 @@ function Startup() {
                   <div className="ul">
                     <ul className='link'>
                       <li className='li'><ScrollLink to='f' smooth={true} spy={true} offset={-200} duration={500} >Overview</ScrollLink></li>
-                      <li className='li'><ScrollLink to='about' smooth={true}>about</ScrollLink></li>
-                      <li className='li'><ScrollLink to='term' smooth={true}>term</ScrollLink></li>
-                      <li className='li'><ScrollLink>discussion</ScrollLink></li>
+                      <li className='li'><ScrollLink to='about' smooth={true}>About</ScrollLink></li>
+                      <li className='li'><ScrollLink to='term' smooth={true}>Term</ScrollLink></li>
+                      <li className='li'><ScrollLink>Discussion</ScrollLink></li>
                     </ul>
                   </div>
             </div>
             <div className="pitch">
                 <div className="pitchcont">
-                  <h4>The Pitch</h4>
+                  <h2>The Pitch</h2>
                   <p>{`${arr.pitch}`}</p>
                   <img style={{paddingTop:'20px'}}  src={`data:image/jpeg;base64,${arr.pitchimage}`} alt="pitchimage" />
                 </div>
@@ -78,14 +78,15 @@ function Startup() {
 
             <div className="wti">
               <div className="wticont">
-                <h4>Why To Invest</h4>
+                <h2>Why? To Invest</h2>
                 <p>{`${arr.wti}`}</p>
                 <img style={{paddingTop:'20px'}} src={`data:image/jpeg;base64,${arr.wtiImage}`} alt="WtiImage" />
               </div>
             </div>
+
             <div className="about" id='about'>
               <br />
-              <h3>About</h3>
+              <h2>ABOUT</h2>
               <br />
               <div className="abountcont">
                 <div className="ceo">
@@ -96,6 +97,7 @@ function Startup() {
                     <p>{`${arr.ceoinfo}`}</p>
                     <a href={`${arr.ceoLink}`}><LinkedinOutlined className='ld' /></a>
                 </div>
+
                 <div className="cto">
                 <div className="cimg">
                       <img src={`data:image/jpeg;base64,${arr.ctoimage}`} alt="" />
@@ -104,6 +106,7 @@ function Startup() {
                     <p>{`${arr.ctoinfo}`}</p>
                     <a href={`${arr.ctoLink}`}><LinkedinOutlined className='ld'/></a>
                 </div>
+
                 <div className="board">
                 <div className="cimg">
                       <img src={`data:image/jpeg;base64,${arr.board}`} alt="" />
@@ -115,10 +118,11 @@ function Startup() {
                 </div>
               </div>
             </div>
+
             <div className="term1" id='term'>
               <br />
-              <h2>Term</h2>
-              <h5 className='common'>{`${arr.companyName}`}</h5>
+              <h2>TERM</h2>
+              <h5 id ="comp-name" className='common'>{`${arr.companyName}`}</h5>
               <br />
               <div className="termcont">
               <h3 className='cmc'>OVERVIEW</h3>
