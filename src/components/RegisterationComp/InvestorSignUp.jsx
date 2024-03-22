@@ -9,7 +9,7 @@ const InvestorSignUp = () =>{
     name: "",
     mobileNo: "",
     mailId: "",
-    startupname: "",
+    startupname: [],
     investmentAmount: "",
     username: "",
     password: "",
@@ -45,7 +45,7 @@ const InvestorSignUp = () =>{
     // Update form data
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: name === "startupname" ? [value] : value,
     });
   };
 
@@ -92,6 +92,11 @@ const InvestorSignUp = () =>{
           // "Accept" : "application/json" //explicit specify 
         },
         body: JSON.stringify(formData),
+        // body: JSON.stringify({
+        //   ...formData,
+        //   startupname: 
+
+        // }),
       })
 
       .then((response) => {
