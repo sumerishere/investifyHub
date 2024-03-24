@@ -15,6 +15,8 @@ import Login from "./components/Login/Login";
 // import { Footer } from "antd/es/layout/layout";
 import Footer from "./components/Footer/Footer";
 import InvestorNavbar from "./components/investorsPortfolio/InvestoNavbar";
+
+import InvestmentForm from "./components/InvestmentForm/InvestmentForm";
 // import { useState } from "react";
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/InvestorSignUp" element={<InvestorSignUp />} />
         <Route path = "/InvestorNavbar" element={ <InvestorNavbar handleClick={handleClick} /> } />
+        <Route path = "/InvestmentForm" element={<InvestmentForm/>}/>
       </Routes>
       <Footer></Footer>
      

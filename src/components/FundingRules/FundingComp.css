@@ -93,8 +93,8 @@
   
   .bootem-p-text{
     margin-top: 20px;
-    font-size: 0.9rem;
-    color: rgb(195, 166, 166);
+    font-size: 1rem;
+    color: rgb(207, 200, 200);
     line-height: 25px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }

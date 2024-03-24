@@ -66,7 +66,7 @@ function Startup() {
             <div id='fixed-container'>
 
               <div id= "equity-btn" >
-                <Link to='/InvestorSignUp' style={{ textDecoration: 'none',color:'white'}}>Get Equity <p>{`${arr.raised}`}</p></Link>
+                <Link to='/InvestmentForm' style={{ textDecoration: 'none',color:'white'}}>Get Equity <p>{`${arr.raised}`}</p></Link>
               </div>
 
               <div className='fix-content'>

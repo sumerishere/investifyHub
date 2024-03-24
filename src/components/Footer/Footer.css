@@ -10,6 +10,22 @@
   padding-left: 70px;
 }
 
+.title-logo{
+  font-size: 22px;
+  font-weight: 700;
+  color: #2daaba;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.sub-text-logo{
+  font-size: 0.6rem;
+  padding-left: 148px;
+  font-weight: 500;
+  color: rgb(199, 194, 194);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
 .main-div-top {
   display: flex;
   justify-content: space-around;

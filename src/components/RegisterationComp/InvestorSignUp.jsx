@@ -145,6 +145,7 @@ const InvestorSignUp = () =>{
     <div>
       <ToastContainer/>
       <h2>Investor Registration Form</h2>
+      <p id = "heading-sign-up-text">Note : Please! Fill The All Necessary Details Carefully.</p>
       <form className="form-container"  onSubmit={handleSubmit}>
         <label htmlFor="name">
           Investor Name<span className="required">*</span>

@@ -7,9 +7,10 @@ const Footer = () => {
       <div className="main-div">
         <div className="main-div-top">
           <div className="div-1">
-            <p id="footer-logo" className="title-p">
+            <p id="footer-logo" className="title-logo">
               investifyHub📈
             </p>
+            <p className="sub-text-logo">elevate your investments</p>
           </div>
 
           <div className="div-2">

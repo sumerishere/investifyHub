@@ -1,0 +1,19 @@
+#heading-textt{
+  font-size: 18px;
+  padding-top: 45px;
+  margin-left: 368px;
+}
+
+#form-size{
+  width: 30%;
+}
+
+#submit-color{
+  background-color: rgb(47, 193, 47);
+  font-weight: 500;
+
+}
+
+#submit-color:hover{
+  background-color: rgb(62, 151, 62);
+}

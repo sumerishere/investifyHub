@@ -69,11 +69,16 @@ function StartUpComp() {
   const industry = new Set(data.map((data) => data.industry));
   const arr1 = Array.from(industry);
 
+
+
   return (
     <div className="cont">
       <div className="drop">
         <div className="se">
-          <Select placeholder="Category" onSelect={select}>
+          <Select placeholder="Category" onSelect={select} 
+          // open={hovered} // Open the Select component when hovered
+          // value={selectedOption}
+          >
             {arr1.map((data) => {
               return (
                 <Select.Option
