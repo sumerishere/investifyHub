@@ -81,7 +81,7 @@ function Login() {
               to="/InvestorNavbar"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Sign in
+              Sign-in
             </Link>
             {/* Sign-in */}
           </button>
@@ -94,7 +94,7 @@ function Login() {
                 to="/InvestorSignUp"
                 style={{ textDecoration: "none", color: "blue" }}
               >
-                Sign Up
+                Sign-Up
               </Link>
             </span>
           </p>

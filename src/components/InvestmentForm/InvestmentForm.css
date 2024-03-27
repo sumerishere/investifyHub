@@ -17,3 +17,19 @@
 #submit-color:hover{
   background-color: rgb(62, 151, 62);
 }
+
+#p-sign-up{
+  margin-top: -19px;
+  margin-bottom: 20px;
+  margin-left: 218px;
+  font-size: 16px;
+}
+
+#sign-upp{
+  padding-left: 5px;
+  padding-bottom: 5px;
+  color: rgb(34, 34, 233);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}

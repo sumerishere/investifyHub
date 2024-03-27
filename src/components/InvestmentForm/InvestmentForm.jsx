@@ -1,6 +1,8 @@
 import "../InvestmentForm/InvestmentForm.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const InvestmentForm = () => {
@@ -10,9 +12,17 @@ const InvestmentForm = () => {
     setShowPassword(!showPassword);
   };
 
+   // ---handleSubmitForm------ //
+
+     //-------------Pop-up-------//
+    //  toast.success("Congratulations! On Your First Investment 😊, Investor Name", {
+    //   position: "top-center",
+    //   autoClose: 5000            
+    //  });
 
   return (
     <div>
+      <ToastContainer/>
        <p id= "heading-textt">"Welcome, Investor Name! Expand Your Portfolio : Diversify Your Investments! 😉"</p>
        <form className="form-container" id="form-size" >
        <label htmlFor="startupname">
@@ -65,6 +75,12 @@ const InvestmentForm = () => {
           onChange={handleTogglePassword}
         />
         <span id="show-pass-text">Click to Show Password</span>
+
+        <p id="p-sign-up">For new user - <span id ="sign-upp"> <Link
+                to="/InvestorSignUp"
+                style={{ textDecoration: "none", color: "blue" }}>
+                Sign-Up
+              </Link></span></p>
 
         <input id = "submit-color" type="submit" value="Ready! To Invest" />
 

@@ -9,8 +9,6 @@ const InvestorSignUp = () =>{
     name: "",
     mobileNo: "",
     mailId: "",
-    startupname: [],
-    investmentAmount: "",
     username: "",
     password: "",
   };
@@ -23,7 +21,7 @@ const InvestorSignUp = () =>{
     const { name, value } = event.target;
 
     // Validate the input fields
-    if (name === "investmentAmount" || name === "mobileNo") {
+    if ( name === "mobileNo") {
       if (/^\d+$/.test(value) || value === "") {
         setFormErrors({
           ...formErrors,
@@ -92,11 +90,7 @@ const InvestorSignUp = () =>{
           // "Accept" : "application/json" //explicit specify 
         },
         body: JSON.stringify(formData),
-        // body: JSON.stringify({
-        //   ...formData,
-        //   startupname: 
-
-        // }),
+  
       })
 
       .then((response) => {
@@ -108,8 +102,9 @@ const InvestorSignUp = () =>{
           }));
         }
 
-          //-------------Pop-up-------//
-         toast.success("Congratulations! On Your First Investment 😊", {
+        //-------------Pop-up-------//
+
+         toast.success("Thank! You For Sign-Up ", {
           position: "top-center",
           autoClose: 5000            
          });
@@ -210,7 +205,7 @@ const InvestorSignUp = () =>{
           <p style={{ color: "red" }}>{formErrors.mailId}</p>
         )}
 
-        <label htmlFor="startupname">
+        {/* <label htmlFor="startupname">
           StartUp/Company Full Name<span className="required">*</span>
         </label>
         <input
@@ -223,9 +218,9 @@ const InvestorSignUp = () =>{
         />
         {formErrors.startupname && (
           <p style={{ color: "red" }}>{formErrors.startupname}</p>
-        )}
+        )} */}
 
-        <label htmlFor="investmentAmount">
+        {/* <label htmlFor="investmentAmount">
           Investment Amount<span className="required">*</span>
         </label>
         <input
@@ -238,10 +233,10 @@ const InvestorSignUp = () =>{
         />
         {formErrors.investmentAmount && (
           <p style={{ color: "red" }}>{formErrors.investmentAmount}</p>
-        )}
+        )} */}
 
         <label htmlFor="username">
-          Create Username<span className="required">*</span>
+          Create New Username<span className="required">*</span>
         </label>
         <input
           type="text"
@@ -256,7 +251,7 @@ const InvestorSignUp = () =>{
         )}
 
         <label htmlFor="password">
-          Create Password<span className="required">*</span>
+          Create New Password<span className="required">*</span>
         </label>
         <input
           type={showPassword ? "text" : "password"}
@@ -285,194 +280,3 @@ const InvestorSignUp = () =>{
   );
 }
 export default InvestorSignUp;
-
-//---------------------------------------------------------------------//
-
-// function InvestorSignUp() {
-//     const initialFormData = {
-//         // investorId: "",
-//         investorName: "",
-//         investorEmail: "",
-//         investorMobileNo: "",
-//         // investorPanId: "",
-//         startupName: "",
-//         investmentAmount: "",
-//         username: "",
-//         password: "",
-//         // profileImage: "",
-//       };
-
-//       const [errorMessage, setErrorMessage] = useState(""); // Error message state
-//       const [formData, setFormData] = useState(initialFormData); // Form data state
-//       const [showPassword, setShowPassword] = useState(false); // Password visibility state
-
-//       // const handleInputChange = (event) => {
-//       //   const { name, value } = event.target;
-
-//       //   setFormData({
-//       //     ...formData,
-//       //     [name]: value,
-//       //   });
-
-//       // };
-
-//       const handleInputChange = (event) => {
-//         const { name, value } = event.target;
-
-//         if (name === "investmentAmount" || name==="investorMobileNo") {
-//           // Check if the entered value contains only digits
-//           if (/^\d+$/.test(value) || value === "") {
-//             setFormData({
-//               ...formData,
-//               [name]: value,
-//             });
-//             setErrorMessage(""); // Clear any previous error messages
-//           } else {
-//             // Display error message for invalid input
-//             setErrorMessage("Please enter digits only for Investment Amount");
-//           }
-//         } else {
-//           // For other fields, update the form data directly
-//           setFormData({
-//             ...formData,
-//             [name]: value,
-//           });
-//           setErrorMessage(""); // Clear any previous error messages
-//         }
-//       };
-
-//       const handleTogglePassword = () => {
-//         setShowPassword(!showPassword);
-//       };
-
-//       // const handleSubmit = (event) => {
-//       //   event.preventDefault();
-
-//       //   fetch("http://localhost:8080/investorInfo", {
-//       //     method: "POST",
-//       //     headers: {
-//       //       "Content-Type": "application/json",
-//       //     },
-//       //     body: JSON.stringify(formData),
-//       //   })
-//       //     .then((response) => response.json())
-//       //     .then((data) => {
-//       //       console.log("Success:", data);
-//       //       setFormData(initialFormData); // Reset form fields after successful submission
-//       //       setErrorMessage(""); // Clear any previous error messages
-//       //     })
-//       //     .catch((error) => {
-//       //       console.error("Error:", error);
-//       //       setErrorMessage("Failed to submit form. Please try again."); // Set error message on submission failure
-//       //     });
-
-//       };
-
-//       return (
-//         <div>
-//           <h2>Investor Registration Form</h2>
-
-//           <form className="form-container" onSubmit={handleSubmit}>
-
-//             <label htmlFor="investorName">Investor Name</label>
-//             <input
-//               type="text"
-//               placeholder="Enter Your Name"
-//               name="investorName"
-//               id="name-id"
-//               value={formData.investorName}
-//               onChange={handleInputChange}
-//             />
-
-//             <label htmlFor="investorMobileNo">Investor Mobile No.</label>
-//             <input
-//               type="text"
-//               placeholder="Enter Your Mobile No."
-//               name="investorMobileNo"
-//               id="mobile-id"
-//               value={formData.investorMobileNo}
-//               onChange={handleInputChange}
-//             />
-
-//             <label htmlFor="investorEmail">Investor Email</label>
-//             <input
-//               type="text"
-//               placeholder="Enter Your Email"
-//               name="investorEmail"
-//               id="email-id"
-//               value={formData.investorEmail}
-//               onChange={handleInputChange}
-//             />
-
-//             {/* <label htmlFor="investorPanId">Investor Pan-Id</label>
-//             <input
-//               type="text"
-//               placeholder="Enter Your Pan-Id"
-//               name="investorPanId"
-//               id="pan-id"
-//               value={formData.investorPanId}
-//               onChange={handleInputChange}
-//             />
-//      */}
-//             <label htmlFor="startupName">StartUp/Company Full Name</label>
-//             <input
-//               type="text"
-//               placeholder="Enter StartUp/Company  Name "
-//               name="startupName"
-//               id="startup-name-id"
-//               value={formData.startupName}
-//               onChange={handleInputChange}
-//             />
-
-//             <label htmlFor="investmentAmount">Investment Amount</label>
-//             <input
-//               type="text"
-//               placeholder="Enter Amount"
-//               name="investmentAmount"
-//               id="amount-id"
-//               value={formData.investmentAmount}
-//               onChange={handleInputChange}
-//             />
-//             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-//             <label htmlFor="username">Create Username</label>
-//             <input
-//               type="text"
-//               placeholder="Enter New Username"
-//               name="username"
-//               id="username-id"
-//               value={formData.username}
-//               onChange={handleInputChange}
-//             />
-
-//             <label htmlFor="password">Create Password</label>
-//             <input
-//               type={showPassword ? "text" : "password"}
-//               placeholder="Enter New Password"
-//               name="password"
-//               id="pass-id"
-//               value={formData.password}
-//               onChange={handleInputChange}
-//             />
-
-//             <input
-//               type="checkbox"
-//               id="show-password"
-//               onChange={handleTogglePassword}
-//             /> <span id = "show-pass-text" >Click to Show Password</span>
-
-//             {/* <label htmlFor="profileImage">Profile Image</label>
-//             <input
-//               type="file"
-//               placeholder="Add Your Picture"
-//               name="profileImage"
-//               id="pic-id"
-//               onChange={handleInputChange}
-//             /> */}
-//             <input type="submit" value="Sign-Up" />
-//             {/* {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>} */}
-//           </form>
-//         </div>
-//       );
-// }
-
-// export default InvestorSignUp
