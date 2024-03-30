@@ -106,7 +106,7 @@
     margin-left: 20px;
 }
 
-.pitchcont p{
+.pitchcont p {
     margin-top: 16px;
 }
 
@@ -123,9 +123,11 @@
     margin-top: 40px;
     margin-left: 20px;
 }
-.wticont p{
+
+.wticont p {
     margin-top: 16px;
 }
+
 .wticont img {
     width: 100%;
 }
@@ -185,9 +187,10 @@
     width: 100%;
 }
 
-#comp-name{
+#comp-name {
     margin-top: 10px;
 }
+
 .over {
     width: 100%;
     display: grid;
@@ -218,6 +221,14 @@ li {
     cursor: pointer;
 }
 
+.lis {
+    cursor: pointer;
+}
+
+.lis:hover {
+    text-decoration: underline;
+}
+
 #equity-btn {
     /* line-height: 40px; */
     text-align: center;
@@ -231,7 +242,8 @@ li {
     cursor: pointer;
 
 }
-#equity-btn:hover{
+
+#equity-btn:hover {
     background-color: rgb(40, 34, 34);
 }
 
@@ -270,13 +282,14 @@ li {
     padding-left: 120px;
 }
 
-#raised-number{
+#raised-number {
     padding-top: 2px;
     padding-left: 60px;
     font-weight: 700;
 }
 
-#investor-number{
+#investor-number {
     padding-left: 120px;
 }
+
 .fix-content {}

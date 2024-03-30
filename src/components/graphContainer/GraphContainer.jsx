@@ -88,7 +88,7 @@ const GraphContainer = () => {
 
   return (
     <div className="">
-      <p id="heading-status">Start-Ups Status</p>
+      <p id="heading-status">Investment Status</p>
       <p id="welcome-txt">Welcome! Sumer Khan <SmileTwoTone /></p>
       <div className="graph-div">
         <div className="child-div1">

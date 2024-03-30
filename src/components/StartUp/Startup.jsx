@@ -46,10 +46,10 @@ function Startup() {
             <div className="nav1">
                   <div className="ul">
                     <ul className='link'>
-                      <li className='li'><ScrollLink to='f' smooth={true} spy={true} offset={-200} duration={500} >Overview</ScrollLink></li>
-                      <li className='li'><ScrollLink to='about' smooth={true}>About</ScrollLink></li>
-                      <li className='li'><ScrollLink to='term' smooth={true}>Term</ScrollLink></li>
-                      <li className='li'><ScrollLink>Discussion</ScrollLink></li>
+                      <li className='lis'><ScrollLink to='f' smooth={true} spy={true} offset={-200} duration={500} >Overview</ScrollLink></li>
+                      <li className='lis'><ScrollLink to='about' smooth={true}>About</ScrollLink></li>
+                      <li className='lis'><ScrollLink to='term' smooth={true}>Term</ScrollLink></li>
+                      <li className='lis'><ScrollLink>Discussion</ScrollLink></li>
                     </ul>
                   </div>
             </div>
@@ -71,7 +71,7 @@ function Startup() {
 
               <div className='fix-content'>
                 <p id='p-t1'>Previously Crowd Funded</p>
-                <p id='raised'>Raised  <span id="investor-span" >Investors</span> </p>
+                <p id='raised'>Raised : <span id="investor-span" >Investors :</span> </p>
                 <p id='raised-number'>{`${arr.raised}`}  <span id="investor-number" >{`${arr.investor}`} </span></p>
               </div>
             </div>

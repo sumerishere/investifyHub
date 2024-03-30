@@ -104,7 +104,7 @@ const InvestorSignUp = () =>{
 
         //-------------Pop-up-------//
 
-         toast.success("Thank! You For Sign-Up ", {
+         toast.success("Thank! You For Sign-Up 😊", {
           position: "top-center",
           autoClose: 5000            
          });
