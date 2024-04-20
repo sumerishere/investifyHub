@@ -62,8 +62,24 @@ import "./home.css";
 
 // export default Home;
 
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { addData } from "../../redux/slice/startUpDataSlice";
+import { useEffect } from "react";
 
 function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    async function fun() {
+      const data = await fetch("http://localhost:8080/get-all");
+      const jsondata = await data.json();
+      jsondata.forEach((element) => {
+        dispatch(addData(element));
+      });
+    }
+    fun();
+  }, []);
+
   return (
     <div className="mcont">
       <div className="root-div">

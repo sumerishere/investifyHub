@@ -45,6 +45,7 @@ function App() {
         <Route path="/InvestorSignUp" element={<InvestorSignUp />} />
         <Route path = "/InvestorNavbar" element={ <InvestorNavbar handleClick={handleClick} /> } />
         <Route path = "/InvestmentForm" element={<InvestmentForm/>}/>
+        
       </Routes>
       <Footer></Footer>
      

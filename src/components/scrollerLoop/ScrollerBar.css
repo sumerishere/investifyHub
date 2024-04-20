@@ -32,7 +32,7 @@
 .scroller-div[data-animated="true"] .scroller__inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 20s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller-div[data-direction="right"] {
@@ -44,7 +44,7 @@
 }
 
 .scroller-div[data-speed="fast"] {
-  --_animation-duration: 40s;
+  --_animation-duration: 20s;
 }
 
 .scroller-div[data-speed="slow"] {
@@ -102,7 +102,7 @@
   box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);
   color: rgb(246, 154, 17);
   font-weight: 500;
-  text-shadow: 2px 4px 4px rgb(0,0,0,0.7);
+  text-shadow: 2px 4px 4px rgb(0, 0, 0, 0.7);
 }
 
 /* for testing purposed to ensure the animation lined up correctly */

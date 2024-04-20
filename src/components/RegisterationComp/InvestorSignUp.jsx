@@ -3,7 +3,9 @@ import "./InvestorSignUp.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const InvestorSignUp = () =>{
+const InvestorSignUp = () => {
+
+  
 
   const initialFormData = {
     name: "",
@@ -13,6 +15,7 @@ const InvestorSignUp = () =>{
     password: "",
   };
 
+
   const [formErrors, setFormErrors] = useState({}); // Error messages state
   const [formData, setFormData] = useState(initialFormData); // Form data state
   const [showPassword, setShowPassword] = useState(false); // Password visibility state
@@ -21,7 +24,7 @@ const InvestorSignUp = () =>{
     const { name, value } = event.target;
 
     // Validate the input fields
-    if ( name === "mobileNo") {
+    if (name === "mobileNo") {
       if (/^\d+$/.test(value) || value === "") {
         setFormErrors({
           ...formErrors,
@@ -43,7 +46,7 @@ const InvestorSignUp = () =>{
     // Update form data
     setFormData({
       ...formData,
-      [name]: name === "startupname" ? [value] : value,
+      [name]: value,
     });
   };
 
@@ -77,47 +80,43 @@ const InvestorSignUp = () =>{
     //   return; //prevent from empty or half field store in DB.
 
     // } else {
-      console.log("Form submitted:", formData);
-      setFormData(initialFormData); // Reset form fields
-      setFormErrors({}); // Clear any error messages
+    console.log("Form submitted:", formData);
+    setFormData(initialFormData); // Reset form fields
+    setFormErrors({}); // Clear any error messages
     // }
 
     fetch("http://localhost:8080/saveInvestorInfo", {
-
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // "Accept" : "application/json" //explicit specify 
-        },
-        body: JSON.stringify(formData),
-  
-      })
-
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // "Accept" : "application/json" //explicit specify
+      },
+      body: JSON.stringify(formData),
+    })
       .then((response) => {
         if (!response.ok) {
-         
-          throw new Error( toast.error("Failed! to Submit, Try Again",{
-            position: "top-center",
-            autoClose: 3000   
-          }));
+          throw new Error(
+            toast.error("Failed! to Submit, Try Again", {
+              position: "top-center",
+              autoClose: 3000,
+            })
+          );
         }
 
         //-------------Pop-up-------//
 
-         toast.success("Thank! You For Sign-Up 😊", {
+        toast.success("Thank! You For Sign-Up 😊", {
           position: "top-center",
-          autoClose: 5000            
-         });
-         // alert("saved investor data");
+          autoClose: 5000,
+        });
+        // alert("saved investor data");
         return response.json(); // Parse response as JSON
-          
-        
       })
       .then((data) => {
-          console.log("Success:", data);
-          setFormData(initialFormData); // Reset form fields after successful submission
-          setFormErrors({});
-          //  setErrorMessage(""); // Clear any previous error messages
+        console.log("Success:", data);
+        setFormData(initialFormData); // Reset form fields after successful submission
+        setFormErrors({});
+        //  setErrorMessage(""); // Clear any previous error messages
       })
 
       .catch((error) => {
@@ -127,21 +126,21 @@ const InvestorSignUp = () =>{
           error.response.text().then((text) => {
             console.log("Non-JSON response:", text); // Log non-JSON response as text
           });
-        } 
-        else {
+        } else {
           console.log("Non-JSON response: No response object available.");
         }
         //  setErrorMessage("Failed to submit form. Please try again."); // Set error message on submission failure
       });
-    };
-
+  };
 
   return (
     <div>
-      <ToastContainer/>
+      <ToastContainer />
       <h2>Investor Registration Form</h2>
-      <p id = "heading-sign-up-text">Note : Please! Fill The All Necessary Details Carefully.</p>
-      <form className="form-container"  onSubmit={handleSubmit}>
+      <p id="heading-sign-up-text">
+        Note : Please! Fill The All Necessary Details Carefully.
+      </p>
+      <form className="form-container" onSubmit={handleSubmit}>
         <label htmlFor="name">
           Investor Name<span className="required">*</span>
         </label>
@@ -153,9 +152,7 @@ const InvestorSignUp = () =>{
           value={formData.name}
           onChange={handleInputChange}
         />
-        {formErrors.name && (
-          <p style={{ color: "red" }}>{formErrors.name}</p>
-        )}
+        {formErrors.name && <p style={{ color: "red" }}>{formErrors.name}</p>}
 
         <label htmlFor="countryCode">
           Country Code<span className="required">*</span>
@@ -169,7 +166,6 @@ const InvestorSignUp = () =>{
           <option value="+1">+91 (India)</option>
           <option value="+1">+1 (USA)</option>
           <option value="+44">+44 (UK)</option>
-
         </select>
         {formErrors.countryCode && (
           <p style={{ color: "red" }}>{formErrors.countryCode}</p>
@@ -274,9 +270,8 @@ const InvestorSignUp = () =>{
         <span id="show-pass-text">Click to Show Password</span>
 
         <input type="submit" value="Sign-Up" />
-
       </form>
     </div>
   );
-}
+};
 export default InvestorSignUp;

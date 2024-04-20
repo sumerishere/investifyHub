@@ -1,8 +1,8 @@
 import "../graphContainer/GraphContainer.css";
 import { Line, Bar, Doughnut, Pie } from "react-chartjs-2";
-import {SmileTwoTone } from "@ant-design/icons"
+import { SmileTwoTone } from "@ant-design/icons";
 
-const GraphContainer = () => {
+const GraphContainer = ({ jsondata }) => {
   const lineData = {
     labels: [
       "STORM-MOTORS",
@@ -20,9 +20,8 @@ const GraphContainer = () => {
         fill: true,
         borderColor: "rgb(230, 0, 0)",
         tension: 0.1,
-        borderWidth: 1, 
+        borderWidth: 1,
         backgroundColor: "rgba(255, 99, 132, 0.2)",
-        
       },
     ],
   };
@@ -65,7 +64,7 @@ const GraphContainer = () => {
           "rgba(54, 162, 235, 0.6)",
           "rgba(255, 206, 86, 0.6)",
         ],
-        borderColor: 'grey',
+        borderColor: "grey",
       },
     ],
   };
@@ -81,7 +80,7 @@ const GraphContainer = () => {
           "rgba(54, 162, 235, 0.6)",
           "rgba(255, 206, 86, 0.6)",
         ],
-        borderColor: 'grey',
+        borderColor: "grey",
       },
     ],
   };
@@ -89,7 +88,9 @@ const GraphContainer = () => {
   return (
     <div className="">
       <p id="heading-status">Investment Status</p>
-      <p id="welcome-txt">Welcome! Sumer Khan <SmileTwoTone /></p>
+      <p id="welcome-txt">
+        Welcome! {jsondata[0].investorInfo.name} <SmileTwoTone />
+      </p>
       <div className="graph-div">
         <div className="child-div1">
           <Line data={lineData} />

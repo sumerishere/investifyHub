@@ -1,23 +1,77 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./login.css";
 import { GoogleOutlined, AppleOutlined } from "@ant-design/icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, json, useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { UseDispatch,useSelector } from "react-redux";
-import { FetchInvestor } from "../../redux/slice/InvestorDataSlice";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
-  
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
+
+  // const handleSignIn = () => {
+  //   console.log("In Sign in");
+  //   async function fun() {
+  //     const data = await fetch("http://localhost:8080/invested-startups", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ username, password }),
+  //     });
+
+  //     const jsondata = await data.json();
+  //     console.log(jsondata);
+  //   }
+  //   fun();
+  // };
+  const handleSignIn = () => {
+    console.log("In Sign in");
+
+    async function fun() {
+      try {
+        const response = await fetch(
+          "http://localhost:8080/invested-startups",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password}), // Object shorthand notation
+          }
+        );
+        const jsondata = await response.json(); // Parse response JSON
+        console.log(jsondata);
+
+        if (!response.ok) {
+          toast.error("Failed! to Submit, Try Again", {
+            position: "top-center",
+            autoClose: 3000,
+          });
+          throw new Error("Failed to sign in"); // Throw an error if response is not ok
+        } else {
+          navigate("/InvestorNavbar", { state: { jsondata } });
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+
+    fun();
+  };
 
   return (
     <>
       <h3>Investor Log-in</h3>
-      
+
       <div className="login-r">
         <div className="form">
           <div className="flex-column">
-            <label>Email </label>
+            <label>Username </label>
           </div>
           <div className="inputForm">
             <svg
@@ -31,9 +85,13 @@ function Login() {
               </g>
             </svg>
             <input
+              value={username}
               type="text"
               className="input"
               placeholder="Enter your Email"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
             ></input>
           </div>
 
@@ -51,9 +109,13 @@ function Login() {
               <path d="M304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path>
             </svg>
             <input
+              value={password}
               type="password"
               className="input"
               placeholder="Enter your Password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             ></input>
             {/* <svg
               viewBox="0 0 576 512"
@@ -62,7 +124,6 @@ function Login() {
             >
               <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"></path>
             </svg> */}
-
           </div>
 
           <div className="flex-row">
@@ -73,19 +134,15 @@ function Login() {
             <span className="span">Forgot password?</span>
           </div>
 
-          <button className="button-submit" 
-          // onClick={notify} 
-          // onClick={handleSignIn}
+          <button
+            className="button-submit"
+            // onClick={notify}
+            onClick={handleSignIn}
           >
-            <Link
-              to="/InvestorNavbar"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              Sign-in
-            </Link>
+            Sign-in
             {/* Sign-in */}
           </button>
-          {/* <ToastContainer/> */}
+          <ToastContainer />
 
           <p className="p-or-text">
             Don't have an account? Or With

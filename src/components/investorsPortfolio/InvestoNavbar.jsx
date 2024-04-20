@@ -6,39 +6,30 @@ import { useState, useEffect } from "react";
 import InvestedStartUps from "./Invested-StartUps/InvestedStartUps";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { useLocation } from "react-router-dom";
 
 const InvestorNavbar = () => {
-
   const [open, setOpen] = useState(false);
-
+  const location = useLocation();
+  const { jsondata } = location.state || {};
+  console.log(jsondata);
   const handleClick = () => {
     setOpen(!open);
   };
-
-  // const notify = () => {
-  //   toast.success("Login Successfully!",{
-  //   position: "top-center",
-  //   autoClose: 3000
-  //   });
-  // }
-  // notify();
 
   useEffect(() => {
     const notify = () => {
       toast.success("Login Successfully!", {
         position: "top-center",
-        autoClose: 3000
+        autoClose: 3000,
       });
     };
     // Call notify function when component mounts
     notify();
   }, []); // Empty dependency array ensures it runs only once on mount
 
-
   return (
     <div className="portfolio-div">
-
       <div className="investor-child-div">
         <img
           className="aside-img"
@@ -51,7 +42,7 @@ const InvestorNavbar = () => {
           {/* <a className="a-signOut" href="#!">
             Sign Out
           </a> */}
-          <p className="name-tag">Sumer Khan</p>
+          <div className="name-tag">{jsondata[0].investorInfo.name}</div>
 
           <div className="profile-img-div">
             <img
@@ -64,8 +55,8 @@ const InvestorNavbar = () => {
       </div>
       <BackDrop click={handleClick} open={open}></BackDrop>
       <AsideBar open={open}></AsideBar>
-      <GraphContainer></GraphContainer>
-      <InvestedStartUps></InvestedStartUps>
+      <GraphContainer jsondata={jsondata}></GraphContainer>
+      <InvestedStartUps jsondata={jsondata}></InvestedStartUps>
       <ToastContainer />
     </div>
   );
