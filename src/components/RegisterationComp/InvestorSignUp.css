@@ -118,6 +118,11 @@ h2{
     cursor: pointer;
   }
 
+  .pro-img{
+    /* width: 50%; */
+    cursor: pointer;
+  }
+
   /*-----------------------------------*/
 
   /* #name-label{

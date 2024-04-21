@@ -5,8 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const InvestorSignUp = () => {
 
-  
-
   const initialFormData = {
     name: "",
     mobileNo: "",
@@ -268,6 +266,9 @@ const InvestorSignUp = () => {
           onChange={handleTogglePassword}
         />
         <span id="show-pass-text">Click to Show Password</span>
+
+        <label htmlFor="ProfileImg">Upload Profile Image</label>
+        <input className="pro-img" type="file" />
 
         <input type="submit" value="Sign-Up" />
       </form>

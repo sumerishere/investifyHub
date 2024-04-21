@@ -31,26 +31,27 @@ const InvestorNavbar = () => {
   return (
     <div className="portfolio-div">
       <div className="investor-child-div">
-        <img
-          className="aside-img"
-          src="/hamburger.png"
-          alt="menu"
-          onClick={handleClick}
-        />
-
-        <div className="investor-nav-div">
-          {/* <a className="a-signOut" href="#!">
-            Sign Out
-          </a> */}
-          <div className="name-tag">{jsondata[0].investorInfo.name}</div>
-
-          <div className="profile-img-div">
+      {/* <div className="asisde-humbarg"> */}
             <img
-              className="img-tag"
-              src="/profile_images/crop_size_img.jpg"
-              alt="img"
+              className="aside-img"
+              src="/hamburger.png"
+              alt="menu"
+              onClick={handleClick}
             />
-          </div>
+          {/* </div> */}
+        <div className="investor-nav-div">
+
+       
+            <div className="name-tag">{jsondata[0].investorInfo.name}</div>
+
+            <div className="profile-img-div">
+              <img
+                className="img-tag"
+                src="/profile_images/crop_size_img.jpg"
+                alt="img"
+              />
+            </div>
+         
         </div>
       </div>
       <BackDrop click={handleClick} open={open}></BackDrop>

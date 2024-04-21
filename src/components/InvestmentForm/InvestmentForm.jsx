@@ -56,7 +56,7 @@ const InvestmentForm = () => {
     setFormErrors({});
 
     const requestBody = {
-      startupName: formData.startupname,
+      startupName: formData.startupName,
       investmentAmount: formData.investmentAmount,
       username: formData.username,
       password: formData.password

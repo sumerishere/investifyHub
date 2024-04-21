@@ -47,6 +47,7 @@ h3 {
 .inputForm {
   border: 1.5px solid #ecedec;
   border-radius: 10px;
+  width: max-content;
   height: 50px;
   display: flex;
   align-items: center;
@@ -55,8 +56,9 @@ h3 {
 }
 
 .input {
-  margin-left: 10px;
+  margin-left: 15px;
   border-radius: 10px;
+  width: max-content;
   border: none;
   /* width: 85%;
     height: 100%; */
