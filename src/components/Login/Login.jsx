@@ -8,36 +8,18 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
 
-  // const initialFormData = {
-  //   username: "",
-  //   password: "",
-  // };
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // const handleSignIn = () => {
-  //   console.log("In Sign in");
-  //   async function fun() {
-  //     const data = await fetch("http://localhost:8080/invested-startups", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ username, password }),
-  //     });
-
-  //     const jsondata = await data.json();
-  //     console.log(jsondata);
-  //   }
-  //   fun();
-  // };
+ 
   const handleSignIn = () => {
     console.log("In Sign in");
 
     async function fun() {
+
       try {
+
         const response = await fetch(
           "http://localhost:8080/invested-startups",
           {
@@ -54,10 +36,14 @@ function Login() {
         if (!response.ok) {
 
           throw new Error("Failed! to Submit, Try Again"); // Throw an error if response is not ok
-          
         }
         else {
-          navigate("/InvestorNavbar", { state: { jsondata } });
+             navigate("/InvestorNavbar", { state: { jsondata } });
+
+             // Redirect to InvestorNavbar page with jsonData state in a new tab
+            // const url = "/InvestorNavbar";
+            // const params = new URLSearchParams({ jsondata: JSON.stringify(jsondata) });
+            // window.open(`${url}`, "_blank");
         }
       }
        catch (error) {
@@ -178,3 +164,22 @@ function Login() {
 }
 
 export default Login;
+
+
+
+ // const handleSignIn = () => {
+  //   console.log("In Sign in");
+  //   async function fun() {
+  //     const data = await fetch("http://localhost:8080/invested-startups", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ username, password }),
+  //     });
+
+  //     const jsondata = await data.json();
+  //     console.log(jsondata);
+  //   }
+  //   fun();
+  // };

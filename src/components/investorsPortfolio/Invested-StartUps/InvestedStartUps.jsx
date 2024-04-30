@@ -11,9 +11,13 @@ const InvestedStartUps = ({ jsondata }) => {
           <div className="startup-lists">
             <ul className="startup-list-ul">
               {jsondata.map((value, index) => (
-                <li>{value.startupname}</li>
+                <li>{`${value.startupname} :- ${value.investmentAmount}`}</li>
               ))}
             </ul>
+          </div>
+
+          <div className="total-amount">
+            <p id="total-value">Total invested amount : </p>
           </div>
         </div>
       </div>
