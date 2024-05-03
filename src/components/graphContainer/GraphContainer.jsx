@@ -87,7 +87,7 @@ const GraphContainer = ({ jsondata }) => {
 
   return (
     <div className="">
-      <p id="heading-status">Investment Status</p>
+      <p id="heading-status">Investment Status 📈 </p>
       <p id="welcome-txt">
         Welcome! {jsondata[0].investorInfo.name} <SmileTwoTone />
       </p>

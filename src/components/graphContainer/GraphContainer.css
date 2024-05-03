@@ -15,12 +15,13 @@
 }
 
 #heading-status {
-  color: rgb(49, 48, 48);
+  /* color: rgb(49, 48, 48); */
+  color: #197682;
   margin-top: 10px;
   font-size: 26px;
   text-align: center;
-  font-weight: 500;
-  text-shadow: 1px 2px 4px rgb(0, 0, 0, 0.3);
+  font-weight: 600;
+  text-shadow: 1px 2px 3px rgb(0, 0, 0, 0.3);
 }
 
 
