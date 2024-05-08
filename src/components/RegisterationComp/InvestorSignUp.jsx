@@ -122,9 +122,23 @@ const InvestorSignUp = () => {
     event.preventDefault();
 
     try {
+      // const formDataObject = new FormData();
+      // formDataObject.append("info", JSON.stringify(formData)); // Convert 'info' object to JSON string
+      // formDataObject.append("image", formData.image); // Add 'image' file
+
       const formDataObject = new FormData();
-      formDataObject.append("info", JSON.stringify(formData)); // Convert 'info' object to JSON string
-      formDataObject.append("image", formData.image); // Add 'image' file
+
+      formDataObject.append("name", formData.name);
+      formDataObject.append("mobileNo", formData.mobileNo);
+      formDataObject.append("mailId", formData.mailId);
+      formDataObject.append("username", formData.username);
+      formDataObject.append("password", formData.password);
+
+      formDataObject.append("image", formData.image);
+
+        // Convert 'info' object to JSON string and append it as a part
+      const infoPart = new Blob([JSON.stringify(formData)], { type: 'application/json' });
+      formDataObject.append("info", infoPart);
 
       const response = await fetch("http://localhost:8080/saveInvestorInfo", {
         method: "POST",
@@ -134,8 +148,8 @@ const InvestorSignUp = () => {
       if (!response.ok) {
         console.log(formData);
         // throw new Error("Failed! to Submit, Try Again");
-        const errorMessage = await response.text(); // Get error message from response body
-        throw new Error(errorMessage || "Failed! to Submit, Try Again");
+        // const errorMessage = await response.text(); // Get error message from response body
+        throw new Error("Failed! to Submit, Try Again");
 
       }
 

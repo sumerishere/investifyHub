@@ -1,14 +1,11 @@
 import { json } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../Invested-StartUps/InvestedStartUps.css";
 
 const InvestedStartUps = ({ jsondata }) => {
-
-  
   const [totalSumINR, setTotalSumINR] = useState(0);
   const [totalSumUSD, setTotalSumUSD] = useState(0);
 
- 
   useEffect(() => {
     let sumINR = 0;
 
@@ -17,7 +14,7 @@ const InvestedStartUps = ({ jsondata }) => {
       sumINR += parseInt(value.investmentAmount.replace(/,/g, ""));
     });
     setTotalSumINR(sumINR);
-    
+
     // Convert INR to USD using a fixed exchange rate
     const exchangeRate = 0.013; // Example: 1 INR = 0.013 USD
     const sumUSD = sumINR * exchangeRate;
@@ -26,17 +23,17 @@ const InvestedStartUps = ({ jsondata }) => {
 
   // Function to format currency as INR
   const formatCurrencyINR = (value) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR'
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
     }).format(value);
   };
 
   // Function to format currency as USD
   const formatCurrencyUSD = (value) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD'
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
     }).format(value);
   };
 
@@ -48,14 +45,22 @@ const InvestedStartUps = ({ jsondata }) => {
           <div className="startup-lists">
             <ul className="startup-list-ul">
               {jsondata.map((value, index) => (
-                <li key={index}>{`${value.startupname} :- ${value.investmentAmount}`}</li>
+                <li
+                  key={index}
+                >{`${value.startupname} :- ${value.investmentAmount}`}</li>
               ))}
             </ul>
           </div>
 
           <div className="total-amount">
-            <p id="total-value">Total Invested Amount In INR : {formatCurrencyINR(totalSumINR)}</p>
-            <p id="total-value">Total Invested Amount In USD : {formatCurrencyUSD(totalSumUSD)}</p>
+            <div id="amt-container">
+              <p id="total-value">
+                Total Invested Amount In INR : {formatCurrencyINR(totalSumINR)}
+              </p>
+              <p id="total-value">
+                Total Invested Amount In USD : {formatCurrencyUSD(totalSumUSD)}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -64,8 +69,6 @@ const InvestedStartUps = ({ jsondata }) => {
 };
 
 export default InvestedStartUps;
-
-
 
 //----old code -----//
 // const InvestedStartUps = ({ jsondata }) => {
