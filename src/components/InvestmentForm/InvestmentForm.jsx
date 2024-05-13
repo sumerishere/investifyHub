@@ -57,10 +57,12 @@ const InvestmentForm = () => {
 
     const requestBody = {
       startupName: formData.startupName,
-      investmentAmount: formData.investmentAmount,
+      investment_amount: formData.investmentAmount,
       username: formData.username,
-      password: formData.password
+      password: formData.password,
     };
+
+    // const queryParams = new URLSearchParams(formData).toString();
 
     fetch("http://localhost:8080/add-startup", {
       method: "PUT",
@@ -71,6 +73,7 @@ const InvestmentForm = () => {
     })
       .then((response) => {
         if (!response.ok) {
+          console.log(formData);
           throw new Error("Failed! to Submit, Try Again");
         }
 
@@ -86,7 +89,7 @@ const InvestmentForm = () => {
         setFormData(initialFormData);
         setFormErrors({});
       })
-      
+
       .catch((error) => {
         console.error("Error:", error);
         toast.error("Failed!!! to Submit, Try Again", {

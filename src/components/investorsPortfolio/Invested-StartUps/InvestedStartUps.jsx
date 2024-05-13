@@ -41,7 +41,7 @@ const InvestedStartUps = ({ jsondata }) => {
     <div className="">
       <div className="invested-list-div">
         <div className="startup-list-container">
-          <p id="header-list">Your Invested Companies Are Listed Here</p>
+          <p id="header-list">Your Invested! Companies Are Listed Here</p>
           <div className="startup-lists">
             <ul className="startup-list-ul">
               {jsondata.map((value, index) => (
@@ -54,6 +54,7 @@ const InvestedStartUps = ({ jsondata }) => {
 
           <div className="total-amount">
             <div id="amt-container">
+              <p id="total-value">Number of Invested Companies : {jsondata.length}</p>
               <p id="total-value">
                 Total Invested Amount In INR : {formatCurrencyINR(totalSumINR)}
               </p>

@@ -4,16 +4,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const InvestorSignUp = () => {
-
   const initialFormData = {
     name: "",
     mobileNo: "",
     mailId: "",
     username: "",
     password: "",
-    image: null
+    image: null,
   };
-
 
   const [formErrors, setFormErrors] = useState({}); // Error messages state
   const [formData, setFormData] = useState(initialFormData); // Form data state
@@ -60,7 +58,6 @@ const InvestorSignUp = () => {
   //   setFormData(initialFormData); // Reset form fields
   //   setFormErrors({}); // Clear any error messages
 
-
   //   fetch("http://localhost:8080/saveInvestorInfo", {
   //     method: "POST",
   //     headers: {
@@ -105,10 +102,9 @@ const InvestorSignUp = () => {
   //       } else {
   //         console.log("Non-JSON response: No response object available.");
   //       }
-       
+
   //     });
   // };
-
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -134,11 +130,16 @@ const InvestorSignUp = () => {
       formDataObject.append("username", formData.username);
       formDataObject.append("password", formData.password);
 
-      formDataObject.append("image", formData.image);
+      // formDataObject.append("image", formData.image);
 
-        // Convert 'info' object to JSON string and append it as a part
-      const infoPart = new Blob([JSON.stringify(formData)], { type: 'application/json' });
+      // Convert 'info' object to JSON string and append it as a part
+      const infoPart = new Blob([JSON.stringify(formData)], {
+        type: "application/json",
+      });
       formDataObject.append("info", infoPart);
+
+      // Append the file
+      formDataObject.append("image", formData.image);
 
       const response = await fetch("http://localhost:8080/saveInvestorInfo", {
         method: "POST",
@@ -150,7 +151,6 @@ const InvestorSignUp = () => {
         // throw new Error("Failed! to Submit, Try Again");
         // const errorMessage = await response.text(); // Get error message from response body
         throw new Error("Failed! to Submit, Try Again");
-
       }
 
       toast.success("Thank! You For Sign-Up 😊", {
@@ -160,8 +160,7 @@ const InvestorSignUp = () => {
 
       setFormData(initialFormData);
       setFormErrors({});
-    } 
-    catch (error) {
+    } catch (error) {
       console.error("Error:", error);
       toast.error("Failed!!! to Sign-Up, Try Again", {
         position: "top-center",
@@ -169,7 +168,6 @@ const InvestorSignUp = () => {
       });
     }
   };
-  
 
   return (
     <div>
@@ -277,13 +275,15 @@ const InvestorSignUp = () => {
         />
         <span id="show-pass-text">Click to Show Password</span>
 
-        <label htmlFor="ProfileImg">Upload Profile Image<span className="required">*</span></label>
-        <input 
-              className="pro-img" 
-              type="file"
-              name= "image"
-              accept="image/*"
-              onChange={handleFileChange}
+        <label htmlFor="ProfileImg">
+          Upload Profile Image<span className="required">*</span>
+        </label>
+        <input
+          className="pro-img"
+          type="file"
+          name="image"
+          accept="image/*"
+          onChange={handleFileChange}
         />
 
         <input type="submit" value="Sign-Up" />
