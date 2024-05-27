@@ -1,0 +1,33 @@
+.root-divv{
+  background-color: rgba(66, 162, 92, 0.792);
+}
+
+.info-container{
+  height: 500px;
+  /* margin-bottom: 50px; */
+ 
+}
+
+#info-header{
+  font-weight: 400;
+  font-size: 33px;
+  padding-left: 80px;
+  padding-top: 60px;
+  color: rgba(211, 211, 211, 0.714);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.text-info-container{
+  height: 200px;
+  /* background-color: aquamarine; */
+  margin-top: 50px;
+}
+
+.text-info-p{
+  color: rgba(0, 0, 0, 0.671);
+  padding-top: 10px;
+  margin-left: 80px;
+  font-size: 22px;
+  font-weight: 500;
+}

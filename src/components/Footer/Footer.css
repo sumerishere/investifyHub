@@ -1,5 +1,5 @@
 .main-div{
-  background-color: gray;
+  background-color: rgb(99, 98, 98);
 }
 
 #header-p {
@@ -112,7 +112,7 @@
 
 .main-div-bottem-container{
   height: 100%;
-  background-color: grey;
+  background-color: rgb(99, 98, 98);
   height: 250px;
   width: 66%;
   margin-left: 0px;
@@ -156,7 +156,7 @@
 }
 
 .social-links{
-  background-color: grey;
+  background-color: rgb(99, 98, 98);
   width: 34%;
   height: 250px;
  

@@ -2,6 +2,7 @@ import React from "react";
 import FundingComp from "../FundingRules/FundingComp";
 import ScrollerBar from "../scrollerLoop/ScrollerBar";
 import "./home.css";
+
 // import { useState, useEffect } from "react";
 
 // function Home() {
@@ -66,6 +67,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addData } from "../../redux/slice/startUpDataSlice";
 import { useEffect } from "react";
+import InfoContainer from "../infoContainer/InfoContainer";
 
 function Home() {
   const dispatch = useDispatch();
@@ -102,6 +104,7 @@ function Home() {
       </div>
       <ScrollerBar />
       <FundingComp />
+      <InfoContainer/>
     </div>
   );
 }

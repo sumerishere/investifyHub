@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const InvestmentForm = () => {
   const initialFormData = {
-    startupName: "",
+    startupname: "",
     investmentAmount: "",
     username: "",
     password: "",
@@ -51,12 +51,11 @@ const InvestmentForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("Form submitted:", formData);
     setFormData(initialFormData);
-    setFormErrors({});
+    // setFormErrors({});
 
     const requestBody = {
-      startupName: formData.startupName,
+      startupname: formData.startupname,
       investment_amount: formData.investmentAmount,
       username: formData.username,
       password: formData.password,
@@ -91,7 +90,7 @@ const InvestmentForm = () => {
       })
 
       .catch((error) => {
-        console.error("Error:", error);
+        // console.error("Error:", error);
         toast.error("Failed!!! to Submit, Try Again", {
           position: "top-center",
           autoClose: 3000,
@@ -107,16 +106,16 @@ const InvestmentForm = () => {
         Investments! 😉"
       </p>
       <form className="form-container" id="form-size" onSubmit={handleSubmit}>
-        <label htmlFor="startupName">
+        <label htmlFor="startupname">
           StartUp/Company Full Name<span className="required">*</span>
         </label>
 
         <input
           type="text"
           placeholder="Enter StartUp/Company  Name "
-          name="startupName"
+          name="startupname"
           required={true}
-          value={formData.startupName}
+          value={formData.startupname}
           onChange={handleInputChange}
         />
 
@@ -164,9 +163,8 @@ const InvestmentForm = () => {
         <span id="show-pass-text">Click to Show Password</span>
 
         <p id="p-sign-up">
-          For new user -{" "}
+          For new user -
           <span id="sign-upp">
-            {" "}
             <Link
               to="/InvestorSignUp"
               style={{ textDecoration: "none", color: "blue" }}
