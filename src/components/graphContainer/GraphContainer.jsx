@@ -1,6 +1,6 @@
 import "../graphContainer/GraphContainer.css";
 import { Line, Bar, Doughnut, Pie } from "react-chartjs-2";
-import { SmileTwoTone } from "@ant-design/icons";
+import { AlignCenterOutlined, SmileTwoTone } from "@ant-design/icons";
 
 const GraphContainer = ({ jsondata }) => {
   const lineData = {
@@ -27,7 +27,13 @@ const GraphContainer = ({ jsondata }) => {
   };
 
   const barData = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: [ "STORM-MOTORS",
+              "ideaForage",
+              "PharmaEasy",
+              "Swiggy",
+              "RazorPay",
+              "intello-Lab",
+              "Skyroot",],
     datasets: [
       {
         label: "Bar Chart",
@@ -54,7 +60,7 @@ const GraphContainer = ({ jsondata }) => {
   };
 
   const doughnutData = {
-    labels: ["Red", "Blue", "Yellow"],
+    labels: ["Skyroot Aerospace pvt ltd", "intello labs pvt ltd", "Razorpay Software Pvt Ltd"],
     datasets: [
       {
         label: "Doughnut Chart",
@@ -80,7 +86,7 @@ const GraphContainer = ({ jsondata }) => {
           "rgba(54, 162, 235, 0.6)",
           "rgba(255, 206, 86, 0.6)",
         ],
-        borderColor: "grey",
+        borderColor: "grey"
       },
     ],
   };

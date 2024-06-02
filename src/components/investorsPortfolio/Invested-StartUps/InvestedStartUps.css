@@ -19,11 +19,11 @@
 .startup-lists {
   width: 70%;
   /* height: 200px; */
-  background-color: rgb(111, 109, 114);
+  background-color: rgb(93, 91, 96);
   margin-top: 50px;
   margin-left: 170px;
   color: aliceblue;
-  border: 2px solid rgb(205, 23, 23);
+  border: 2px solid rgb(229, 29, 29);
   border-radius: 10px;
   box-shadow: 2px 3px 4px rgb(0, 0, 0, 0.5);
 }
@@ -66,20 +66,28 @@
 }
 
 #amt-container {
+  margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 2px solid rgb(37, 219, 31);
   border-radius: 10px;
-  background-color: rgba(84, 84, 84, 0.755);
+  background-color: rgba(60, 57, 57, 0.755);
   box-shadow: 2px 3px 4px rgb(0, 0, 0, 0.5);
 }
 
 #total-value {
-  color: rgb(238, 177, 84);
+  color: rgb(248, 216, 169);
   margin-top: 15px;
   margin-left: 30px;
-  font-weight: 500;
+  font-weight: 400;
   text-shadow: 2px 3px 4px rgba(12, 11, 11, 0.405);
   line-height: 13px;
+  font-size: 17px;
+}
 
+#consider-value{
+  color: rgb(220, 220, 220);
+  margin-left: 170px;
+  margin-top: 22px;
+  text-shadow: 2px 3px 4px rgba(12, 11, 11, 0.5);
 }

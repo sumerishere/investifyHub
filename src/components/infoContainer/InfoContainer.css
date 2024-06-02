@@ -1,5 +1,5 @@
 .root-divv{
-  background-color: rgba(66, 162, 92, 0.792);
+  background-color: rgba(200, 200, 200, 0.696);
 }
 
 .info-container{
@@ -13,8 +13,8 @@
   font-size: 33px;
   padding-left: 80px;
   padding-top: 60px;
-  color: rgba(211, 211, 211, 0.714);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: rgba(45, 38, 38, 0.966);
+  text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -25,9 +25,10 @@
 }
 
 .text-info-p{
-  color: rgba(0, 0, 0, 0.671);
+  color: rgba(0, 0, 0, 0.463);
   padding-top: 10px;
   margin-left: 80px;
   font-size: 22px;
   font-weight: 500;
+  font-style:oblique;
 }

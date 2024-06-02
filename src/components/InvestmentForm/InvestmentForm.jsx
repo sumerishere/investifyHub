@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const InvestmentForm = () => {
+  
   const initialFormData = {
     startupname: "",
     investmentAmount: "",
@@ -70,6 +71,7 @@ const InvestmentForm = () => {
       },
       body: JSON.stringify(requestBody),
     })
+    
       .then((response) => {
         if (!response.ok) {
           console.log(formData);

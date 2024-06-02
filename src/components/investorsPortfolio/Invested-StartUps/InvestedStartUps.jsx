@@ -54,12 +54,20 @@ const InvestedStartUps = ({ jsondata }) => {
 
           <div className="total-amount">
             <div id="amt-container">
-              <p id="total-value">Number of Invested Companies : {jsondata.length}</p>
+
+              <p id="total-value">Number of Invested Companies : {jsondata.length}
+              </p>
+
               <p id="total-value">
                 Total Invested Amount In INR : {formatCurrencyINR(totalSumINR)}
               </p>
+
               <p id="total-value">
                 Total Invested Amount In USD : {formatCurrencyUSD(totalSumUSD)}
+              </p>
+
+              <p id = "consider-value">
+                Note : consider value of 1 INR = 0.013 USD.
               </p>
             </div>
           </div>

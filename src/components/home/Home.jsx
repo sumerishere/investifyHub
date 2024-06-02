@@ -2,11 +2,62 @@ import React from "react";
 import FundingComp from "../FundingRules/FundingComp";
 import ScrollerBar from "../scrollerLoop/ScrollerBar";
 import "./home.css";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { addData } from "../../redux/slice/startUpDataSlice";
+import { useEffect } from "react";
+import InfoContainer from "../infoContainer/InfoContainer";
+
+function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    async function fun() {
+      const data = await fetch("http://localhost:8080/get-all");
+      const jsondata = await data.json();
+      jsondata.forEach((element) => {
+        dispatch(addData(element));
+      });
+    }
+    fun();
+  }, []);
+
+  return (
+    <div className="mcont">
+      <div className="root-div">
+        <div className="child-div">
+          <div className="grand-child-div">
+            <div className="text-overlay">
+              <p id="mid-text">
+                One of those platforms letting you to work with folks who know,
+                love, and support you is investifyHub📈
+              </p>
+            </div>
+
+            <img
+              style={{ width: "100%", height: "100%" }}
+              src="/homeImage/pexels-1990x910__.jpg"
+              alt="img"
+            />
+          </div>
+        </div>
+      </div>
+      <ScrollerBar />
+      <FundingComp />
+      <InfoContainer/>
+    </div>
+  );
+}
+
+export default Home;
+
+
+
+
+
 
 // import { useState, useEffect } from "react";
 
 // function Home() {
-
 //   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 //   const images = [
@@ -62,51 +113,3 @@ import "./home.css";
 // }
 
 // export default Home;
-
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { addData } from "../../redux/slice/startUpDataSlice";
-import { useEffect } from "react";
-import InfoContainer from "../infoContainer/InfoContainer";
-
-function Home() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    async function fun() {
-      const data = await fetch("http://localhost:8080/get-all");
-      const jsondata = await data.json();
-      jsondata.forEach((element) => {
-        dispatch(addData(element));
-      });
-    }
-    fun();
-  }, []);
-
-  return (
-    <div className="mcont">
-      <div className="root-div">
-        <div className="child-div">
-          <div className="grand-child-div">
-            <div className="text-overlay">
-              <p id="mid-text">
-                One of those platforms letting you to work with folks who know,
-                love, and support you is investifyHub📈
-              </p>
-            </div>
-
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src="/homeImage/pexels-1990x910__.jpg"
-              alt="img"
-            />
-          </div>
-        </div>
-      </div>
-      <ScrollerBar />
-      <FundingComp />
-      <InfoContainer/>
-    </div>
-  );
-}
-
-export default Home;

@@ -1,37 +1,37 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const FetchInvestor = createAsyncThunk('FetchInvestor', async() =>{
-  const response = await fetch('http://localhost:8080/get-all-investors');
+// export const FetchInvestor = createAsyncThunk('FetchInvestor', async() =>{
+//   const response = await fetch('http://localhost:8080/get-all-investors');
 
-  return response.json();
-  
-});
+//   return response.json();
 
-const InvestorDataSlice = createSlice({
-  name: "InvestorData",
-   
-  initialState : {
-    isLoading : false,
-    data: null,
-  },
+// });
 
-  // extraReducers: (builder) => {
+// const InvestorDataSlice = createSlice({
+//   name: "InvestorData",
 
-  //   builder.addCase(FetchInvestor.pending, (state,action) => {
-  //     state.isLoading = true
-  //   })
+//   initialState : {
+//     isLoading : false,
+//     data: null,
+//   },
 
-  //   builder.addCase(FetchInvestor.fulfilled, (state,action) => {
-  //     state.isLoading = false;
-  //     state.data = action.payload
-  //   });
+// extraReducers: (builder) => {
 
-  //   builder.addCase(FetchInvestor,(state, action) => {
-  //     console.log("Error", action.payload);
-  //     state.isError = true;
-  //   });
-  // },
+//   builder.addCase(FetchInvestor.pending, (state,action) => {
+//     state.isLoading = true
+//   })
 
-});
+//   builder.addCase(FetchInvestor.fulfilled, (state,action) => {
+//     state.isLoading = false;
+//     state.data = action.payload
+//   });
 
-export default InvestorDataSlice.reducer;
+//   builder.addCase(FetchInvestor,(state, action) => {
+//     console.log("Error", action.payload);
+//     state.isError = true;
+//   });
+// },
+
+// });
+
+// export default InvestorDataSlice.reducer;

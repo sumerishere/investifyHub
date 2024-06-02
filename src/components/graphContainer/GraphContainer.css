@@ -12,16 +12,19 @@
 
 #welcome-txt {
   margin-left: 65px;
+  color: rgba(255, 255, 255, 0.848);
+  text-shadow: 2px 3px 4px rgba(12, 11, 11, 0.5);
 }
 
 #heading-status {
   /* color: rgb(49, 48, 48); */
-  color: #197682;
+  color: #20a8ba;
+  padding-top: 22px;
   margin-top: 10px;
   font-size: 26px;
   text-align: center;
   font-weight: 600;
-  text-shadow: 1px 2px 3px rgb(0, 0, 0, 0.3);
+  text-shadow: 1px 2px 3px rgb(0, 0, 0, 0.6);
 }
 
 
@@ -31,27 +34,29 @@
   width: 630px;
   margin: 10px;
   height: 330px;
+  padding: 15px;
   text-align: center;
   border-radius: 9px;
   margin-left: 40px;
   /* background-color: rgba(180, 169, 169, 0.419); */
-  background-color: #4d4855;
+  background-color: #49454f;
   background-image: linear-gradient(147deg, #2f2b34 0%, #000000ba 74%);
 
   box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.6);
 }
 
 .child-div2 {
-  width: 560px;
-  height: 300px;
+  width: 600px;
+  height: 320px;
   background-color: rgb(241, 240, 243);
   /* background-color: transparent; */
-  margin: 10px;
+  margin-top: 10px;
+  padding: 15px;
   text-align: center;
   border-radius: 9px;
   margin-right: 70px;
   box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.6);
-  background-color: #4d4855;
+  background-color: #403d45;
   background-image: linear-gradient(147deg, #2c2931 0%, #0000009e 74%);
 }
 
@@ -59,27 +64,30 @@
   width: 650px;
   height: 320px;
   /* background-color: rgb(255, 237, 244); */
-  margin-right: 50px;
+  margin-right: 40px;
   text-align: center;
   border-radius: 9px;
-  margin-left: 110px;
+  margin-left: 89px;
   margin-top: 10px;
+  padding: 10px;
   /* background-color: rgba(225, 219, 219, 0.338); */
-  background-color: #4d4855;
+  background-color: #1e1b23;
   background-image: linear-gradient(147deg, #2f2b34 0%, #000000ba 74%);
   box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.6);
 
 }
 
 .child-div4 {
-  width: 550px;
-  height: 300px;
-  margin: 10px;
+  width: 590px;
+  height: 318px;
+  margin-top: 10px;
+  padding: 15px;
   text-align: center;
   border-radius: 9px;
   margin-right: 140px;
+  /* margin-left: 5px; */
   box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.6);
-  background-color: #4d4855;
+  background-color: #272628;
   background-image: linear-gradient(147deg, #2f2b34 0%, #000000ba 74%);
 
 }

@@ -4,13 +4,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const InvestorSignUp = () => {
+
   const initialFormData = {
     name: "",
     mobileNo: "",
     mailId: "",
     username: "",
     password: "",
-    image: null,
   };
 
   const [formErrors, setFormErrors] = useState({}); // Error messages state
@@ -51,123 +51,109 @@ const InvestorSignUp = () => {
     setShowPassword(!showPassword);
   };
 
-  // var handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   console.log("Form submitted:", formData);
-  //   setFormData(initialFormData); // Reset form fields
-  //   setFormErrors({}); // Clear any error messages
-
-  //   fetch("http://localhost:8080/saveInvestorInfo", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       // "Accept" : "application/json" //explicit specify
-  //     },
-  //     body: JSON.stringify(formData),
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error(
-  //           toast.error("Failed! to Submit, Try Again", {
-  //             position: "top-center",
-  //             autoClose: 3000,
-  //           })
-  //         );
-  //       }
-
-  //       //-------------Pop-up-------//
-
-  //       toast.success("Thank! You For Sign-Up 😊", {
-  //         position: "top-center",
-  //         autoClose: 5000,
-  //       });
-  //       // alert("saved investor data");
-  //       return response.json(); // Parse response as JSON
-  //     })
-  //     .then((data) => {
-  //       console.log("Success:", data);
-  //       setFormData(initialFormData); // Reset form fields after successful submission
-  //       setFormErrors({});
-  //       //  setErrorMessage(""); // Clear any previous error messages
-  //     })
-
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //       if (error.response && error.response.status === 200) {
-  //         // Check if response exists
-  //         error.response.text().then((text) => {
-  //           console.log("Non-JSON response:", text); // Log non-JSON response as text
-  //         });
-  //       } else {
-  //         console.log("Non-JSON response: No response object available.");
-  //       }
-
-  //     });
-  // };
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setFormData({
-      ...formData,
-      image: file,
-    });
-  };
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    try {
-      // const formDataObject = new FormData();
-      // formDataObject.append("info", JSON.stringify(formData)); // Convert 'info' object to JSON string
-      // formDataObject.append("image", formData.image); // Add 'image' file
+    console.log("Form submitted:", formData);
+    setFormData(initialFormData); // Reset form fields
+    setFormErrors({}); // Clear any error messages
 
-      const formDataObject = new FormData();
+    fetch("http://localhost:8080/saveInvestorInfo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // "Accept" : "application/json" //explicit specify
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            toast.error("Failed! to Submit, Try Again", {
+              position: "top-center",
+              autoClose: 3000,
+            })
+          );
+        }
 
-      formDataObject.append("name", formData.name);
-      formDataObject.append("mobileNo", formData.mobileNo);
-      formDataObject.append("mailId", formData.mailId);
-      formDataObject.append("username", formData.username);
-      formDataObject.append("password", formData.password);
+        //-------------Pop-up-------//
 
-      // formDataObject.append("image", formData.image);
+        toast.success("Thank!! You For Sign-Up 😊", {
+          position: "top-center",
+          autoClose: 5000,
+        });
+        // alert("saved investor data");
+        return response.json(); // Parse response as JSON
+      })
+      .then((data) => {
+        console.log("Success:", data);
+        setFormData(initialFormData); // Reset form fields after successful submission
+        setFormErrors({});
+        //  setErrorMessage(""); // Clear any previous error messages
+      })
 
-      // Convert 'info' object to JSON string and append it as a part
-      const infoPart = new Blob([JSON.stringify(formData)], {
-        type: "application/json",
+      .catch((error) => {
+        console.error("Error:", error);
+        if (error.response && error.response.status === 200) {
+          // Check if response exists
+          error.response.text().then((text) => {
+            console.log("Non-JSON response:", text); // Log non-JSON response as text
+          });
+        } else {
+          console.log("Non-JSON response: No response object available.");
+        }
+
       });
-      formDataObject.append("info", infoPart);
-
-      // Append the file
-      formDataObject.append("image", formData.image);
-
-      const response = await fetch("http://localhost:8080/saveInvestorInfo", {
-        method: "POST",
-        body: formDataObject,
-      });
-
-      if (!response.ok) {
-        console.log(formData);
-        // throw new Error("Failed! to Submit, Try Again");
-        // const errorMessage = await response.text(); // Get error message from response body
-        throw new Error("Failed! to Submit, Try Again");
-      }
-
-      toast.success("Thank! You For Sign-Up 😊", {
-        position: "top-center",
-        autoClose: 5000,
-      });
-
-      setFormData(initialFormData);
-      setFormErrors({});
-    } catch (error) {
-      console.error("Error:", error);
-      toast.error("Failed!!! to Sign-Up, Try Again", {
-        position: "top-center",
-        autoClose: 3000,
-      });
-    }
   };
+
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   setFormData({
+  //     ...formData,
+  //     image: file,
+  //   });
+  // };
+
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   try {
+
+  //     const formDataObject = new FormData();
+
+  //     formDataObject.append("name", formData.name);
+  //     formDataObject.append("mobileNo", formData.mobileNo);
+  //     formDataObject.append("mailId", formData.mailId);
+  //     formDataObject.append("username", formData.username);
+  //     formDataObject.append("password", formData.password);
+
+
+  //     const response = await fetch("http://localhost:8080/saveInvestorInfo", {
+  //       method: "POST",
+  //       body: formDataObject,
+  //     });
+
+  //     if (!response.ok) {
+  //       console.log(formData);
+  //       throw new Error("Failed! to Submit, Try Again");
+  //     }
+
+  //     toast.success("Thank! You For Sign-Up 😊", {
+  //       position: "top-center",
+  //       autoClose: 5000,
+  //     });
+
+  //     setFormData(initialFormData);
+  //     setFormErrors({});
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //     toast.error("Failed!!! to Sign-Up, Try Again", {
+  //       position: "top-center",
+  //       autoClose: 3000,
+  //     });
+  //   }
+  // };
 
   return (
     <div>
@@ -275,7 +261,7 @@ const InvestorSignUp = () => {
         />
         <span id="show-pass-text">Click to Show Password</span>
 
-        <label htmlFor="ProfileImg">
+        {/* <label htmlFor="ProfileImg">
           Upload Profile Image<span className="required">*</span>
         </label>
         <input
@@ -284,7 +270,7 @@ const InvestorSignUp = () => {
           name="image"
           accept="image/*"
           onChange={handleFileChange}
-        />
+        /> */}
 
         <input type="submit" value="Sign-Up" />
       </form>

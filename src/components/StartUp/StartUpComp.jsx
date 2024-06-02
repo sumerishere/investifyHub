@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./startCom.css";
 import Startup from "./Startup";
-import startUpDataSlice, {addData,selectAllData,} from "../../redux/slice/startUpDataSlice";
+import startUpDataSlice, {
+  addData,
+  selectAllData,
+} from "../../redux/slice/startUpDataSlice";
 import { Select } from "antd";
-
 
 function StartUpComp() {
   // const dispatch = useDispatch();
@@ -39,9 +41,7 @@ function StartUpComp() {
   }
   useEffect(() => {
     async function fun() {
-      const dt = await fetch(
-        `http://localhost:8080/getByIndustry?ind=${inpvalue}`
-      );
+      const dt = await fetch(`http://localhost:8080/getbyName?ind=${inpvalue}`);
       const jsonData = await dt.json();
       console.log(jsonData);
       setres(jsonData);
@@ -52,32 +52,32 @@ function StartUpComp() {
 
   let arr = res.length > 0 ? res : data;
 
-  function reset() {
-    const obj = {
-      paddingLeft: "10px",
-      paddingRight: "10px",
-      paddingTop: "4px",
-      paddingBottom: "4px",
-      borderColor: "#ffffff",
-      backgroundColor: "#cdcdcd",
-      color: "#b2abab",
-    };
-    setbtn(obj);
-    window.location.reload();
-  }
+  // function reset() {
+  //   const obj = {
+  //     paddingLeft: "10px",
+  //     paddingRight: "10px",
+  //     paddingTop: "4px",
+  //     paddingBottom: "4px",
+  //     borderColor: "#ffffff",
+  //     backgroundColor: "#cdcdcd",
+  //     color: "#b2abab",
+  //   };
+  //   setbtn(obj);
+  //   window.location.reload();
+  // }
 
-  const industry = new Set(data.map((data) => data.industry));
-  const arr1 = Array.from(industry);
-
-
+  // const industry = new Set(data.map((data) => data.industry));
+  // const arr1 = Array.from(industry);
 
   return (
     <div className="cont">
-      <div className="drop">
-        <div className="se">
+
+      {/* <div className="drop"> */}
+        {/* pending issue of category */}
+        {/* <div className="se">
           <Select placeholder="Category" onSelect={select} 
-          // open={hovered} // Open the Select component when hovered
-          // value={selectedOption}
+          open={hovered} // Open the Select component when hovered
+          value={selectedOption}
           >
             {arr1.map((data) => {
               return (
@@ -89,13 +89,14 @@ function StartUpComp() {
               );
             })}
           </Select>
-        </div>
-        <div className="bt">
+        </div> */}
+        {/* <div className="bt">
           <button className="btn2" style={{ ...btns, cursor: 'pointer' }} onClick={reset}>
             Reset
           </button>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
+      
       <div className="cont2">
         <div className="cont1">
           {arr.map((data) => {

@@ -1,6 +1,5 @@
 import "../infoContainer/InfoContainer.css";
 
-
 const InfoContainer = () => {
   return (
     <div className="root-divv">
@@ -11,11 +10,12 @@ const InfoContainer = () => {
 
         <div className="text-info-container">
           <p className="text-info-p">
-            Get what you need to help your fundraiser succeed on investifyHub
+            Get what you need to help your fundraiser succeed on investifyHub,
           </p>
 
           <p className="text-info-p">
-            With no fee to start, investifyHub is the world’s leading crowdfunding! platform.
+            With no fee to start, investifyHub is the world’s leading
+            crowdfunding! platform.
           </p>
         </div>
       </div>
