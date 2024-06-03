@@ -1,6 +1,5 @@
-
-.cont{
-    background: -webkit-linear-gradient(360deg,#383836 10%,#585555 360%);
+.cont {
+    background: -webkit-linear-gradient(360deg, #383836 10%, #585555 360%);
     width: 100%;
     /* height: 100vh; */
     /* display: flex;
@@ -17,7 +16,7 @@
 /* .drop{
     width: 100%;
     /* background-color:#62523a; */
-    /* padding-left: 185px;
+/* padding-left: 185px;
     padding-bottom: 10px; 
 
     position: fixed;
@@ -25,19 +24,20 @@
     justify-content: space-around; 
 } */
 
-.see{
+.see {
     width: 186px;
 }
 
-.se{
+.se {
     padding-bottom: 14px;
 }
 
-.bt{
+.bt {
     padding-bottom: 7px;
-    
+
 }
-.btn2{
+
+.btn2 {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 4px;
@@ -47,14 +47,16 @@
     color: #b2abab;
 }
 
-.cont2{
+.cont2 {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-top: -50px; */
 }
-.cont1{
+
+.cont1 {
     display: flex;
     width: 70%;
     margin-top: 7%;
@@ -70,8 +72,9 @@
     column-gap: 80px;
     row-gap: 15px;
     margin-top: 80px; */
-} 
-.comp{
+}
+
+.comp {
     margin: 16px;
     width: 300px;
     height: 320px;
@@ -80,62 +83,70 @@
     box-shadow: 2px 2px 4px rgba(18, 17, 17, 0.8);
 }
 
-.divimg{
+.divimg {
     width: 100%;
     height: 100%;
-    
+
 }
-.img1{
+
+.img1 {
     width: 100%;
     height: 190px;
-   
+
 }
-.img{
+
+.img {
     width: 100%;
     height: 190px;
     border-radius: 10px;
-    
+
 }
-.nm{
+
+.nm {
     width: 100%;
     height: max-content;
     text-align: start;
     text-decoration: none;
     padding-left: 5px;
-   
+
 }
-.nm p{
+
+.nm p {
     /* margin-top: -28px; */
     /* margin-left: -10px; */
     font-size: 0.7rem;
     color: rgb(55, 52, 52);
     padding-left: 4px;
 }
-.nm h4{
+
+.nm h4 {
     color: black;
     padding-left: 5px;
     padding-top: 4px;
 }
-.term{
+
+.term {
     width: 100%;
     height: max-content;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     line-height: 20px;
     /* margin-top: -40px; */
 }
 
-.r{
+.r {
     text-align: start;
 
 }
-.r h6{
-    font-size:0.9rem;
+
+.r h6 {
+    font-size: 0.9rem;
     color: #185c65;
     padding-left: 8px;
     /* margin-top: -8px;     */
 }
-.r p{
+
+.r p {
     /* margin-top: -33px; */
     font-size: 0.7rem;
     color: rgb(47, 43, 43);

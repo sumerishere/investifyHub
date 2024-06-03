@@ -17,11 +17,11 @@
 }
 
 .startup-lists {
-  width: 70%;
+  width: 60%;
   /* height: 200px; */
   background-color: rgb(93, 91, 96);
   margin-top: 50px;
-  margin-left: 170px;
+  margin-left: 200px;
   color: aliceblue;
   border: 2px solid rgb(229, 29, 29);
   border-radius: 10px;
@@ -87,7 +87,8 @@
 
 #consider-value{
   color: rgb(220, 220, 220);
-  margin-left: 170px;
+  margin-left: 220px;
   margin-top: 22px;
   text-shadow: 2px 3px 4px rgba(12, 11, 11, 0.5);
+  font-size: 12px;
 }

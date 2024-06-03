@@ -69,7 +69,7 @@
 
 
 
-.child-div {
+.child-div-scroller {
   display: grid;
   min-block-size: 100vh;
   place-content: center;
@@ -80,7 +80,7 @@
 
 }
 
-.child-div p {
+.child-div-scroller p {
   margin-top: 10px;
   font-size: 30px;
   color: rgba(255, 255, 255, 0.585);

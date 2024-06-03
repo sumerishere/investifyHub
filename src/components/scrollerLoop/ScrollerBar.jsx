@@ -6,6 +6,7 @@ import "../scrollerLoop/ScrollerBar.css";
 import React from 'react'
 
 function ScrollerBar() {
+  
   const data = useSelector(selectAllData);
     console.log('the value of data',data);
   
@@ -38,7 +39,7 @@ function ScrollerBar() {
   
     return (
       <div>
-        <div className="child-div">
+        <div className="child-div-scroller">
   
           <p style={{textAlign:'center'}}>Top! Invested Companies, Highly Funded by Top Investors.</p>
           <div className="scroller-div" data-speed="fast">
@@ -63,6 +64,7 @@ function ScrollerBar() {
               {
                 data.map((data)=>{
                     return(
+                        // eslint-disable-next-line jsx-a11y/img-redundant-alt
                         <img src={`data:image/jpeg;base64,${data.companyImage}`} alt="image" />
                     )
                 })

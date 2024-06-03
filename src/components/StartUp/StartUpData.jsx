@@ -5,7 +5,9 @@ import { addData } from '../../redux/slice/startUpDataSlice';
 import StartUpComp from './StartUpComp';
 
 function StartUpData() {
+
     const dispatch = useDispatch();
+    
     useEffect(()=>{
         async function fun(){
             const data = await fetch('http://localhost:8080/get-all');
