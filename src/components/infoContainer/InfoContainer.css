@@ -1,5 +1,5 @@
 .root-divv{
-  background-color: rgba(200, 200, 200, 0.696);
+  background-color: rgba(200, 200, 200, 0.564);
 }
 
 .info-container{
@@ -8,27 +8,44 @@
  
 }
 
+
+.text-info-container{
+  height: 250px;
+  margin-left: 8%;
+  width: 80%;
+  /* background-color: aquamarine; */
+  margin-top: 50px;
+  border: 2px solid rgb(249, 241, 241);
+  box-shadow: 1px 2px 4px rgba(248, 223, 223, 0.863);
+  border-radius: 10px;
+  background-color: #545154d8;
+}
+
 #info-header{
   font-weight: 400;
   font-size: 33px;
-  padding-left: 80px;
-  padding-top: 60px;
-  color: rgba(45, 38, 38, 0.966);
+  padding-left: 130px;
+  padding-top: 35px;
+  margin-top: 5px;
+  color: rgba(230, 224, 224, 0.963);
   text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.4);
 }
 
-
-.text-info-container{
-  height: 200px;
-  /* background-color: aquamarine; */
-  margin-top: 50px;
+.text-info-p{
+  color: rgba(186, 180, 180, 0.811);
+  margin-top: 35px;
+  margin-left: 130px;
+  font-size: 22px;
+  font-weight: 400;
+  font-style:oblique;
+  line-height: 2px;
+  text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
-.text-info-p{
-  color: rgba(0, 0, 0, 0.463);
-  padding-top: 10px;
-  margin-left: 80px;
-  font-size: 22px;
-  font-weight: 500;
-  font-style:oblique;
+#welcome-msg{
+  font-size: 20px;
+  margin-left: 50px;
+  padding-top: 25px;
+  font-weight: 600;
+  color: #3d3c3d;
 }

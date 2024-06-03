@@ -4,11 +4,17 @@ const InfoContainer = () => {
   return (
     <div className="root-divv">
       <div className="info-container">
-        <p id="info-header">
-          Fundraising on investifyHub📈 is easy, powerful, and trusted.
-        </p>
+
+        <p id="welcome-msg">Welcome! to Start-Ups Elevator (investifyHub📈)</p>
+
+        
 
         <div className="text-info-container">
+
+          <p id="info-header">
+            Fundraising on investifyHub📈 is easy, powerful, and trusted.
+          </p>
+
           <p className="text-info-p">
             Get what you need to help your fundraiser succeed on investifyHub,
           </p>

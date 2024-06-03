@@ -21,9 +21,10 @@ h2{
     box-shadow: 2px 2px 4px rgba(0.9, 0.8, 0.8, 0.5);
     width: 600px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 35px;
+    padding-bottom: 50px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f9f9f9;
     text-align: left;
     margin-top: 60px;
@@ -61,7 +62,7 @@ h2{
       width: 100%;
       padding: 10px;
       border: none;
-      border-radius: 3px;
+      border-radius: 6px;
       background-color: #007bff;
       color: #fff;
       font-size: 16px;

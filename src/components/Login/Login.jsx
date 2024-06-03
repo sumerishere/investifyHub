@@ -149,13 +149,13 @@ function Login() {
           </p>
 
           <div className="flex-row">
-            <button className="btn google">
+            {/* <button className="btn google">
               <GoogleOutlined /> Google
             </button>
 
             <button className="btn apple">
               <AppleOutlined /> Apple
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
