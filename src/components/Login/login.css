@@ -6,6 +6,16 @@ h3 {
   text-shadow: 2px 2px 4px rgba(0.8, 0, 0, 0.4);
 }
 
+.login-root-div{
+  background-color: #cdcfd3eb;
+  padding-bottom: 8px;
+}
+
+#label-css{
+  font-weight: 500;
+  font-size: 18px;
+}
+
 .login-r {
   margin-bottom: 20px;
   width: 100%;
@@ -80,6 +90,10 @@ h3 {
   justify-content: space-between;
 }
 
+.flex-column{
+  margin-top: 8px;
+}
+
 .flex-row>div>label {
   font-size: 14px;
   color: black;
@@ -149,7 +163,7 @@ h3 {
   ;
 }
 
-.google {
+/* .google {
   background-color: rgba(230, 36, 36, 0.993);
   font-weight: 500;
 }
@@ -157,4 +171,4 @@ h3 {
 .apple {
   background-color: rgb(203, 197, 197);
   font-weight: 500;
-}
+} */

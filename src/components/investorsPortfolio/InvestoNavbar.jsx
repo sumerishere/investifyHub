@@ -30,6 +30,7 @@ const InvestorNavbar = () => {
     notify();
   }, []); // Empty dependency array ensures it runs only once on mount
 
+  
   return (
     <div className="portfolio-div">
       <div className="investor-child-div">

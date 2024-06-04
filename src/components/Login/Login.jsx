@@ -60,14 +60,14 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="login-root-div">
       <ToastContainer />
       <h3>Investor Log-in</h3>
 
       <div className="login-r">
         <div className="form">
           <div className="flex-column">
-            <label>Username </label>
+            <label id="label-css">Investor's username </label>
           </div>
           <div className="inputForm">
             <svg
@@ -94,7 +94,7 @@ function Login() {
           </div>
 
           <div className="flex-column">
-            <label>Password </label>
+            <label id="label-css">Password </label>
           </div>
 
           <div className="inputForm">
@@ -137,7 +137,7 @@ function Login() {
           
 
           <p className="p-or-text">
-            Don't have an account? Or With
+            Don't have an account? Or with
             <span className="span-sign-up">
               <Link
                 to="/InvestorSignUp"

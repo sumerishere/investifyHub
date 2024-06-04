@@ -104,7 +104,7 @@ const InvestmentForm = () => {
     <div>
       <ToastContainer />
       <p id="heading-textt">
-        "Welcome, Investor Name! Expand Your Portfolio : Diversify Your
+        "Welcome! Dear A Great Future Ahead, Let's Expand Your Portfolio : Diversify Your
         Investments! 😉"
       </p>
       <form className="form-container" id="form-size" onSubmit={handleSubmit}>

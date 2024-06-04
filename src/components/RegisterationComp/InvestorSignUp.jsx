@@ -156,7 +156,7 @@ const InvestorSignUp = () => {
   // };
 
   return (
-    <div>
+    <div className="sign-up-root-div">
       <ToastContainer />
       <h2>Investor Registration Form</h2>
       <p id="heading-sign-up-text">
