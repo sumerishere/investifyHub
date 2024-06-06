@@ -28,8 +28,8 @@ function Home() {
           <div className="grand-child-div">
             <div className="text-overlay">
               <p id="mid-text">
-                One of those platforms letting you to work with folks who know,
-                love, and support you is investifyHub📈
+                "One of those platforms letting you to work with folks who know,
+                love, and support you is investifyHub📈"
               </p>
             </div>
 

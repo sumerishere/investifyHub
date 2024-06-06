@@ -1,25 +1,21 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import "./login.css";
-import { GoogleOutlined, AppleOutlined } from "@ant-design/icons";
-import { Link,useNavigate } from "react-router-dom";
+// import { GoogleOutlined, AppleOutlined } from "@ant-design/icons";
+import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
- 
   const handleSignIn = () => {
     console.log("In Sign in");
 
     async function fun() {
-
       try {
-
         const response = await fetch(
           "http://localhost:8080/invested-startups",
           {
@@ -34,19 +30,16 @@ function Login() {
         console.log(jsondata);
 
         if (!response.ok) {
-
           throw new Error("Failed! to Submit, Try Again"); // Throw an error if response is not ok
-        }
-        else {
-             navigate("/InvestorNavbar", { state: { jsondata } });
+        } else {
+          navigate("/InvestorNavbar", { state: { jsondata } });
 
-             // Redirect to InvestorNavbar page with jsonData state in a new tab
-            // const url = "/InvestorNavbar";
-            // const params = new URLSearchParams({ jsondata: JSON.stringify(jsondata) });
-            // window.open(`${url}`, "_blank");
+          // Redirect to InvestorNavbar page with jsonData state in a new tab
+          // const url = "/InvestorNavbar";
+          // const params = new URLSearchParams({ jsondata: JSON.stringify(jsondata) });
+          // window.open(`${url}`, "_blank");
         }
-      }
-       catch (error) {
+      } catch (error) {
         console.error("Error:", error);
         toast.error("Failed!  to Sign-in, Try Again", {
           position: "top-center",
@@ -63,6 +56,9 @@ function Login() {
     <div className="login-root-div">
       <ToastContainer />
       <h3>Investor Log-in</h3>
+
+      <img className="back-img" src="/business-02png.png" alt="" />
+      <div className="overlay"></div>
 
       <div className="login-r">
         <div className="form">
@@ -117,8 +113,8 @@ function Login() {
               placeholder="Enter your Password"
               onChange={(e) => {
                 setPassword(e.target.value);
-              }}>
-              </input>
+              }}
+            ></input>
           </div>
 
           <div className="flex-row">
@@ -126,22 +122,19 @@ function Login() {
               <input type="checkbox"></input>
               <label>Remember me </label>
             </div>
-            <span className="span">Forgot password?</span>
+            <p className="span">Forgot password?</p>
           </div>
 
-          <button
-            className="button-submit"
-            onClick={handleSignIn}>
+          <button className="button-submit" onClick={handleSignIn}>
             Sign-in
           </button>
-          
 
           <p className="p-or-text">
             Don't have an account? Or with
             <span className="span-sign-up">
               <Link
                 to="/InvestorSignUp"
-                style={{ textDecoration: "none", color: "blue" }}
+                style={{ textDecoration: "none", color: "#317efb" }}
               >
                 Sign-Up
               </Link>
@@ -165,21 +158,19 @@ function Login() {
 
 export default Login;
 
+// const handleSignIn = () => {
+//   console.log("In Sign in");
+//   async function fun() {
+//     const data = await fetch("http://localhost:8080/invested-startups", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ username, password }),
+//     });
 
-
- // const handleSignIn = () => {
-  //   console.log("In Sign in");
-  //   async function fun() {
-  //     const data = await fetch("http://localhost:8080/invested-startups", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ username, password }),
-  //     });
-
-  //     const jsondata = await data.json();
-  //     console.log(jsondata);
-  //   }
-  //   fun();
-  // };
+//     const jsondata = await data.json();
+//     console.log(jsondata);
+//   }
+//   fun();
+// };

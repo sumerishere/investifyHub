@@ -15,8 +15,11 @@
   
   #mid-text{
     font-size: 50px;
-    color: rgba(250, 250, 250, 0.944);
+    color: rgb(250, 250, 250);
     font-weight: 400;
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-style: italic;
+    text-shadow: 1px 5px 4px rgb(0,0,0,0.7);
   }
   
   .text-overlay {
