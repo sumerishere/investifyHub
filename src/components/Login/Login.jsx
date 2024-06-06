@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./login.css";
 // import { GoogleOutlined, AppleOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,6 +10,8 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const handleSignIn = () => {
     console.log("In Sign in");
@@ -51,14 +53,22 @@ function Login() {
     }
     fun();
   };
+  // useEffect(() => {
+  //   const img = new Image();
+  //   img.src = "/business-02png.png";
+  //   img.onload = () => setIsImageLoaded(true);
+  // }, []);
 
   return (
     <div className="login-root-div">
       <ToastContainer />
       <h3>Investor Log-in</h3>
 
+      {/* {isImageLoaded && (
+        <img className="back-img" src="/business-02png.png" alt="Background" />
+      )} */}
+      <div className="overlayy"></div>
       <img className="back-img" src="/business-02png.png" alt="" />
-      <div className="overlay"></div>
 
       <div className="login-r">
         <div className="form">
