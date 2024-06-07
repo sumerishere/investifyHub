@@ -16,18 +16,22 @@ function Startup() {
   const {id} = useParams();
   const data = useSelector(selectAllData);
 
-
   const arr =data.find(sData=>(sData.id) == id);
+
+
+
 
   return (
     <div className='container'>
       <>{ arr && 
         <div className="content">
+          <p id="welcome-cmp-name">{`Welcome! to ${arr.companyName}`}</p>
           <div className="f" id='f'>
             <div className="fcont">
-            <p className='cmc'>{`Get The Piece Of ${arr.companyName}`}</p>
-            <h3 className='cmc'>{`${arr.title}`}</h3>
-            <p className='common'>{`${arr.desc}`}</p>
+              
+              <p className='cmc'>{`Get The Piece Of ${arr.companyName}`}</p>
+              <h3 className='cmc'>{`${arr.title}`}</h3>
+              <p className='common'>{`${arr.desc}`}</p>
             </div>
             <div className="fcont1">
               <div className="imgi">
@@ -70,7 +74,7 @@ function Startup() {
               </div>
 
               <div className='fix-content'>
-                <p id='p-t1'>Previously Crowd Funded</p>
+                {/* <p id='p-t1'></p> */}
                 <p id='raised'>Raised : <span id="investor-span" >Investors :</span> </p>
                 <p id='raised-number'>{`${arr.raised}`}  <span id="investor-number" >{`${arr.investor}`} </span></p>
               </div>
@@ -86,34 +90,35 @@ function Startup() {
 
             <div className="about" id='about'>
               <br />
+              <hr /><br/><br/><br/>
               <h2>ABOUT</h2>
               <br />
               <div className="abountcont">
                 <div className="ceo">
                     <div className="cimg">
-                      <img src={`data:image/jpeg;base64,${arr.ceoImage}`} alt="" />
-                      <h5>{`${arr.ceoName},CEO`}</h5>
+                      <img id="img-tag" src={`data:image/jpeg;base64,${arr.ceoImage}`} alt="" />
+                      <h5>{`${arr.ceoName} - CEO`}</h5>
                     </div>
-                    <p>{`${arr.ceoinfo}`}</p>
+                    <p id="ceo-info-text">{`${arr.ceoinfo}`}</p>
                     <a href={`${arr.ceoLink}`}><LinkedinOutlined className='ld' /></a>
                 </div>
 
                 <div className="cto">
                 <div className="cimg">
-                      <img src={`data:image/jpeg;base64,${arr.ctoimage}`} alt="" />
-                      <h5>{`${arr.ctoNAme},CTO`}</h5>
+                      <img id="img-tag" src={`data:image/jpeg;base64,${arr.ctoimage}`} alt="" />
+                      <h5>{`${arr.ctoNAme} - CTO`}</h5>
                     </div>
-                    <p>{`${arr.ctoinfo}`}</p>
+                    <p id="cto-info-text">{`${arr.ctoinfo}`}</p>
                     <a href={`${arr.ctoLink}`}><LinkedinOutlined className='ld'/></a>
                 </div>
 
                 <div className="board">
-                <div className="cimg">
-                      <img src={`data:image/jpeg;base64,${arr.board}`} alt="" />
+                <div className="cimg ">
+                      <img id="img-tag board-img-size"   src={`data:image/jpeg;base64,${arr.board}`} alt="" />
                       <h5>{`${arr.boardMemberNAme
 },Bard Member`}</h5>
                     </div>
-                    <p>{`${arr.boradinfo}`}</p>
+                    <p id="board-text-size">{`${arr.boradinfo}`}</p>
                     <a href={`${arr.boardLink}`}><LinkedinOutlined className='ld'/></a>
                 </div>
               </div>
@@ -122,10 +127,10 @@ function Startup() {
             <div className="term1" id='term'>
               <br />
               <h2>TERM</h2>
-              <h5 id ="comp-name" className='common'>{`${arr.companyName}`}</h5>
+              <h4 id ="comp-name" className="">{`${arr.companyName}`}</h4>
               <br />
               <div className="termcont">
-              <h3 className='cmc'>OVERVIEW</h3>
+              <h3 id='term-value-section'>OVERVIEW</h3>
                 <div className="over">
                   <div className="ppr">
                     <p className='common'>PRICE PER SHARE</p>
@@ -145,7 +150,7 @@ function Startup() {
                   </div>
                 </div>
                 <br />
-                <h3 className='cmc'>BREAKDOWN</h3>
+                <h3 id='term-value-section'>BREAKDOWN</h3>
                 <div className="breakd">
                   <div className="mini">
                     <p className='common'>MIN INVESTMENT</p>
@@ -172,7 +177,9 @@ function Startup() {
                     <p className='common'>SHARED OFFERED</p>
                     <h4>{`${arr.shareof}`}</h4>
                   </div>
+                  
                 </div>
+                <hr /><br/><br/>
               </div>
             </div>
           </div>

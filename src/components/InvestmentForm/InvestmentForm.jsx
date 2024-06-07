@@ -42,7 +42,7 @@ const InvestmentForm = () => {
         [name]: "",
       });
     }
-
+    // Update form data
     setFormData({
       ...formData,
       [name]: value,
@@ -55,12 +55,12 @@ const InvestmentForm = () => {
     setFormData(initialFormData);
     // setFormErrors({});
 
-    const requestBody = {
-      startupname: formData.startupname,
-      investment_amount: formData.investmentAmount,
-      username: formData.username,
-      password: formData.password,
-    };
+    // const requestBody = {
+    //   startupname: formData.startupname,
+    //   investment_amount: formData.investmentAmount,
+    //   username: formData.username,
+    //   password: formData.password,
+    // };
 
     // const queryParams = new URLSearchParams(formData).toString();
 
@@ -69,7 +69,7 @@ const InvestmentForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify(formData),
     })
     
       .then((response) => {

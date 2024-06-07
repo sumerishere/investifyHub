@@ -96,6 +96,7 @@
 }
 
 .pitch {
+    margin-top: -60px;
     width: 50%;
     /* border:2px solid skyblue; */
 }
@@ -133,13 +134,16 @@
 }
 
 .about {
+    margin-top: 60px;
     width: 50%;
     height: max-content;
     /* border: 2px solid green; */
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .abountcont {
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
     height: max-content;
     display: grid;
@@ -153,16 +157,37 @@
     /* border: 2px solid seagreen; */
 }
 
+#img-tag{
+    object-fit: cover;
+}
+
+#ceo-info-text{
+    width: 350px;
+}
+
 .cto {
     width: 220px;
     height: max-content;
     /* border: 2px solid seagreen; */
 }
 
+#cto-info-text{
+    width: 350px;
+}
+
 .board {
-    width: 220px;
+    width: 240px;
     height: max-content;
     /* border: 2px solid seagreen; */
+}
+#board-text-size{
+    margin-top: 10px;
+    width: 700px;
+}
+
+#board-img-size{
+    height: 100%;
+    width: 100%;
 }
 
 .cimg img {
@@ -177,10 +202,11 @@
 }
 
 .term1 {
+    margin-top: 40px;
     width: 50%;
     height: 100%;
     /* border: 2px solid rgb(154, 75, 88); */
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .termcont {
@@ -189,6 +215,8 @@
 
 #comp-name {
     margin-top: 10px;
+
+    color:rgba(31, 30, 30, 0.749);
 }
 
 .over {
@@ -200,12 +228,36 @@
 }
 
 .common {
-    color: rgb(142, 138, 138);
+    color: rgb(93, 89, 89);
 }
 
 .cmc {
+   
     color: #185c65;
-    border-radius: 60px;
+    border-radius: 30px;
+}
+
+#welcome-cmp-name{
+    padding-left: 40px;
+    margin-top: 40px;
+    margin-bottom: -50px;
+    font-size: 20px;
+    color: #858a8a;
+    text-shadow: 1px 2px 12px rgb(0,0,0,0.4);
+}
+
+#term-value-section{
+    padding-top: 12px;
+    width: 280px;
+    height: 50px;
+    color: #185c65;
+    border: 1px solid;
+    margin-right: 30%;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    text-align: center;
+    /* background-color: #185c65; */
+    font-size: 20px;
 }
 
 .breakd {
@@ -214,7 +266,7 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
     margin-top: 15px;
-    margin-bottom: 24px;
+    margin-bottom: 60px;
 }
 
 li {
@@ -274,7 +326,7 @@ li {
 }
 
 #raised {
-    padding-top: 20px;
+    padding-top: 50px;
     padding-left: 60px;
     font-size: 18px;
 }

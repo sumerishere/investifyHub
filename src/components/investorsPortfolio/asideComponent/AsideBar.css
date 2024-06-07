@@ -10,14 +10,16 @@
    height: 100vh;
    background-color: rgb(86, 84, 84);
    position: absolute;
+   margin-top: 0px;
    top: 0;
    left: 0;
    transform: translateX(-100%);
    transition: all 0.4s ease-in-out;
+   border: 1px solid rgb(52, 50, 50);
 
    /* background-color: #ddd;  */
    position: fixed;
-   top: 78px;
+   top: 71px;
    bottom: 0;
    left: 0;
    z-index: 999;

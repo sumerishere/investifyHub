@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import InvestedStartUps from "./Invested-StartUps/InvestedStartUps";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useLocation } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 
 const InvestorNavbar = () => {
 
@@ -34,6 +34,17 @@ const InvestorNavbar = () => {
   return (
     <div className="portfolio-div">
       <div className="investor-child-div">
+
+      {/* <div className="logo-portfolio">
+            <p id="title-portfolio">
+                <Link to="/" style={{ textDecoration: "none",color:"#2c9aa9"}}>
+                 investifyHub📈
+                </Link>
+            </p>
+
+            <p className="sub-text-portfolio">elevate your investments</p>
+          </div> */}
+
       {/* <div className="asisde-humbarg"> */}
             <img
               className="aside-img"
