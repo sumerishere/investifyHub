@@ -1,13 +1,8 @@
-// import React, { useEffect } from 'react'
-// import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-// import {Link} from 'react-scroll';
-import { selectAllData } from '../../redux/slice/startUpDataSlice';
 import './startup.css'
+import { useSelector } from 'react-redux';
+import { Link,useParams, useNavigate} from 'react-router-dom';
+import { selectAllData } from '../../redux/slice/startUpDataSlice';
 import {LinkedinOutlined} from '@ant-design/icons'
-// import { Link } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
 
@@ -15,11 +10,13 @@ function Startup() {
 
   const {id} = useParams();
   const data = useSelector(selectAllData);
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const arr =data.find(sData=>(sData.id) == id);
+  const arr = data.find(sData=>(sData.id) == id);
 
-
-
+  const handleEquityClick = () => {
+    navigate('/InvestmentForm', { state: { startupname: arr.companyName } }); // Pass the startupname as state
+  };
 
   return (
     <div className='container'>
@@ -69,12 +66,16 @@ function Startup() {
 
             <div id='fixed-container'>
 
-              <div id= "equity-btn" >
-                <Link to='/InvestmentForm' style={{ textDecoration: 'none',color:'white'}}>Get Equity <p>{`${arr.raised}`}</p></Link>
+              <div id= "equity-btn" onClick={handleEquityClick}  >
+                {/* <Link to='/InvestmentForm' style={{ textDecoration: 'none',color:'white'}}>Get Equity <p>{`${arr.raised}`}</p></Link> */}
+
+                <Link to={{ pathname: '/InvestmentForm', state: { startupname: arr.companyName } }} style={{ textDecoration: 'none', color: 'white' }}>
+                  Get Equity <p>{`${arr.raised}`}</p>
+                </Link>
               </div>
 
               <div className='fix-content'>
-                {/* <p id='p-t1'></p> */}
+                {/* <p id='p-t1'>Previously Crowd Funded</p> */}
                 <p id='raised'>Raised : <span id="investor-span" >Investors :</span> </p>
                 <p id='raised-number'>{`${arr.raised}`}  <span id="investor-number" >{`${arr.investor}`} </span></p>
               </div>
@@ -115,8 +116,7 @@ function Startup() {
                 <div className="board">
                 <div className="cimg ">
                       <img id="img-tag board-img-size"   src={`data:image/jpeg;base64,${arr.board}`} alt="" />
-                      <h5>{`${arr.boardMemberNAme
-},Bard Member`}</h5>
+                      <h5>{`${arr.boardMemberNAme},Bard Member`}</h5>
                     </div>
                     <p id="board-text-size">{`${arr.boradinfo}`}</p>
                     <a href={`${arr.boardLink}`}><LinkedinOutlined className='ld'/></a>
@@ -170,8 +170,7 @@ function Startup() {
                   </div>
                   <div className="nofs">
                     <p className='common'>MIN NUMBER SHARE OFFERED</p>
-                    <h4>{`${arr.nofS
-}`}</h4>
+                    <h4>{`${arr.nofS}`}</h4>
                   </div>
                   <div className="shof">
                     <p className='common'>SHARED OFFERED</p>

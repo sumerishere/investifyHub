@@ -1,13 +1,19 @@
 import "../InvestmentForm/InvestmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
+
 import { useState } from "react";
 
+
 const InvestmentForm = () => {
+
+  const location = useLocation();
+  const defaultStartupName = location.state?.startupname || ""; // Retrieve startupname from state or set default
   
   const initialFormData = {
-    startupname: "",
+
+    startupname: defaultStartupName,  // Set the default startup name
     investmentAmount: "",
     username: "",
     password: "",
@@ -53,16 +59,8 @@ const InvestmentForm = () => {
     event.preventDefault();
 
     setFormData(initialFormData);
-    // setFormErrors({});
+    setFormErrors({});
 
-    // const requestBody = {
-    //   startupname: formData.startupname,
-    //   investment_amount: formData.investmentAmount,
-    //   username: formData.username,
-    //   password: formData.password,
-    // };
-
-    // const queryParams = new URLSearchParams(formData).toString();
 
     fetch("http://localhost:8080/add-startup", {
       method: "PUT",
@@ -119,6 +117,7 @@ const InvestmentForm = () => {
           required={true}
           value={formData.startupname}
           onChange={handleInputChange}
+          readOnly
         />
 
         <label htmlFor="investmentAmount">
@@ -378,3 +377,13 @@ export default InvestmentForm;
 // };
 
 // export default InvestmentForm;
+
+//-------json data--//
+    // const requestBody = {
+    //   startupname: formData.startupname,
+    //   investment_amount: formData.investmentAmount,
+    //   username: formData.username,
+    //   password: formData.password,
+    // };
+
+    // const queryParams = new URLSearchParams(formData).toString();
