@@ -31,6 +31,7 @@ const InvestmentForm = () => {
     const { name, value } = event.target;
 
     if (name === "investmentAmount") {
+
       if (/^\d+$/.test(value) || value === "") {
         setFormErrors({
           ...formErrors,

@@ -9,7 +9,9 @@ import { useEffect } from "react";
 import InfoContainer from "../infoContainer/InfoContainer";
 
 function Home() {
+  
   const dispatch = useDispatch();
+
   useEffect(() => {
     async function fun() {
       const data = await fetch("http://localhost:8080/get-all");

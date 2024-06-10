@@ -11,8 +11,6 @@ function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-
   const handleSignIn = () => {
     console.log("In Sign in");
 
@@ -53,20 +51,12 @@ function Login() {
     }
     fun();
   };
-  // useEffect(() => {
-  //   const img = new Image();
-  //   img.src = "/business-02png.png";
-  //   img.onload = () => setIsImageLoaded(true);
-  // }, []);
 
   return (
     <div className="login-root-div">
       <ToastContainer />
       <h3>Investor Log-in</h3>
 
-      {/* {isImageLoaded && (
-        <img className="back-img" src="/business-02png.png" alt="Background" />
-      )} */}
       <div className="overlayy"></div>
       <img className="back-img" src="/business-02png.png" alt="" />
 

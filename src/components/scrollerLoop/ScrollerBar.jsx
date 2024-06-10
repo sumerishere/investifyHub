@@ -64,8 +64,8 @@ function ScrollerBar() {
               {
                 data.map((data)=>{
                     return(
-                        // eslint-disable-next-line jsx-a11y/img-redundant-alt
-                        <img src={`data:image/jpeg;base64,${data.companyImage}`} alt="image" />
+            
+                        <img src={`data:image/jpeg;base64,${data.companyImage}`} alt="imge" />
                     )
                 })
               }
