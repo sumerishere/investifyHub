@@ -157,11 +157,11 @@
     /* border: 2px solid seagreen; */
 }
 
-#img-tag{
+#img-tag {
     object-fit: cover;
 }
 
-#ceo-info-text{
+#ceo-info-text {
     width: 350px;
 }
 
@@ -171,7 +171,7 @@
     /* border: 2px solid seagreen; */
 }
 
-#cto-info-text{
+#cto-info-text {
     width: 350px;
 }
 
@@ -180,12 +180,13 @@
     height: max-content;
     /* border: 2px solid seagreen; */
 }
-#board-text-size{
+
+#board-text-size {
     margin-top: 10px;
     width: 700px;
 }
 
-#board-img-size{
+#board-img-size {
     height: 100%;
     width: 100%;
 }
@@ -216,7 +217,7 @@
 #comp-name {
     margin-top: 10px;
 
-    color:rgba(31, 30, 30, 0.749);
+    color: rgba(31, 30, 30, 0.749);
 }
 
 .over {
@@ -232,21 +233,21 @@
 }
 
 .cmc {
-   
+    text-shadow: 1px 2px 3px rgb(0,0,0,0.3);
     color: #185c65;
     border-radius: 30px;
 }
 
-#welcome-cmp-name{
+#welcome-cmp-name {
     padding-left: 40px;
     margin-top: 40px;
     margin-bottom: -50px;
     font-size: 20px;
-    color: #858a8a;
-    text-shadow: 1px 2px 12px rgb(0,0,0,0.4);
+    color: #6a6b6b;
+    text-shadow: 1px 1px 13px rgba(22, 21, 21, 0.578);
 }
 
-#term-value-section{
+#term-value-section {
     padding-top: 12px;
     width: 280px;
     height: 50px;
@@ -297,7 +298,7 @@ li {
 
 #equity-btn:hover {
     background-color: rgb(40, 34, 34);
-    
+
 }
 
 #fixed-container {
@@ -336,13 +337,13 @@ li {
 }
 
 #raised-number {
-    padding-top: 2px;
-    padding-left: 60px;
+    padding-top: 8px;
+    padding-left: 62px;
     font-weight: 700;
 }
 
 #investor-number {
-    padding-left: 120px;
+    padding-left: 130px;
 }
 
 .fix-content {}

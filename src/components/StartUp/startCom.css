@@ -81,6 +81,12 @@
     background-color: rgb(231, 231, 223);
     border-radius: 12px;
     box-shadow: 2px 2px 4px rgba(18, 17, 17, 0.8);
+    transition: transform 0.3s ease,box-shadow 0.3s ease; 
+}
+
+.comp:hover{
+    transform: scale(1.1); /* Smooth scaling */
+    box-shadow: 4px 4px 8px rgba(18, 17, 17, 0.8);
 }
 
 .divimg {

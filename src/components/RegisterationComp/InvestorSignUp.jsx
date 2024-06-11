@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./InvestorSignUp.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RotatingLines } from 'react-loader-spinner';
+
 
 const InvestorSignUp = () => {
 
@@ -16,6 +18,9 @@ const InvestorSignUp = () => {
   const [formErrors, setFormErrors] = useState({}); // Error messages state
   const [formData, setFormData] = useState(initialFormData); // Form data state
   const [showPassword, setShowPassword] = useState(false); // Password visibility state
+
+  const [loading, setLoading] = useState(false); // State to manage loading spinner
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -54,6 +59,8 @@ const InvestorSignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    setLoading(true); //start spinner on form submission
+
     console.log("Form submitted:", formData);
     setFormData(initialFormData); // Reset form fields
     setFormErrors({}); // Clear any error messages
@@ -67,6 +74,8 @@ const InvestorSignUp = () => {
       body: JSON.stringify(formData),
     })
       .then((response) => {
+
+        setLoading(false); //stop spinner after response
         if (!response.ok) {
           throw new Error(
             toast.error("Failed! to Submit, Try Again", {
@@ -93,6 +102,7 @@ const InvestorSignUp = () => {
       })
 
       .catch((error) => {
+        setLoading(false); //stop spinner on error
         console.error("Error:", error);
         if (error.response && error.response.status === 200) {
           // Check if response exists
@@ -272,8 +282,14 @@ const InvestorSignUp = () => {
           onChange={handleFileChange}
         /> */}
 
-        <input type="submit" value="Sign-Up" />
+        <input type="submit" value="Sign-Up"  disabled={loading}/>
       </form>
+
+      {loading && (
+        <div className="spinnner-signUp"> 
+          <RotatingLines width="100"/>
+        </div>
+      )}
     </div>
   );
 };

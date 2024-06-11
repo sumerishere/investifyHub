@@ -2,8 +2,8 @@ import "../InvestmentForm/InvestmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link,useLocation } from "react-router-dom";
-
 import { useState } from "react";
+import { RotatingLines } from 'react-loader-spinner';
 
 
 const InvestmentForm = () => {
@@ -22,6 +22,7 @@ const InvestmentForm = () => {
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState(initialFormData);
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false); // State to manage loading spinner
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
@@ -59,6 +60,8 @@ const InvestmentForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    setLoading(true); // Start spinner on form submission
+
     setFormData(initialFormData);
     setFormErrors({});
 
@@ -72,12 +75,18 @@ const InvestmentForm = () => {
     })
     
       .then((response) => {
+        setLoading(false); // Stop spinner after response
         if (!response.ok) {
-          console.log(formData);
+          toast.error("Failed!!! to Submit, Try Again", {
+            position: "top-center",
+            autoClose: 3000,
+          });
+          console.log("failed submission : ",formData);
           throw new Error("Failed! to Submit, Try Again");
+          
         }
 
-        toast.success("Congratulations! On Your Investment 😊, Investor Name", {
+        toast.success(`Congratulations! On Your Investment 😊`, {
           position: "top-center",
           autoClose: 5000,
         });
@@ -91,11 +100,14 @@ const InvestmentForm = () => {
       })
 
       .catch((error) => {
+        setLoading(false); // Stop spinner on error
         // console.error("Error:", error);
-        toast.error("Failed!!! to Submit, Try Again", {
-          position: "top-center",
-          autoClose: 3000,
-        });
+        console.log("failed to save : ",formData);
+
+        // toast.error("Failed!!! to Submit, Try Again", {
+        //   position: "top-center",
+        //   autoClose: 3000,
+        // });
       });
   };
 
@@ -176,13 +188,23 @@ const InvestmentForm = () => {
           </span>
         </p>
 
-        <input id="submit-color" type="submit" value="Ready! To Invest" />
+        <input id="submit-color" type="submit" value="Ready! To Invest" disabled={loading} />
       </form>
+
+      {loading && (
+        <div className="spinner">
+          <RotatingLines width="100" />
+        </div>
+      )}
+      
     </div>
   );
 };
 
 export default InvestmentForm;
+
+
+
 
 // import "../InvestmentForm/InvestmentForm.css";
 // import { ToastContainer, toast } from "react-toastify";
