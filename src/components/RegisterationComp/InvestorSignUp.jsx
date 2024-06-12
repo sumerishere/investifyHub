@@ -170,7 +170,7 @@ const InvestorSignUp = () => {
       <ToastContainer />
       <h2>Investor Registration Form</h2>
       <p id="heading-sign-up-text">
-        Note : Please! Fill The All Necessary Details Carefully.
+        Note : Please!!! Fill The All Necessary Details Carefully.
       </p>
       <form className="form-container" onSubmit={handleSubmit}>
         <label htmlFor="name">
@@ -234,7 +234,8 @@ const InvestorSignUp = () => {
         )}
 
         <label htmlFor="username">
-          Create New Username<span className="required">*</span>
+          Create New Username (Unique)<span className="required">*</span>
+          <p id ="username-unique">note : " Username should be start with Capital letter and it's mandatory to unique. "</p>
         </label>
         <input
           type="text"
@@ -250,6 +251,8 @@ const InvestorSignUp = () => {
 
         <label htmlFor="password">
           Create New Password<span className="required">*</span>
+          <p id="username-unique">
+            note : " Password must be at least 8 characters with format -  at least one uppercase letter/ lowercase letter/ digit and one special character. "</p>
         </label>
         <input
           type={showPassword ? "text" : "password"}

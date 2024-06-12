@@ -15,8 +15,8 @@
   width: 80%;
   /* background-color: aquamarine; */
   margin-top: 50px;
-  border: 2px solid rgb(249, 241, 241);
-  box-shadow: 1px 2px 4px rgba(248, 223, 223, 0.863);
+  border: 1px solid rgb(249, 241, 241);
+  box-shadow: 1px 4px 5px rgba(248, 223, 223, 0.863);
   border-radius: 10px;
   background-color: #545154d8;
 }
@@ -32,7 +32,7 @@
 }
 
 .text-info-p{
-  color: rgba(186, 180, 180, 0.811);
+  color: rgba(194, 191, 191, 0.922);
   margin-top: 35px;
   margin-left: 130px;
   font-size: 22px;

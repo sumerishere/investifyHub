@@ -50,7 +50,7 @@ function FundingComp() {
                 </p>
     
                 <li className="">
-                  Step 1 : Identify a Startup for Investment :- Select a startup (select Full name) you
+                  Step 1 : Identify a Startup for Investment :- Select a startup (carefully) you
                   wish to invest in.
                 </li>
                 <li className=""> Step 2 : Review Startup Description :- Carefully examine the startup's description.</li>
@@ -61,9 +61,9 @@ function FundingComp() {
                 <li className=""> Step 5 : Verify Investment Amount :- Double-check the investment amount before submission.</li>
                 <li className="">Step 6 : Submit Form :- Click the submit button. </li>
     
-                <p className="bootem-p-text">Upon submission, you'll receive a confirmation message: "Congratulations! On Your First Investment 😊" . </p>
+                <p className="bootem-p-text">Upon submission, you'll receive a confirmation message: "Congratulations! On Your  Investment 😊" . </p>
               </ul>
-              
+            
             </div>
           </div>
         </div>

@@ -190,6 +190,9 @@ function StartUpComp() {
   return (
     <div className="cont">
       <div className="cont2">
+        <div>
+          <button id="add-startup-btn"><span>Be part of investifyHub📈</span></button>
+        </div>
         <div className="cont1">
           {arr.map((data) => {
             return (

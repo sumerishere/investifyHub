@@ -51,6 +51,13 @@ h2 {
   /* line-height: 30px; */
 }
 
+#username-unique{
+  font-size: 12px;
+  margin: 2px 10px 10px 10px;
+  color: rgba(0, 0, 0, 0.884);
+  font-weight: 400;
+}
+
 .form-container label {
   display: block;
   margin: 5px;

@@ -48,6 +48,7 @@
 }
 
 .cont2 {
+    /* background-color: blue; */
     width: 100%;
     height: 100%;
     display: flex;
@@ -56,7 +57,31 @@
     /* margin-top: -50px; */
 }
 
+#add-startup-btn{
+    margin-top: 7%;
+    margin-left: 60%;
+    height: 45px;
+    width: 120px;
+    font-weight: 500;
+    top: 0 ;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.638);
+    background-color: #089fb3;
+    box-shadow: 2px 3px 4px rgb(0,0,0,0.5);
+    color :rgb(255, 244, 244);
+    text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.264);
+    transition: transform 0.2s  ease-out; 
+}
+
+#add-startup-btn:hover{
+    transform: scale(1.2);
+
+}
+
 .cont1 {
+    /* background-color: red; */
     display: flex;
     width: 70%;
     margin-top: 7%;

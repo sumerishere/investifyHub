@@ -116,7 +116,7 @@ const InvestmentForm = () => {
       <ToastContainer />
       <p id="heading-textt">
         "Welcome! Dear A Great Future Ahead, Let's Expand Your Portfolio : Diversify Your
-        Investments! 😉"
+        Investments!! 😉"
       </p>
       <form className="form-container" id="form-size" onSubmit={handleSubmit}>
         <label htmlFor="startupname">
@@ -135,15 +135,19 @@ const InvestmentForm = () => {
 
         <label htmlFor="investmentAmount">
           Investment Amount<span className="required">*</span>
+          <p id="amount-enter-note">note : "enter amount carefully."</p>
         </label>
         <input
           type="text"
           placeholder="Enter Amount"
           name="investmentAmount"
-          required={true}
           value={formData.investmentAmount}
+          required={true}
           onChange={handleInputChange}
         />
+        {formErrors.investmentAmount && (
+          <p style={{ color: "red" }}>{formErrors.investmentAmount}</p>
+        )}
 
         <label htmlFor="username">
           Username<span className="required">*</span>

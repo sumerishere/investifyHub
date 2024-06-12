@@ -13,17 +13,23 @@ function Nav() {
     const history = useNavigate()
 
     async function fun(){
+
         let val = inpvalue.current.input.defaultValue;
         val=val.toUpperCase();
+
         const dt = await fetch(`http://localhost:8080/getbyName?cname=${val}`);
         const data=await dt.json();
+
         if (data.length > 0) {
+
             console.log(data[0]);
             setId(data[0].id);
             history(`/post/${data[0].id}`);
-        } else {
+        } 
+        else {
             setId(null);
         }
+        inpvalue.current.input.defaultValue = '';
     }
 
   return (
@@ -42,6 +48,7 @@ function Nav() {
         <div className="input">
             <Input placeholder='Explore Investments'  ref={inpvalue} />
             <Button onClick={fun}><SearchOutlined /></Button>
+
         </div>
             </div>
             <div className="right">
