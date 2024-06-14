@@ -139,6 +139,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./startCom.css";
 import { selectAllData } from "../../redux/slice/startUpDataSlice";
+import AddStartUpBtn from "../AddStartUpBtn/AddStartUpBtn";
 
 function StartUpComp() {
   const data = useSelector(selectAllData);
@@ -191,8 +192,15 @@ function StartUpComp() {
     <div className="cont">
       <div className="cont2">
         <div>
-          <button id="add-startup-btn"><span>Be part of investifyHub📈</span></button>
+          <Link 
+            to ={'/AddStartUpBtn'} 
+            style={{ textDecoration: "none" }}> 
+              <button id="add-startup-btn">
+                <span>Be part of investifyHub📈</span>
+              </button> 
+          </Link>
         </div>
+        
         <div className="cont1">
           {arr.map((data) => {
             return (

@@ -235,7 +235,7 @@ const InvestorSignUp = () => {
 
         <label htmlFor="username">
           Create New Username (Unique)<span className="required">*</span>
-          <p id ="username-unique">note : " Username should be start with Capital letter and it's mandatory to unique. "</p>
+          <p id ="username-unique">Note : " Username should be start with Capital letter and it's mandatory to unique. "</p>
         </label>
         <input
           type="text"
@@ -252,7 +252,7 @@ const InvestorSignUp = () => {
         <label htmlFor="password">
           Create New Password<span className="required">*</span>
           <p id="username-unique">
-            note : " Password must be at least 8 characters with format -  at least one uppercase letter/ lowercase letter/ digit and one special character. "</p>
+            Note : " Password must be at least 8 characters with format -  at least one uppercase letter/ lowercase letter/ digit and one special character. "</p>
         </label>
         <input
           type={showPassword ? "text" : "password"}

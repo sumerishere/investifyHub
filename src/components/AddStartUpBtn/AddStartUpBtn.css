@@ -1,3 +1,51 @@
-.root-addStartUp{
+/* .root-addStartUp {
+  background-color: rebeccapurple;
+}
+
+.hello-div {
+  font-size: 30px;
+  color: red;
+} */
+
+/* Form {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; 
+}
+  */
+
+  .custom-toast {
+    width: 400px; /* Set your desired width */
+  }
+
+  #startup-regis-h2{
+    background-color: rgba(118, 70, 127, 0.834);
+  }
+
+form{
+  border: 1px solid rgb(153, 153, 153);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: rgba(248, 246, 246, 0.981);
+  
+}
+
+#note-pdf{
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.818);
+  margin: 2px 10px 10px 10px;
+}
+
+span{
+  margin-top: -12px;
+  margin-bottom: 10px;
   
 }

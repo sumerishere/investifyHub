@@ -135,9 +135,10 @@ const InvestmentForm = () => {
 
         <label htmlFor="investmentAmount">
           Investment Amount<span className="required">*</span>
-          <p id="amount-enter-note">note : "enter amount carefully."</p>
+          <p id="amount-enter-note">Note : "enter amount carefully."</p>
         </label>
         <input
+          id="amount-input"
           type="text"
           placeholder="Enter Amount"
           name="investmentAmount"

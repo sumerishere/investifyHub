@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import Footer from "./components/Footer/Footer";
 import InvestorNavbar from "./components/investorsPortfolio/InvestoNavbar";
 import InvestmentForm from "./components/InvestmentForm/InvestmentForm";
+import AddStartUpBtn from "./components/AddStartUpBtn/AddStartUpBtn";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/InvestorSignUp" element={<InvestorSignUp />} />
         <Route path = "/InvestorNavbar" element={ <InvestorNavbar handleClick={handleClick} /> } />
         <Route path = "/InvestmentForm" element={<InvestmentForm/>}/>
+        <Route path = "/AddStartUpBtn" element = {<AddStartUpBtn/>} />
         
       </Routes>
       <Footer></Footer>
