@@ -175,7 +175,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
-import { RotatingLines } from 'react-loader-spinner';
+import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
 
 const FormWrapper = styled.div`
@@ -241,7 +241,6 @@ const AddStartUpBtn = () => {
   };
 
   const handleSubmitFetch = async (formData) => {
-
     setLoading(true); // Start spinner on form submission
 
     try {
@@ -269,7 +268,7 @@ const AddStartUpBtn = () => {
       toast.success(`Start-Up Registration, Successfully!! 😊`, {
         position: "top-center",
         autoClose: 5000,
-        className: 'custom-toast' // Apply the custom class
+        className: "custom-toast", // Apply the custom class
       });
       reset();
       console.log("Form submitted successfully:", responseData);
@@ -296,6 +295,7 @@ const AddStartUpBtn = () => {
       mobileNo: data.mobileNo,
       email: data.email,
       linkedInUrl: data.linkedInUrl,
+      companyName: data.companyName,
       companyUrl: data.companyUrl,
     };
 
@@ -373,6 +373,21 @@ const AddStartUpBtn = () => {
           )}
 
           <label>
+            Company/Start-Up Name <span className="required">*</span>
+          </label>
+          <input
+            placeholder="Enter Company/Start-Up Name"
+            {...register("companyName", { required: true },
+            )}
+          />
+          {errors.companyName && (
+              <span style={{ color: "red" }}>
+                Please enter a valid Company/Start-Up Name
+              </span>
+            )}
+
+
+          <label>
             Company Website URL <span className="required">*</span>
           </label>
           <input
@@ -381,6 +396,7 @@ const AddStartUpBtn = () => {
               required: true,
               pattern: /^https?:\/\/.*/i,
             })}
+            
           />
           {errors.companyUrl && (
             <span style={{ color: "red" }}>
@@ -398,7 +414,9 @@ const AddStartUpBtn = () => {
             <span style={{ color: "red" }}>Please upload a PDF file</span>
           )}
 
-          <button type="submit" disabled = {loading}>Submit</button>
+          <button type="submit" disabled={loading}>
+            Submit
+          </button>
         </Form>
       </FormWrapper>
       {loading && (
