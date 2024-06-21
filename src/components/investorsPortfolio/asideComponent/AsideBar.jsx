@@ -4,7 +4,7 @@ import "../asideComponent/AsideBar.css";
 import { Link } from "react-router-dom";
 const AsideBar = ({ open }) => {
   return (
-    <div>
+    <div className="aside-bar-root">
       <div className={open ? "aside-bar collapse" : "aside-bar"}>
         <ul>
           <li>

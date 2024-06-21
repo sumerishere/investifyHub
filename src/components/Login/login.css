@@ -33,6 +33,7 @@ h3 {
 }
 
 .login-root-div {
+  /* margin-top: 8%; */
 
 }
 
@@ -54,7 +55,7 @@ h3 {
 
 .form {
   /* border: 1px solid rgb(196, 196, 178); */
-  margin-top: 1%;
+  margin-top: 5%;
   width: 30%;
   margin-right: 57%;
   flex-direction: column;

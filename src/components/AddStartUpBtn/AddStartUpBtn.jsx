@@ -185,6 +185,7 @@ const FormWrapper = styled.div`
 `;
 
 const Form = styled.form`
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -214,7 +215,7 @@ const Form = styled.form`
   button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: rgba(118, 70, 127, 0.834);
+    background-color: rgba(118, 70, 127, 0.978);
     color: white;
     border: none;
     border-radius: 4px;
@@ -257,7 +258,7 @@ const AddStartUpBtn = () => {
         console.log("data object : ", formData);
 
         toast.error("Failed!!! to Submit, Try Again", {
-          position: "top-center",
+          position: "bottom-right",
           autoClose: 3000,
         });
 
@@ -266,7 +267,7 @@ const AddStartUpBtn = () => {
 
       const responseData = await response.json();
       toast.success(`Start-Up Registration, Successfully!! 😊`, {
-        position: "top-center",
+        position: "bottom-right",
         autoClose: 5000,
         className: "custom-toast", // Apply the custom class
       });
@@ -314,6 +315,11 @@ const AddStartUpBtn = () => {
     <div>
       <h2 id="startup-regis-h2">Start-Up Registration Form</h2>
       <ToastContainer />
+      <p id="heading-line-startup">
+        Register your startup/company on InvestifyHub.in to connect with investors and
+        grow your business. <br />Join our platform today to gain valuable exposure
+        and support for your innovative!! ideas.
+      </p>
       <FormWrapper>
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
           <label>
@@ -377,15 +383,13 @@ const AddStartUpBtn = () => {
           </label>
           <input
             placeholder="Enter Company/Start-Up Name"
-            {...register("companyName", { required: true },
-            )}
+            {...register("companyName", { required: true })}
           />
           {errors.companyName && (
-              <span style={{ color: "red" }}>
-                Please enter a valid Company/Start-Up Name
-              </span>
-            )}
-
+            <span style={{ color: "red" }}>
+              Please enter a valid Company/Start-Up Name
+            </span>
+          )}
 
           <label>
             Company Website URL <span className="required">*</span>
@@ -396,7 +400,6 @@ const AddStartUpBtn = () => {
               required: true,
               pattern: /^https?:\/\/.*/i,
             })}
-            
           />
           {errors.companyUrl && (
             <span style={{ color: "red" }}>
@@ -407,9 +410,16 @@ const AddStartUpBtn = () => {
           <label>
             Upload Start-Up Details document File{" "}
             <span className="required">*</span>
-            <p id="note-pdf">Note : File should be in PDF format only.</p>
+            <p id="note-pdf">
+              Note : File should be in PDF, doc, .docs format only, with
+            </p>
+            <p id="note-size">size limit upto 10MB.</p>
           </label>
-          <input type="file" {...register("pdfFile", { required: true })} />
+          <input
+            type="file"
+            accept=".pdf,.doc,.docx"
+            {...register("pdfFile", { required: true })}
+          />
           {errors.pdfFile && (
             <span style={{ color: "red" }}>Please upload a PDF file</span>
           )}

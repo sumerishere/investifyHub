@@ -8,9 +8,9 @@
  .aside-bar {
    width: 250px;
    height: 100vh;
-   background-color: rgb(86, 84, 84);
+   background-color: rgb(95, 92, 92);
    position: absolute;
-   margin-top: 0px;
+   margin-top: 5.7%;
    top: 0;
    left: 0;
    transform: translateX(-100%);

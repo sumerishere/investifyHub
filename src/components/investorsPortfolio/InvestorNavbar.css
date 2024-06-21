@@ -47,7 +47,7 @@
 
 
 .portfolio-div {
-  margin-top: -9px;
+  margin-top: 5%;
   /* background-color: red; */
   background-image: linear-gradient(to bottom, #4e5052, #576981, #657080, #888e98, #818ca0);
 
@@ -55,20 +55,18 @@
 }
 
 .investor-child-div {
+  position: fixed;
+  /* top: 1; */
+  margin-top: 5%;
+
   background-color: #5a697d;
   display: flex;
   justify-content: end;
   align-items: end;
   padding: 12px;
-
   overflow: hidden;
-  /* Ensure content doesn't overflow */
-  /* position: fixed; */
-  /* Fixed positioning */
   top: 0;
-  /* Align to the top of the viewport */
   width: 100%;
-  /* Full width */
   z-index: 1000;
 }
 

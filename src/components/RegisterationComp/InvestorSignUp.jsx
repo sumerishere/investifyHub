@@ -169,7 +169,7 @@ const InvestorSignUp = () => {
     <div className="sign-up-root-div">
       <ToastContainer />
       <h2>Investor Registration Form</h2>
-      <p id="heading-sign-up-text">
+      <p id="heading-form-text">
         Note : Please!!! Fill The All Necessary Details Carefully.
       </p>
       <form className="form-container" onSubmit={handleSubmit}>
