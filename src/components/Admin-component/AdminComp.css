@@ -1,0 +1,57 @@
+.Admin-root {
+  background-color: rgb(255, 255, 255);
+}
+
+h1{
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+  padding-left: 15px;
+  background-color: rgb(68, 185, 189);
+  color: #3f3f3f;
+  margin: 0px;
+
+  text-shadow: 1px 2px 3px rgb(0,0,0,0.3);
+}
+
+h5 {
+  text-align: center;
+  font-size: 30px;
+  padding: 15px;
+}
+
+.table-root-div {
+  margin-top: 5%;
+  margin: 3%;
+  width: 95%;
+
+}
+
+.table-container {
+  /* height: 500px; */
+  width: 100%;
+  background-color: rgba(180, 176, 176, 0.849);
+  /* margin-top: 5%; */
+  /* margin-left: 20%; */
+  margin-bottom: 5%;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #2b2a2a;
+  padding: 16px;
+  text-align: left;
+  width: 100%;
+  font-weight: 500;
+}
+
+.admin-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  width: 100%;
+}

@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 import InvestorNavbar from "./components/investorsPortfolio/InvestoNavbar";
 import InvestmentForm from "./components/InvestmentForm/InvestmentForm";
 import AddStartUpBtn from "./components/AddStartUpBtn/AddStartUpBtn";
-
+import AdminComp from "./components/Admin-component/AdminComp";
 
 function App() {
   const handleClick = () => {
@@ -38,7 +38,11 @@ function App() {
         <Route path = "/InvestmentForm" element={<InvestmentForm/>}/>
         <Route path = "/AddStartUpBtn" element = {<AddStartUpBtn/>} />
         
+        <Route path = "/AdminComp" element={
+          <AdminComp/>} />
+
       </Routes>
+
       <Footer></Footer>
      
     </div>
