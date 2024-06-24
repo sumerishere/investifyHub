@@ -155,7 +155,7 @@ const InvestmentForm = () => {
         </label>
         <input
           type="text"
-          placeholder="Enter New Username"
+          placeholder="Enter Your Username"
           name="username"
           required={true}
           value={formData.username}
@@ -167,7 +167,7 @@ const InvestmentForm = () => {
         </label>
         <input
           type={showPassword ? "text" : "password"}
-          placeholder="Enter New Password"
+          placeholder="Enter Your Password"
           name="password"
           required={true}
           id="pass-id"

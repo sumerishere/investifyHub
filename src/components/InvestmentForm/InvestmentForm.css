@@ -19,6 +19,8 @@
 }
 #amount-input{
   color: rgba(34, 34, 255, 0.984);
+  font-weight: 600;
+  font-size: 18px;
 }
 
 #heading-textt{

@@ -19,8 +19,6 @@ function App() {
     console.log("Hamburger menu clicked");
   };
 
-
-
   return (
     <div className="App">
 
