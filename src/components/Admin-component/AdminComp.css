@@ -128,13 +128,13 @@
 }
 
 .react-confirm-alert-button-group button:hover {
-  background-color: #da302a;
+  background-color: #2ada5c;
 }
 
 .react-confirm-alert-button-group button:nth-child(2) {
-  background-color: #5bc0de;
+  background-color: #e24024;
 }
 
 .react-confirm-alert-button-group button:nth-child(2):hover {
-  background-color: #2fcfff;
+  background-color: #ff2f2f;
 }

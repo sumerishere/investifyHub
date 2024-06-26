@@ -1,61 +1,58 @@
-import React from "react";
-import FundingComp from "../FundingRules/FundingComp";
-import ScrollerBar from "../scrollerLoop/ScrollerBar";
-import "./home.css";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { addData } from "../../redux/slice/startUpDataSlice";
-import { useEffect } from "react";
-import InfoContainer from "../infoContainer/InfoContainer";
+// import React from "react";
+// import FundingComp from "../FundingRules/FundingComp";
+// import ScrollerBar from "../scrollerLoop/ScrollerBar";
+// import "./home.css";
+// import { useDispatch } from "react-redux";
+// import { Link } from "react-router-dom";
+// import { addData } from "../../redux/slice/startUpDataSlice";
+// import { useEffect } from "react";
+// import InfoContainer from "../infoContainer/InfoContainer";
 
-function Home() {
-  
-  const dispatch = useDispatch();
+// import axios from '../axiosConfig'; // Import the configured axios instance
 
-  useEffect(() => {
-    async function fun() {
-      const data = await fetch("http://localhost:8080/get-all");
-      const jsondata = await data.json();
-      jsondata.forEach((element) => {
-        dispatch(addData(element));
-      });
-    }
-    fun();
-  }, []);
+// function Home() {
 
-  return (
-    <div className="mcont">
-      <div className="root-div">
-        <div className="child-div">
-          <div className="grand-child-div">
-            <div className="text-overlay">
-              <p id="mid-text">
-                "One of those platforms letting you to work with folks who know,
-                love, and support you is investifyHub📈"
-              </p>
-            </div>
+//   const dispatch = useDispatch();
 
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src="/homeImage/pexels-1990x910__.jpg"
-              alt="img"
-            />
-          </div>
-        </div>
-      </div>
-      <ScrollerBar />
-      <FundingComp />
-      <InfoContainer/>
-    </div>
-  );
-}
+//   useEffect(() => {
+//     async function fun() {
+//       const data = await fetch("http://localhost:8080/get-all");
+//       const jsondata = await data.json();
+//       jsondata.forEach((element) => {
+//         dispatch(addData(element));
+//       });
+//     }
+//     fun();
+//   }, []);
 
-export default Home;
+//   return (
+//     <div className="mcont">
+//       <div className="root-div">
+//         <div className="child-div">
+//           <div className="grand-child-div">
+//             <div className="text-overlay">
+//               <p id="mid-text">
+//                 "One of those platforms letting you to work with folks who know,
+//                 love, and support you is investifyHub📈"
+//               </p>
+//             </div>
 
+//             <img
+//               style={{ width: "100%", height: "100%" }}
+//               src="/homeImage/pexels-1990x910__.jpg"
+//               alt="img"
+//             />
+//           </div>
+//         </div>
+//       </div>
+//       <ScrollerBar />
+//       <FundingComp />
+//       <InfoContainer/>
+//     </div>
+//   );
+// }
 
-
-
-
+// export default Home;
 
 // import { useState, useEffect } from "react";
 
@@ -115,3 +112,59 @@ export default Home;
 // }
 
 // export default Home;
+
+import React, { useEffect } from "react";
+import FundingComp from "../FundingRules/FundingComp";
+import ScrollerBar from "../scrollerLoop/ScrollerBar";
+import "./home.css";
+import { useDispatch } from "react-redux";
+import { addData } from "../../redux/slice/startUpDataSlice";
+import axios from '../../axiosConfig'; // Import the configured axios instance
+import InfoContainer from "../infoContainer/InfoContainer";
+
+function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:8080/get-all");
+        const jsonData = response.data;
+        jsonData.forEach((element) => {
+          dispatch(addData(element));
+        });
+      } catch (error) {
+        console.error("Error fetching data", error);
+        // Handle error appropriately (e.g., redirect to login if unauthorized)
+      }
+    }
+    fetchData();
+  }, [dispatch]);
+
+  return (
+    <div className="mcont">
+      <div className="root-div">
+        <div className="child-div">
+          <div className="grand-child-div">
+            <div className="text-overlay">
+              <p id="mid-text">
+                "One of those platforms letting you to work with folks who know,
+                love, and support you is investifyHub📈"
+              </p>
+            </div>
+            <img
+              style={{ width: "100%", height: "100%" }}
+              src="/homeImage/pexels-1990x910__.jpg"
+              alt="img"
+            />
+          </div>
+        </div>
+      </div>
+      <ScrollerBar />
+      <FundingComp />
+      <InfoContainer />
+    </div>
+  );
+}
+
+export default Home;
