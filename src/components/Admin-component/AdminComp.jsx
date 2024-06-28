@@ -183,7 +183,8 @@ const AdminComp = () => {
       <h1 id = "admin-heading">Admin</h1>
       
       {/* <div className="table-root-div"> */}
-      <h5>Investors Table</h5>
+
+        <h5>Investors Table</h5>
         <div className="table-container">
           <table className="admin-table">
             <thead>

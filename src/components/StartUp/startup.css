@@ -308,6 +308,11 @@ li {
 
 }
 
+#equity-btn p{
+    padding-top: 12px;
+    font-size: 17px;
+}
+
 #equity-btn:hover {
     background-color: rgb(40, 34, 34);
 

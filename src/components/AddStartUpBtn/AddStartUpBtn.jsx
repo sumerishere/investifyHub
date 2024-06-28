@@ -178,6 +178,10 @@ import { ToastContainer, toast } from "react-toastify";
 import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
 
+import {dotSpinner} from 'ldrs';
+
+dotSpinner.register(); // Register the dotSpinner
+
 const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -429,12 +433,14 @@ const AddStartUpBtn = () => {
           </button>
         </Form>
       </FormWrapper>
+
       {loading && (
         <div className="spinner">
-          <RotatingLines width="100" />
+          <l-dot-spinner size="40" speed="0.9" color=" #69397e"></l-dot-spinner>
         </div>
       )}
     </div>
+
   );
 };
 

@@ -70,7 +70,8 @@ function Startup() {
                 {/* <Link to='/InvestmentForm' style={{ textDecoration: 'none',color:'white'}}>Get Equity <p>{`${arr.raised}`}</p></Link> */}
 
                 <Link to={{ pathname: '/InvestmentForm', state: { startupname: arr.companyName } }} style={{ textDecoration: 'none', color: 'white' }}>
-                  Get Equity <p>{`${arr.raised}`}</p>
+                  <p>Get Equity </p>
+                  {/* <p>{`${arr.raised}`}</p> */}
                 </Link>
               </div>
 

@@ -3,8 +3,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link,useLocation } from "react-router-dom";
 import { useState } from "react";
-import { RotatingLines } from 'react-loader-spinner';
+// import { RotatingLines } from 'react-loader-spinner';
+import { dotSpinner } from "ldrs";
 
+dotSpinner.register();
 
 const InvestmentForm = () => {
 
@@ -193,12 +195,15 @@ const InvestmentForm = () => {
           </span>
         </p>
 
+        <Link to ="/PaymentComp">
         <input id="submit-color" type="submit" value="Ready! To Invest" disabled={loading} />
+        </Link>
       </form>
 
       {loading && (
         <div className="spinner">
-          <RotatingLines width="100" />
+          {/* <RotatingLines width="100" /> */}
+          <l-dot-spinner size="40" speed="0.9" color="#2be71d"></l-dot-spinner>
         </div>
       )}
       

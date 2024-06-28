@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./InvestorSignUp.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { RotatingLines } from 'react-loader-spinner';
+// import { RotatingLines } from 'react-loader-spinner';
+import { dotSpinner } from "ldrs";
 
+dotSpinner.register();
 
 const InvestorSignUp = () => {
 
@@ -290,7 +292,8 @@ const InvestorSignUp = () => {
 
       {loading && (
         <div className="spinnner-signUp"> 
-          <RotatingLines width="100"/>
+          {/* <RotatingLines width="100"/> */}
+          <l-dot-spinner size="40" speed="0.9" color=" #1de1e7"></l-dot-spinner>
         </div>
       )}
     </div>

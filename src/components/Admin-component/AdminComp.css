@@ -19,13 +19,13 @@
   text-align: center;
   font-size: 25px;
   /* padding: 15px; */
-  margin-top: 81px;
-  border: 1px solid;
+  margin-top: 82px;
+  /* border: 1px solid; */
   width: 100%;
   padding: 3px;
   color: white;
   font-weight: 500;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .table-root-div {
@@ -65,7 +65,7 @@
   width: 100%;
   position: sticky; /* Make the header sticky */
   top: 0; /* Stick to the top of the container */
-  z-index: 1; /* Ensure headers stay above the table rows */
+  z-index: 10; /* Ensure headers stay above the table rows */
 }
 
 
@@ -97,17 +97,18 @@
 /* CustomConfirmAlert.css */
 
 .react-confirm-alert-overlay {
-  background: rgba(0, 0, 0, 0.9);
-
+  background: rgba(0, 0, 0, 0.9)
 }
 
 .react-confirm-alert {
   font-family: 'Arial', sans-serif;
   font-size: 15px;
   padding-bottom: 10px;
+
 }
 
 .react-confirm-alert-body {
+  
   background: white;
   border-radius: 10px;
   padding: 20px;
