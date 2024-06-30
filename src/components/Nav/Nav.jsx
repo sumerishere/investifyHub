@@ -17,7 +17,7 @@ function Nav() {
         let val = inpvalue.current.input.defaultValue;
         val=val.toUpperCase();
 
-        const dt = await fetch(`http://localhost:8080/getbyName?cname=${val}`);
+        const dt = await fetch(`http://localhost:8080/company-search?name=${val}`);
         const data=await dt.json();
 
         if (data.length > 0) {

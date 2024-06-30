@@ -1,7 +1,7 @@
 import "../InvestmentForm/InvestmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link,useLocation } from "react-router-dom";
+import { Link,useNavigate,useLocation } from "react-router-dom";
 import { useState } from "react";
 // import { RotatingLines } from 'react-loader-spinner';
 import { dotSpinner } from "ldrs";
@@ -10,6 +10,7 @@ dotSpinner.register();
 
 const InvestmentForm = () => {
 
+  const navigate = useNavigate(); // Correct import
   const location = useLocation();
   const defaultStartupName = location.state?.startupname || ""; // Retrieve startupname from state or set default
   
@@ -99,17 +100,15 @@ const InvestmentForm = () => {
         console.log("Success:", data);
         setFormData(initialFormData);
         setFormErrors({});
+          
+        navigate("/PaymentComp", { state: { investmentAmount: formData.investmentAmount } });
+       
       })
 
       .catch((error) => {
         setLoading(false); // Stop spinner on error
         // console.error("Error:", error);
         console.log("failed to save : ",formData);
-
-        // toast.error("Failed!!! to Submit, Try Again", {
-        //   position: "top-center",
-        //   autoClose: 3000,
-        // });
       });
   };
 

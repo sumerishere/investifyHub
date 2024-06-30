@@ -373,7 +373,7 @@ const AddStartUpBtn = () => {
             placeholder="Enter Your LinkedIn URL"
             {...register("linkedInUrl", {
               required: true,
-              pattern: /^https:\/\/[a-z]{2,3}\.linkedin\.com\/.*/i,
+              pattern: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i,
             })}
           />
           {errors.linkedInUrl && (
@@ -402,7 +402,8 @@ const AddStartUpBtn = () => {
             placeholder="Enter Your Company Website URL"
             {...register("companyUrl", {
               required: true,
-              pattern: /^https?:\/\/.*/i,
+              pattern: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i,
+              // pattern: /^https?:\/\/.*/i,
             })}
           />
           {errors.companyUrl && (

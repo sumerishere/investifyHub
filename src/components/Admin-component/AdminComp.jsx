@@ -119,11 +119,16 @@ const AdminComp = () => {
   ];
 
   const [data, setData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(''); // State to manage the search query
 
   useEffect(() => {
+
     fetch("http://localhost:8080/get-all-investors")
+
       .then(response => response.json())
+
       .then(data => {
+
         const formattedData = data.map(investor => ({
           investorId: investor.investorId,
           name: investor.name,
@@ -141,28 +146,38 @@ const AdminComp = () => {
             />
           ) : 'No Image'
         }));
+
         setData(formattedData);
         console.log(formattedData);
       })
+
       .catch(error => console.error("Error fetching data: ", error));
+
   }, []);
 
   const handleDelete = (investorId) => {
+
     console.log(`Attempting to delete investor with ID: ${investorId}`);
+
     fetch(`http://localhost:8080/delete-investor-id/${investorId}`, { method: 'DELETE' })
+
       .then(response => {
         console.log("Response received:", response);
+
         if (response.ok) {
           console.log(`Successfully deleted investor with ID: ${investorId}`);
           setData(data.filter(item => item.investorId !== investorId));
-        } else {
+        } 
+        else {
           console.error("Error deleting data");
         }
+
       })
       .catch(error => console.error("Error deleting data: ", error));
   };
 
   const confirmDelete = (investorId) => {
+
     confirmAlert({
       title: 'Confirm to delete 🥺',
       message: `Are you sure you want to delete this investor with ID: ${investorId} ?`,
@@ -178,6 +193,49 @@ const AdminComp = () => {
     });
   };
 
+  // Function to handle search
+  const handleSearch = () => {
+
+    fetch(`http://localhost:8080/investor-search?name=${searchQuery}`)
+
+      .then(response => {
+        
+          if(!response.ok){
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+
+      .then(data => {
+
+        if(!Array.isArray(data)){
+          throw new Error("Expected as array odf data");
+        }
+
+        const formattedData = data.map(investor => ({
+
+          investorId: investor.investorId,
+          name: investor.name,
+          mobile_no: investor.mobileNo,
+          mail_id: investor.mailId,
+          username: investor.username,
+          password: investor.password,
+          image: investor.image ? (
+            <img 
+              src={`data:image/png;base64,${btoa(
+                String.fromCharCode(...new Uint8Array(investor.image))
+              )}`} 
+              alt="Investor" 
+              style={{ width: "50px", height: "50px" }}
+            />
+          ) : 'No Image'
+        }));
+
+        setData(formattedData); })
+
+      .catch(error => console.error("Error searching data: ", error));
+  };
+
   return (
     <div className="Admin-root">
       <h1 id = "admin-heading">Admin</h1>
@@ -185,6 +243,14 @@ const AdminComp = () => {
       {/* <div className="table-root-div"> */}
 
         <h5>Investors Table</h5>
+        <div className="investor-search-div"><input 
+          type="text" 
+          id="search-input" 
+          placeholder="Search here" 
+          value={searchQuery} 
+          onChange={(e) => setSearchQuery(e.target.value)}/>
+
+        <button id="search-btn-investor" onClick={handleSearch} >Search</button></div>
         <div className="table-container">
           <table className="admin-table">
             <thead>

@@ -1,4 +1,5 @@
 import {  Route, Routes } from "react-router-dom";
+// import { useState } from "react";
 import "./App.css";
 import 'chart.js/auto';
 import Nav from './components/Nav/Nav';
@@ -15,6 +16,8 @@ import AdminComp from "./components/Admin-component/AdminComp";
 import PaymentComp from "./components/Payment-form/PaymentComp";
 
 function App() {
+
+
   const handleClick = () => {
     // Define what happens when the hamburger menu is clicked
     console.log("Hamburger menu clicked");
@@ -34,7 +37,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/InvestorSignUp" element={<InvestorSignUp />} />
         <Route path = "/InvestorNavbar" element={ <InvestorNavbar handleClick={handleClick} /> } />
-        <Route path = "/InvestmentForm" element={<InvestmentForm/>}/>
+        <Route path = "/InvestmentForm" element={<InvestmentForm /> }/>
         <Route path = "/AddStartUpBtn" element = {<AddStartUpBtn/>} />
         <Route path = "/PaymentComp" element={<PaymentComp/>}/>
         
