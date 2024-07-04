@@ -44,6 +44,7 @@
 }
 
 #admin-heading{
+  text-shadow: 2px 4px 3px rgb(0,0,0,0.5);
   z-index: 1000;
   position: absolute;
   position: fixed;
@@ -71,6 +72,7 @@
   color: white;
   font-weight: 500;
   z-index: 100;
+  /* text-shadow: 1px 2px 2px rgb(0,0,0,0.3); */
 }
 
 .table-root-div {

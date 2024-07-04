@@ -17,6 +17,7 @@ const PaymentComp = () => {
 
   return (
     <div className="payment-root">
+
       <div className="pay-main-container">
         <p id="payement-heading">
           ELIGIBLE <sub>pay</sub>
@@ -29,6 +30,10 @@ const PaymentComp = () => {
           <hr />
 
           <div className="left-bottom-div">
+
+            <div className="qr-code">
+
+            </div>
 
             <p id="master-card"><div className="master-div" ><img className="img-master" src="/pay-card-imgs/download (2).png" alt="" /></div><input placeholder="Enter card Number eg: **0594" type="text" name="" id="master-input" /></p>
 

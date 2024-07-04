@@ -15,6 +15,10 @@ import AddStartUpBtn from "./components/AddStartUpBtn/AddStartUpBtn";
 import AdminComp from "./components/Admin-component/AdminComp";
 import PaymentComp from "./components/Payment-form/PaymentComp";
 
+import SubmitBtnComp from "./components/alert-comp/SubmitBtnComp.jsx";
+
+import AlertComp from "./components/alert-comp/AlertComp/AlertComp.jsx";
+
 function App() {
 
 
@@ -26,7 +30,7 @@ function App() {
   return (
     <div className="App">
 
-      <Nav />
+      {/* <Nav /> */}
       
       {/* <StartUpData/> */}
 
@@ -44,9 +48,13 @@ function App() {
         <Route path = "/AdminComp" element={
           <AdminComp/>} />
 
+        <Route path = "/SubmitBtnComp" element={<SubmitBtnComp/>}/>
+
+        <Route path = "/AlertComp" element={<AlertComp/>}/>
+
       </Routes>
 
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
      
     </div>
   );

@@ -94,6 +94,11 @@ sub{
   padding: 25px;
 }
 
+.master-div{
+  /* margin-right: 8px; */
+  width: 80%;
+  background-color: rebeccapurple;
+}
 
 #master-card{
   padding-top: 60px;

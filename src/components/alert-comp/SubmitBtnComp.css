@@ -1,0 +1,25 @@
+.root-submit-btn h2 {
+  margin-top: 5%;
+}
+
+.btn-div-submit {
+  height: 50px;
+  width: 200px;
+  /* background-color: brown; */
+  text-align: center;
+  margin:  20% 44% 20%;
+
+}
+
+#submit-btn{
+  width: 130px;
+  height: 40px;
+  outline: none;
+}
+
+#submit-btn:hover{
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+
+}
