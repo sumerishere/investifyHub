@@ -64,7 +64,7 @@ function Home() {
       <InfoContainer />
       {loading && (
         <div className="spinner">
-          <l-dot-stream size="88" speed="" color="#4287b8"></l-dot-stream>
+          <l-dot-stream size="120" speed="" color="#4287b8"></l-dot-stream>
         </div>
       )}
     </div>

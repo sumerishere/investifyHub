@@ -48,7 +48,7 @@ const InvestorNavbar = () => {
       {/* <div className="asisde-humbarg"> */}
             <img
               className="aside-img"
-              src="/hamburger.png"
+              src="./hamburger.png"
               alt="menu"
               onClick={handleClick}
             />

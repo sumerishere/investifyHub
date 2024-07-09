@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
 
-      {/* <Nav /> */}
+      <Nav />
       
       {/* <StartUpData/> */}
 
@@ -54,7 +54,7 @@ function App() {
 
       </Routes>
 
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
      
     </div>
   );
