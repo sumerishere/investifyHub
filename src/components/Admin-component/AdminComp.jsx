@@ -3,8 +3,6 @@ import "../Admin-component/AdminComp.css";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { LineChart } from '@mui/x-charts/LineChart';
-// import { BarChart as RechartsBarChart, XAxis, YAxis, Bar, Tooltip, Legend, CartesianGrid,TickParamsSelector } from '@mui/x-charts/BarChart';
-import { Gauge } from '@mui/x-charts/Gauge';
 
 const AdminComp = () => {
 
@@ -177,6 +175,9 @@ const AdminComp = () => {
   //   margin: { top: 5, right: 30, left: 20, bottom: 5 },
   // };
 
+
+   
+  
   return (
     <div className="Admin-root">
 
@@ -209,7 +210,7 @@ const AdminComp = () => {
           </div>
 
           <div className="admin-chart-1">
-              <LineChart
+          <LineChart
                   xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
                   series={[
                     {

@@ -1,4 +1,4 @@
-/* .container {
+/* .alert-div-container {
   margin: 10% 28% 10% 28%;
   display: flex;
   flex-direction: column;
@@ -33,5 +33,75 @@
   font-size: 16px;
   color: #333;
   text-align: center;
-} 
-*/
+}  */
+
+/* Alert.css */
+
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-size: 26px;
+}
+
+.alert-box {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 90%;
+  max-width: 550px;
+  height: 90%;
+  max-height: 400px;
+  border: 3px solid #3894b6;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.alert-box p {
+  margin: 0 0 50px;
+}
+
+.alert-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #00bbff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.alert-box button:hover {
+  background-color: #00bbff96;
+}
+
+
+.checkmark-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #28a745; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px; 
+}
+
+#checkmark-svg-id {
+  fill: white; 
+  width: 70px;
+  height: 70px;
+}
+
