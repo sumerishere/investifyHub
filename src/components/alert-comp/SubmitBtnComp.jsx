@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Alert from './AlertComp/AlertComp.jsx';
 import "../alert-comp/SubmitBtnComp.css";
+import { message } from 'antd';
 
 
-const SubmitCompo = () => {
+const SubmitCompo = ({message}) => {
   const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = () => {
@@ -13,7 +14,7 @@ const SubmitCompo = () => {
     // Hide the alert message after a delay (optional)
     // setTimeout(() => {
     //   setShowAlert(false);
-    // }, 5000);
+    // }, 3000);
   };
 
   return (
@@ -26,7 +27,7 @@ const SubmitCompo = () => {
         </button>
       </div>
 
-      {showAlert && <Alert message="Saved successfully!!" onClose={() => setShowAlert(false)} />}
+      {showAlert && <Alert message={message} onClose={() => setShowAlert(false)} />}
     </div>
   );
 };
