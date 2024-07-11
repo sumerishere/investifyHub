@@ -9,6 +9,7 @@ function StartUpComp() {
   const data = useSelector(selectAllData);
   const [inpvalue, setinp] = useState();
   const [res, setres] = useState([]);
+  const [error, setError] = useState(false);
 
   const [btns, setbtn] = useState({
     paddingLeft: "10px",
@@ -38,11 +39,16 @@ function StartUpComp() {
 
   useEffect(() => {
     async function fetchData() {
-      // Use 'cname' as the parameter name instead of 'ind'
-      const response = await fetch(`http://localhost:8080/getbyName?cname=${inpvalue}`);
-      const jsonData = await response.json();
-      console.log("startComp error : ",jsonData);
-      setres(jsonData);
+      try {
+        const response = await fetch(`http://localhost:8080/getbyName?cname=${inpvalue}`);
+        if (!response.ok) throw new Error("Network response was not ok");
+        const jsonData = await response.json();
+        setres(jsonData);
+        setError(false);
+      } catch (error) {
+        console.log("startComp error: ", error);
+        setError(true);
+      }
     }
     if (inpvalue) {
       fetchData(); // Only fetch data if inpvalue is defined
@@ -54,65 +60,65 @@ function StartUpComp() {
 
   return (
     <div className="cont">
-      <div className="cont2">
-        <div>
-          <Link 
-            to ={'/AddStartUpBtn'} 
-            style={{ textDecoration: "none" }}> 
-              <button id="add-startup-btn">
-                <span>Be part of investifyHub📈</span>
-              </button> 
-          </Link>
-        </div>
-        
-        <div className="cont1">
-          {arr.map((data) => {
-            return (
-              <div className="comp" key={data.id}>
-                <div className="divimg">
-                  <Link
-                    to={`/post/${data.id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div className="img1">
-                      <img
-                        className="img"
-                        src={`data:image/jpeg;base64,${data.companyImage}`}
-                        alt="imge"
-                      />
-                    </div>
-                    <div className="nm">
-                      <h4>{`${data.companyName}`}</h4>
-                      <p>{`${data.title}`}</p>
-                    </div>
-                    <br />
-                    <div className="term">
-                      <div className="r">
-                        <h6>{`${data.raised}`}</h6>
-                        <p>raised</p>
+      {error ? (
+        <img id="server-error-img" src="/server-error-bg.jpg" alt="Server Error" />
+      ) : (
+        <>
+          <div className="cont2">
+            <div>
+              <Link to={'/AddStartUpBtn'} style={{ textDecoration: "none" }}>
+                <button id="add-startup-btn">
+                  <span>Be part of investifyHub📈</span>
+                </button>
+              </Link>
+            </div>
+
+            <div className="cont1">
+              {arr.map((data) => (
+                <div className="comp" key={data.id}>
+                  <div className="divimg">
+                    <Link to={`/post/${data.id}`} style={{ textDecoration: "none" }}>
+                      <div className="img1">
+                        <img
+                          className="img"
+                          src={`data:image/jpeg;base64,${data.companyImage}`}
+                          alt="imge"
+                        />
                       </div>
-                      <div className="r">
-                        <h6 style={{ paddingLeft: "10px" }}>{`${data.investor}`}</h6>
-                        <p style={{ paddingLeft: "10px" }}>investors</p>
+                      <div className="nm">
+                        <h4>{`${data.companyName}`}</h4>
+                        <p>{`${data.title}`}</p>
                       </div>
-                      <div className="r">
-                        <h6>{`${data.mininvest}`}</h6>
-                        <p>Min.investment</p>
+                      <br />
+                      <div className="term">
+                        <div className="r">
+                          <h6>{`${data.raised}`}</h6>
+                          <p>raised</p>
+                        </div>
+                        <div className="r">
+                          <h6 style={{ paddingLeft: "10px" }}>{`${data.investor}`}</h6>
+                          <p style={{ paddingLeft: "10px" }}>investors</p>
+                        </div>
+                        <div className="r">
+                          <h6>{`${data.mininvest}`}</h6>
+                          <p>Min.investment</p>
+                        </div>
                       </div>
-                    </div>
-                    <br />
-                  </Link>
+                      <br />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
 
 export default StartUpComp;
+
 
 
 

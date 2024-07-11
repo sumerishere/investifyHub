@@ -2,13 +2,44 @@
     background: -webkit-linear-gradient(360deg, #383836 10%, #585555 360%);
     width: 100%;
     margin-top: 5%;
-    /* height: 100vh; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* border: 2px solid red; */
 }
 
+.server-img-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #fff;
+}
+
+#server-error-img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+#server-error-text{
+    color: red;
+    position: absolute;
+    margin: 20% 30% 30% 76%;
+    font-size: 30px;
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 1px solid black;
+    background-color: #fbf8f8;
+}
+
+
+#question-mark-id{
+    position: absolute;
+    margin-left: 11%;
+    margin-top: 25px;
+    font-size: 50px;
+    font-weight: 600;
+}
 /* ----------------------------*/
 
 
@@ -58,25 +89,25 @@
     /* margin-top: -50px; */
 }
 
-#add-startup-btn{
+#add-startup-btn {
     margin-top: 7%;
     margin-left: 60%;
     height: 45px;
     width: 120px;
     font-weight: 500;
-    top: 0 ;
+    top: 0;
     position: absolute;
     cursor: pointer;
     border-radius: 9px;
     border: 1px solid rgba(255, 255, 255, 0.638);
     background-color: #089fb3;
-    box-shadow: 2px 3px 4px rgb(0,0,0,0.5);
-    color :rgb(255, 244, 244);
+    box-shadow: 2px 3px 4px rgb(0, 0, 0, 0.5);
+    color: rgb(255, 244, 244);
     text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.264);
-    transition: transform 0.2s  ease-out; 
+    transition: transform 0.2s ease-out;
 }
 
-#add-startup-btn:hover{
+#add-startup-btn:hover {
     transform: scale(1.2);
 
 }
@@ -107,11 +138,12 @@
     background-color: rgb(231, 231, 223);
     border-radius: 12px;
     box-shadow: 2px 2px 4px rgba(18, 17, 17, 0.8);
-    transition: transform 0.3s ease,box-shadow 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.comp:hover{
-    transform: scale(1.1); /* Smooth scaling */
+.comp:hover {
+    transform: scale(1.1);
+    /* Smooth scaling */
     box-shadow: 4px 4px 8px rgba(18, 17, 17, 0.8);
 }
 
