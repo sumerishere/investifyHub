@@ -2,31 +2,6 @@
   background-color: rgb(255, 255, 255);
 }
 
-.admin-dashboard-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex: 1;
-  max-width: 1400px;
-  border-radius: 10px;
-  margin: -5% 40px  40px 5%;
-  max-height: 900px;
-  background-color: #a7adb0c5;
-}
-
-.admin-chart-1{
-  border: 1px solid rgb(61, 60, 60);
-  margin: 30px 50px 30px 50px;
-  max-height: 300px;
-  max-width: 700px;
-  /* background-color: #ebf8f8fa; */
-  background: rgb(109, 124, 139);
-  background: linear-gradient(121deg, rgba(84,99,115,1) 0%, rgb(116, 22, 9) 77%);
-  border-radius: 10px;
-  box-shadow: 2px 3px 4px rgba(4, 4, 4, 0.181);
-}
-
 .admin-img-div{
   width: 100px;
   height: 82px;
@@ -53,6 +28,79 @@
   height: 100%;
   width: 100%;
 }
+
+
+/* chart css*/
+
+.admin-dashboard-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  flex-wrap: wrap;
+  flex: 1;
+  max-width: 1400px;
+  border-radius: 10px;
+  margin: -5% 40px 40px 5%;
+  max-height: 1000px;
+  border: 1px solid;
+  background-color: #566b76c5;
+}
+
+.admin-chart-1{
+  margin: auto;
+  border: 1px solid rgb(61, 60, 60);
+  /* margin: 30px 50px 30px 50px; */
+  width: 630px;
+  height: 400px;
+
+  padding-left: 30px;
+  background-color: rgb(235, 232, 232);
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px rgba(4, 4, 4, 0.181);
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.admin-chart-2{
+  padding: 40px;
+  margin: auto;
+  border: 1px solid rgb(61, 60, 60);
+  margin: 30px 50px 30px 50px;
+  max-height: 340px;
+  max-width: 700px;
+  width: 500px;
+  height: 350px;
+  background-color: rgb(235, 232, 232);
+  /* background: rgb(109, 124, 139);
+  background: linear-gradient(121deg, rgba(84,99,115,1) 0%, rgb(116, 22, 9) 77%); */
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px rgba(4, 4, 4, 0.181);
+}
+
+.admin-chart-3{
+  background-color: rgb(235, 232, 232);
+  border: 1px solid rgb(61, 60, 60);
+  margin: 30px 50px 30px 50px;
+  max-height: 300px;
+  max-width: 700px;
+  width: 550px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px rgba(4, 4, 4, 0.181);
+}
+
+.admin-chart-4{
+
+  /* background-color: rgb(235, 232, 232); */
+  border: 1px solid rgb(61, 60, 60);
+  margin: 30px 50px 30px 50px;
+  max-height: 300px;
+  max-width: 700px;
+  background-color: #ebf8f8fa; 
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px rgba(4, 4, 4, 0.181);
+}
+
 
 
 .investor-search-div{

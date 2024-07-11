@@ -89,31 +89,38 @@
 
 
 .checkmark-circle {
-  width: 120px; /* Increased width */
-  height: 120px; /* Increased height */
+  width: 120px;
+  /* Increased width */
+  height: 120px;
+  /* Increased height */
   border-radius: 50%;
-  background-color: #28a745; /* Green background for checkmark */
+  border: 2px solid #00bbff;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 20px; /* Center horizontally and add bottom margin */
+  margin: 0 auto 20px;
+  /* Center horizontally and add bottom margin */
 }
 
 .alert-circle {
-  width: 120px; /* Increased width */
-  height: 120px; /* Increased height */
+  width: 120px;
+  /* Increased width */
+  height: 120px;
+  /* Increased height */
   border-radius: 50%;
-  background-color: white; /* White background for alert */
-  border: 3px solid #00bbff; /* Blue border */
+  background-color: white;
+  /* White background for alert */
+  border: 3px solid #00bbff;
+  /* Blue border */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 20px; /* Center horizontally and add bottom margin */
+  margin: 0 auto 20px;
+  /* Center horizontally and add bottom margin */
 }
 
 #checkmark-svg-id {
-  fill: white;
+  fill: rgb(15, 14, 14);
   width: 60px;
   height: 60px;
 }
-
