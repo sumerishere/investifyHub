@@ -4,19 +4,11 @@ import { AlignCenterOutlined, SmileTwoTone } from "@ant-design/icons";
 
 const GraphContainer = ({ jsondata }) => {
   const lineData = {
-    labels: [
-      "STORM-MOTORS",
-      "ideaForage",
-      "PharmaEasy",
-      "Swiggy",
-      "RazorPay",
-      "intello-Lab",
-      "Skyroot",
-    ],
+    labels: jsondata.map(startup =>startup.startupname),
     datasets: [
       {
-        label: "My Start-Ups %",
-        data: [18, 40, 50, 81, 57, 73, 33],
+        label: "INR",
+        data: jsondata.map(startup => startup.investmentAmount),
         fill: true,
         borderColor: "rgb(230, 0, 0)",
         tension: 0.1,
@@ -27,17 +19,11 @@ const GraphContainer = ({ jsondata }) => {
   };
 
   const barData = {
-    labels: [ "STORM-MOTORS",
-              "ideaForage",
-              "PharmaEasy",
-              "Swiggy",
-              "RazorPay",
-              "intello-Lab",
-              "Skyroot",],
+    labels: jsondata.map(startup =>startup.startupname),
     datasets: [
       {
-        label: "Bar Chart",
-        data: [47, 20, 30, 75, 50, 64, 70],
+        label: "INR",
+        data: jsondata.map(startup => startup.investmentAmount),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -60,11 +46,11 @@ const GraphContainer = ({ jsondata }) => {
   };
 
   const doughnutData = {
-    labels: ["Skyroot Aerospace pvt ltd", "intello labs pvt ltd", "Razorpay Software Pvt Ltd"],
+    labels: jsondata.map(startup =>startup.startupname),
     datasets: [
       {
-        label: "Doughnut Chart",
-        data: [300, 50, 120],
+        label: "INR",
+        data: jsondata.map(startup => startup.investmentAmount),
         backgroundColor: [
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
@@ -76,11 +62,11 @@ const GraphContainer = ({ jsondata }) => {
   };
 
   const pieData = {
-    labels: ["Red", "Blue", "Yellow"],
+    labels: jsondata.map(startup =>startup.startupname),
     datasets: [
       {
-        label: "Pie Chart",
-        data: [150, 90, 120, 230],
+        label: "INR",
+        data: jsondata.map(startup => startup.investmentAmount),
         backgroundColor: [
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",

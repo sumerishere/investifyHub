@@ -11,7 +11,7 @@ function StartUpData() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await fetch('http://localhost:8080/get-al');
+                const response = await fetch('http://localhost:8080/get-all');
                 if (!response.ok) throw new Error("Network response was not ok");
                 const jsondata = await response.json();
                 jsondata.forEach(element => {

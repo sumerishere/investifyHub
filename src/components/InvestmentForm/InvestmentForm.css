@@ -17,6 +17,12 @@
   color: rgba(0, 0, 0, 0.942);
   font-weight: 400;
 }
+
+#startupname-input-read{
+  font-weight: 550;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(199, 42, 30);
+}
 #amount-input{
   color: rgba(34, 34, 255, 0.984);
   font-weight: 600;

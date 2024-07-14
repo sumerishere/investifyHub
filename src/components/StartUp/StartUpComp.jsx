@@ -61,7 +61,12 @@ function StartUpComp() {
   return (
     <div className="cont">
       {error ? (
-        <img id="server-error-img" src="/server-error-bg.jpg" alt="Server Error" />
+                <div className="server-img-div">
+                  <p id="server-error-text">OOPs!! Server Not Responding 😔</p>
+
+                  <p id="question-mark-id">?</p>
+                  <img id="server-error-img" src="/server-error-bg.jpg" alt="Server Error" />
+                </div>
       ) : (
         <>
           <div className="cont2">

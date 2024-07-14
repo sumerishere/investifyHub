@@ -79,9 +79,15 @@
 
 .rcont li{
    font-weight: bold;
+   cursor: pointer;
    /* color: rgb(27, 26, 26); */
    
 }
+
+.rcont li .active {
+    color: #d01d1d; 
+} 
+
 
 .logo {
     width: 40%;

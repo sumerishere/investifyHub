@@ -35,24 +35,12 @@ const InvestorNavbar = () => {
     <div className="portfolio-div">
       <div className="investor-child-div">
 
-      {/* <div className="logo-portfolio">
-            <p id="title-portfolio">
-                <Link to="/" style={{ textDecoration: "none",color:"#2c9aa9"}}>
-                 investifyHub📈
-                </Link>
-            </p>
-
-            <p className="sub-text-portfolio">elevate your investments</p>
-          </div> */}
-
-      {/* <div className="asisde-humbarg"> */}
             <img
               className="aside-img"
               src="./hamburger.png"
               alt="menu"
-              onClick={handleClick}
-            />
-          {/* </div> */}
+              onClick={handleClick}/>
+  
         <div className="investor-nav-div">
 
        

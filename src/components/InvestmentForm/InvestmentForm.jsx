@@ -1,7 +1,7 @@
 import "../InvestmentForm/InvestmentForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link,useNavigate,useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 // import { RotatingLines } from 'react-loader-spinner';
 import { dotSpinner } from "ldrs";
@@ -9,14 +9,12 @@ import { dotSpinner } from "ldrs";
 dotSpinner.register();
 
 const InvestmentForm = () => {
-
   const navigate = useNavigate(); // Correct import
   const location = useLocation();
   const defaultStartupName = location.state?.startupname || ""; // Retrieve startupname from state or set default
-  
-  const initialFormData = {
 
-    startupname: defaultStartupName,  // Set the default startup name
+  const initialFormData = {
+    startupname: defaultStartupName, // Set the default startup name
     investmentAmount: "",
     username: "",
     password: "",
@@ -35,7 +33,6 @@ const InvestmentForm = () => {
     const { name, value } = event.target;
 
     if (name === "investmentAmount") {
-
       if (/^\d+$/.test(value) || value === "") {
         setFormErrors({
           ...formErrors,
@@ -68,7 +65,6 @@ const InvestmentForm = () => {
     setFormData(initialFormData);
     setFormErrors({});
 
-
     fetch("http://localhost:8080/add-startup", {
       method: "PUT",
       headers: {
@@ -76,7 +72,6 @@ const InvestmentForm = () => {
       },
       body: JSON.stringify(formData),
     })
-    
       .then((response) => {
         setLoading(false); // Stop spinner after response
         if (!response.ok) {
@@ -84,9 +79,8 @@ const InvestmentForm = () => {
             position: "top-center",
             autoClose: 3000,
           });
-          console.log("failed submission : ",formData);
+          console.log("failed submission : ", formData);
           throw new Error("Failed! to Submit, Try Again");
-          
         }
 
         toast.success(`Congratulations! On Your Investment 😊`, {
@@ -100,15 +94,16 @@ const InvestmentForm = () => {
         console.log("Success:", data);
         setFormData(initialFormData);
         setFormErrors({});
-          
-        navigate("/PaymentComp", { state: { investmentAmount: formData.investmentAmount } });
-       
+
+        navigate("/PaymentComp", {
+          state: { investmentAmount: formData.investmentAmount },
+        });
       })
 
       .catch((error) => {
         setLoading(false); // Stop spinner on error
         // console.error("Error:", error);
-        console.log("failed to save : ",formData);
+        console.log("failed to save : ", formData);
       });
   };
 
@@ -116,8 +111,8 @@ const InvestmentForm = () => {
     <div>
       <ToastContainer />
       <p id="heading-textt">
-        "Welcome! Dear A Great Future Ahead, Let's Expand Your Portfolio : Diversify Your
-        Investments!! 😉"
+        "Welcome! Dear A Great Future Ahead, Let's Expand Your Portfolio :
+        Diversify Your Investments!! 😉"
       </p>
       <form className="form-container" id="form-size" onSubmit={handleSubmit}>
         <label htmlFor="startupname">
@@ -129,6 +124,7 @@ const InvestmentForm = () => {
           placeholder="Enter StartUp/Company  Name "
           name="startupname"
           required={true}
+          id="startupname-input-read"
           value={formData.startupname}
           onChange={handleInputChange}
           readOnly
@@ -194,9 +190,14 @@ const InvestmentForm = () => {
           </span>
         </p>
 
-        <Link to ="/PaymentComp">
-        <input id="submit-color" type="submit" value="Ready! To Invest" disabled={loading} />
-        </Link>
+        {/* <Link to ="/PaymentComp"> */}
+        <input
+          id="submit-color"
+          type="submit"
+          value="Ready! To Invest"
+          disabled={loading}
+        />
+        {/* </Link> */}
       </form>
 
       {loading && (
@@ -205,15 +206,11 @@ const InvestmentForm = () => {
           <l-dot-spinner size="40" speed="0.9" color="#2be71d"></l-dot-spinner>
         </div>
       )}
-      
     </div>
   );
 };
 
 export default InvestmentForm;
-
-
-
 
 // import "../InvestmentForm/InvestmentForm.css";
 // import { ToastContainer, toast } from "react-toastify";
@@ -411,11 +408,11 @@ export default InvestmentForm;
 // export default InvestmentForm;
 
 //-------json data--//
-    // const requestBody = {
-    //   startupname: formData.startupname,
-    //   investment_amount: formData.investmentAmount,
-    //   username: formData.username,
-    //   password: formData.password,
-    // };
+// const requestBody = {
+//   startupname: formData.startupname,
+//   investment_amount: formData.investmentAmount,
+//   username: formData.username,
+//   password: formData.password,
+// };
 
-    // const queryParams = new URLSearchParams(formData).toString();
+// const queryParams = new URLSearchParams(formData).toString();

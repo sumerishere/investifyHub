@@ -43,7 +43,7 @@ function App() {
         <Route path = "/InvestorNavbar" element={ <InvestorNavbar handleClick={handleClick} /> } />
         <Route path = "/InvestmentForm" element={<InvestmentForm /> }/>
         <Route path = "/AddStartUpBtn" element = {<AddStartUpBtn/>} />
-        <Route path = "/PaymentComp" element={<PaymentComp/>}/>
+        {/* <Route path = "/PaymentComp" element={<PaymentComp/>}/> */}
         
         <Route path = "/AdminComp" element={
           <AdminComp/>} />
