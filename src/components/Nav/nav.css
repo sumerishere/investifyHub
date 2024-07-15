@@ -11,6 +11,7 @@
     height: 80px;
     /* background-color: #c3a37416; */
     background: -webkit-linear-gradient(360deg,#383836 10%,#4a4a4a 360%);
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.8);
 }
 .navcontent{
     width: 100%;
@@ -84,9 +85,6 @@
    
 }
 
-.rcont li .active {
-    color: #d01d1d; 
-} 
 
 
 .logo {
@@ -98,7 +96,6 @@
 #title-p {
     padding-left: 10px;
     margin-top: 20px;
-    /* margin-right: 0px; */
     font-size: 22px;
     font-weight: 700;
     color: #2c9aa9;
@@ -107,12 +104,6 @@
 }
 
 .sub-text {
-    /* font-size: 10px;
-    font-weight: 500;
-    padding-left: 70px;
-    margin-top: -2px;
-    color: rgb(190, 183, 183);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); */
     font-size: 0.6rem;
     padding-left: 77px;
     font-weight: 500;
@@ -132,6 +123,8 @@
     font-family: 'Montserrat', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     padding:8px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .btn1:hover {

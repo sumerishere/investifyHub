@@ -22,12 +22,15 @@ function Nav() {
     setActiveLink(path); // Update the active link state
   };
 
-
   const getLinkStyle = (path) => ({
     textDecoration: 'none',
     color: activeLink === path ? '#2c9aaa' : 'white',
   });
 
+  const getButtonLinkStyle = (path) => ({
+    textDecoration: 'none',
+    color: activeLink === path ? '#2c9aa9' : 'black',
+  });
 
   async function fun() {
     let val = inpvalue.current.input.defaultValue;
@@ -48,8 +51,10 @@ function Nav() {
 
   return (
     <div className="nav">
+
       <div className="navcontent">
         <div className="left">
+
           <div className="logo">
             <p id="title-p">
               <Link to="/" style={{ textDecoration: "none", color: "#2c9aa9" }}>
@@ -59,33 +64,31 @@ function Nav() {
 
             <p className="sub-text">elevate your investments</p>
           </div>
+
           <div className="input">
             <Input placeholder="Explore Investments" ref={inpvalue} />
             <Button onClick={fun}>
               <SearchOutlined />
             </Button>
           </div>
+
         </div>
         <div className="right">
           <div className="rcont">
             <ul>
 
-            <li onClick={() => handleNavClick('/')}>
+              <li onClick={() => handleNavClick('/')}>
                 <Link to='/' style={getLinkStyle('/')}>Home</Link>
               </li>
 
-              <li className="btn1">
-                <Link
-                  to="/StartUpData"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  Start Investing
-                </Link>
+              <li  onClick={() => handleNavClick('/StartUpData')}>
+                <Link to='/StartUpData' style={getButtonLinkStyle('/StartUpData')}><button className="btn1">Start Investing</button></Link>
               </li>
 
               <li onClick={() => handleNavClick('/Login')}>
                 <Link to='/Login' style={getLinkStyle('/Login')}>Log In</Link>
               </li>
+
               <li onClick={() => handleNavClick('/InvestorSignUp')}>
                 <Link to='/InvestorSignUp' style={getLinkStyle('/InvestorSignUp')}>Sign Up</Link>
               </li>

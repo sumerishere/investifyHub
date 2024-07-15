@@ -6,7 +6,15 @@ const AsideBar = ({ open }) => {
   return (
     <div className="aside-bar-root">
       <div className={open ? "aside-bar collapse" : "aside-bar"}>
-        <ul>
+
+        <div className="logo-on-aside">
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <p id="logo-on-aside-p">investifyHub📈</p>
+            <sub id="logo-on-aside-sub">elevate your investments</sub>
+          </Link>
+        </div>
+
+        <ul className="aside-ul-list">
           <li>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             Home
@@ -21,6 +29,9 @@ const AsideBar = ({ open }) => {
             </Link>
           </li>
         </ul>
+
+       
+
       </div>
     </div>
   );
