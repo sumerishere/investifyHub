@@ -78,6 +78,10 @@ function StartUpComp() {
               </Link>
             </div>
 
+            <div className="startup-ksd">
+              <button id ="startup-ksd-btn" > {`> Go for KSD`}</button>
+            </div>
+
             <div className="cont1">
               {arr.map((data) => (
                 <div className="comp" key={data.id}>

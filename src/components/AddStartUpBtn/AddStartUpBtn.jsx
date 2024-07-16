@@ -171,12 +171,15 @@
 // export default AddStartUpBtn;
 
 import "../AddStartUpBtn/AddStartUpBtn.css";
+import "../alert-comp/AlertComp/AlertComp.css";
 import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
 import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
+
+
 
 import {dotSpinner} from 'ldrs';
 
@@ -232,13 +235,16 @@ const Form = styled.form`
 `;
 
 const AddStartUpBtn = () => {
+
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+      register,
+      handleSubmit,
+      reset,
+      formState: { errors },
+    } = useForm();
+
   const [loading, setLoading] = useState(false); // State to manage loading spinner
+
 
   const onSubmit = (data) => {
     console.log("Local form submission:", data);
@@ -286,14 +292,8 @@ const AddStartUpBtn = () => {
   };
 
   const handleFormSubmit = (data) => {
-    const formData = new FormData();
 
-    // formData.append("founderName", data.founderName);
-    // formData.append("mobileNo", data.mobileNo);
-    // formData.append("email", data.email);
-    // formData.append("linkedInUrl", data.linkedInUrl);
-    // formData.append("companyUrl", data.companyUrlUrl);
-    // formData.append("companyPdf", data.pdfFile[0]); // Assuming pdfFile is obtained from input type="file"
+    const formData = new FormData();
 
     const formJson = {
       founderName: data.founderName,
@@ -314,6 +314,7 @@ const AddStartUpBtn = () => {
 
     handleSubmitFetch(formData);
   };
+
 
   return (
     <div>
@@ -429,7 +430,7 @@ const AddStartUpBtn = () => {
             <span style={{ color: "red" }}>Please upload a PDF file</span>
           )}
 
-          <button type="submit" disabled={loading}>
+          <button type="submit"  disabled={loading}>
             Submit
           </button>
         </Form>
@@ -440,6 +441,7 @@ const AddStartUpBtn = () => {
           <l-dot-spinner size="40" speed="0.9" color=" #69397e"></l-dot-spinner>
         </div>
       )}
+
     </div>
 
   );
