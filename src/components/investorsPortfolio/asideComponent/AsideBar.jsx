@@ -1,6 +1,5 @@
 import React from "react";
 import "../asideComponent/AsideBar.css";
-// import Hamburger from "/public/profile_Images/hamburger.png";
 import { Link } from "react-router-dom";
 const AsideBar = ({ open }) => {
   return (
@@ -29,8 +28,6 @@ const AsideBar = ({ open }) => {
             </Link>
           </li>
         </ul>
-
-       
 
       </div>
     </div>

@@ -136,8 +136,8 @@
     position: absolute;
     cursor: pointer;
     border-radius: 9px;
-    border: 1px solid rgba(255, 255, 255, 0.638);
-    background-color: #089fb3;
+    border: 2px solid rgba(255, 255, 255, 0.638);
+    background-color: rgba(117, 66, 126, 0.64);
     box-shadow: 2px 3px 4px rgb(0, 0, 0, 0.5);
     color: rgb(255, 244, 244);
     text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.264);
@@ -146,6 +146,7 @@
 
 #add-startup-btn:hover {
     transform: scale(1.2);
+    background-color:rgba(118, 70, 127, 0.978);
 
 }
 
@@ -182,6 +183,7 @@
     transform: scale(1.1);
     /* Smooth scaling */
     box-shadow: 4px 4px 8px rgba(18, 17, 17, 0.8);
+    border : 2px solid #0992a4;
 }
 
 .divimg {

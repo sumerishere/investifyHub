@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import "./startCom.css";
 import { selectAllData } from "../../redux/slice/startUpDataSlice";
 import AddStartUpBtn from "../AddStartUpBtn/AddStartUpBtn";
+import AsideKsd from "./startup-ksd/ksd-aside-bar/AsideKSD";
+import BackdropKsd from "./startup-ksd/ksd-aside-bar/BackdropKSD";
 
 function StartUpComp() {
   const data = useSelector(selectAllData);
   const [inpvalue, setinp] = useState();
   const [res, setres] = useState([]);
   const [error, setError] = useState(false);
+  const [isAsideOpen, setIsAsideOpen] = useState(false);
 
   const [btns, setbtn] = useState({
     paddingLeft: "10px",
@@ -58,6 +61,10 @@ function StartUpComp() {
   // Use the fetched data if available, otherwise fallback to the default data
   let arr = res.length > 0 ? res : data;
 
+  function toggleAside() {
+    setIsAsideOpen((prev) => !prev);
+  }
+
   return (
     <div className="cont">
       {error ? (
@@ -79,7 +86,7 @@ function StartUpComp() {
             </div>
 
             <div className="startup-ksd">
-              <button id ="startup-ksd-btn" > {`> Go for KSD`}</button>
+              <button id ="startup-ksd-btn" onClick={toggleAside} > {`> Go for KSD?`}</button>
             </div>
 
             <div className="cont1">
@@ -120,6 +127,8 @@ function StartUpComp() {
               ))}
             </div>
           </div>
+          <AsideKsd open={isAsideOpen} />
+          <BackdropKsd open={isAsideOpen} click={toggleAside} />
         </>
       )}
     </div>

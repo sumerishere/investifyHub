@@ -1,0 +1,182 @@
+.aside-bar-ksd {
+   width: 250px;
+   height: 100vh;
+   overflow-y: auto;
+   /* overflow: hidden; */
+   position: absolute;
+   margin-top: 0.7%;
+   top: 0;
+   margin-left: -1px;
+   transform: translateX(-100%);
+   transition: all 0.4s ease-in-out;
+   border: 1px solid rgba(160, 153, 153, 0.656);
+   position: fixed;
+   top: 69px;
+   bottom: 0;
+   left: 0;
+   z-index: 200;
+  background-color: rgb(225, 213, 197);
+}
+
+.aside-bar-ksd.collapse {
+  width: 950px; /* Adjust this width as needed */
+}
+
+/*------------------------------------*/
+
+#KSD-h1 {
+  margin: 40px 40px 0px;
+  font-size: 24px;
+  color: #333;
+}
+
+#KSD-h5 {
+  margin-top: 14px;
+  margin-left: 58px;
+  font-size: 16px;
+  color: #555;
+}
+
+#ksd-info-p{
+  margin-left: 54px;
+  font-weight: 450;
+}
+
+#startup-section-p{
+  margin-top: 50px;
+  margin-left: 28px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color:rgb(67, 64, 64);
+  border: 1px solid;
+  width: 240px;
+  border-radius: 8px;
+}
+
+#how-to-register-startup{
+  margin: 25px 0px -35px 58px;
+  /* margin-left: 58px; */
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#how-text-span{
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.799);
+}
+
+.guide-process-ksd{
+  height: 400px;
+  width: 600px;
+  background-color: aliceblue;
+  border: 1px solid grey;
+  margin: 5% 8% 20% 16%;
+  border-radius: 8px;
+}
+
+
+.ksd-info {
+  margin-top: 40px;
+}
+
+.ksd-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.ksd-images {
+  display: block;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  /* gap: 40px; */
+  margin: 60px;
+  /* margin-bottom: 10px; */
+}
+
+
+#startup-btn-img-id{
+  box-shadow: 2px 2px 4px rgba(18, 17, 17, 0.8);
+}
+
+#form-img-id{
+  margin-top: 30px;
+  box-shadow: 2px 2px 4px rgba(18, 17, 17, 0.8);
+}
+
+
+
+.ksd-images img {
+  border: 2px solid grey;
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#guide-proces-p {
+  font-size: 24px;
+  color: #333;
+  /* margin-left: 10%; */
+  text-align: center;
+  margin: 15px;
+}
+
+.ksd-info ol {
+  padding: 20px;
+  margin: 10px 10px 10px 50px;
+}
+
+.ksd-info ol li {
+  font-size: 14px;
+  color: #555;
+  line-height: 50px;
+}
+
+/*---investor KSD css---*/
+
+.investor-ksd-div{
+  /* background-color: red; */
+ 
+  margin: -5% 5% 15% 6%;
+}
+
+#investor-ksd-div-p{
+  height: 56px;
+  width: 240px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color:rgb(67, 64, 64);
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+
+#investor-info-p{
+  font-size: 20px;
+  color: rgb(48, 45, 45);
+  margin-top: 40px;
+  margin-left: 0%;
+  font-weight: 550;
+  margin-bottom: 20px;
+}
+
+#steps-span{
+  line-height: 70px;
+  font-size: 20px;
+  margin-left:14px ;
+  color: red;
+  font-weight: 500;
+}
+
+#steps-5-p{
+  margin-top: 40px;
+  /* line-height: 30px; */
+  font-size: 20px;
+  margin-left:14px ;
+  color: rgb(26, 24, 24);
+  font-weight: 500;
+}
