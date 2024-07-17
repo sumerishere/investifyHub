@@ -1,5 +1,5 @@
 .aside-bar-ksd {
-   width: 250px;
+   width:  950px;
    height: 100vh;
    overflow-y: auto;
    /* overflow: hidden; */
@@ -54,11 +54,25 @@
   border-radius: 8px;
 }
 
+#note-p-text{
+  margin-top: 20px;
+  font-size: 20px;
+  color: black;
+}
+
 #how-to-register-startup{
   margin: 25px 0px -35px 58px;
   /* margin-left: 58px; */
   font-size: 30px;
   font-weight: 600;
+}
+
+#how-to-invest{
+  margin: 40px 0px -10px 10px;
+  /* margin-left: 58px; */
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(86, 85, 85);
 }
 
 #how-text-span{
@@ -103,6 +117,7 @@
 #form-img-id{
   margin-top: 30px;
   box-shadow: 2px 2px 4px rgba(18, 17, 17, 0.8);
+  border: 1px solid #ddd;
 }
 
 
@@ -159,9 +174,9 @@
   font-size: 20px;
   color: rgb(48, 45, 45);
   margin-top: 40px;
-  margin-left: 0%;
+  margin-left: 1.6%;
   font-weight: 550;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 #steps-span{
