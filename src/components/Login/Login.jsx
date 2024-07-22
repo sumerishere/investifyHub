@@ -6,55 +6,147 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function Login() {
+import AlertLoginComp from "./AlertLogin";
 
+// function Login() {
+
+//   const [username, setUsername] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [showAlert, setShowAlert] = useState(false); // State to handle alert visibility
+
+//   const navigate = useNavigate();
+
+//   const handleSignIn = () => {
+//     console.log("In Sign in");
+
+//     async function fun() {
+
+
+//       try {
+//         const response = await fetch(
+//           "http://localhost:8080/invested-startups",
+//           {
+//             method: "POST",
+//             headers: {
+//               "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify({ username, password }), // Object shorthand notation
+//           }
+//         );
+//         const jsondata = await response.json(); // Parse response JSON
+//         console.log(jsondata);
+
+//         if (!response.ok) {
+//           throw new Error("Failed! to Submit, Try Again"); // Throw an error if response is not ok
+//         } 
+//         else if(jsondata.length === 0){
+//           setShowAlert(true); // Show alert if no data is returned
+//         }
+//         else {
+//           navigate("/InvestorNavbar", { state: { jsondata } });
+//         }
+        
+//       } 
+//     catch (error) {
+//         console.error("Error:", error);
+//         toast.error("Failed!  to Sign-in, Try Again", {
+//           position: "top-center",
+//           autoClose: 3000,
+//         });
+       
+//         setUsername("");
+//         setPassword("");
+//       }
+//     }
+//     fun();
+
+//     const handleCloseAlert = () => {
+//       setShowAlert(false); // Close the alert
+//     };
+//   };
+
+
+
+function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showAlert, setShowAlert] = useState(false); // State to handle alert visibility
 
   const navigate = useNavigate();
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     console.log("In Sign in");
 
-    async function fun() {
-      try {
-        const response = await fetch(
-          "http://localhost:8080/invested-startups",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ username, password }), // Object shorthand notation
-          }
-        );
-        const jsondata = await response.json(); // Parse response JSON
-        console.log(jsondata);
-
-        if (!response.ok) {
-          throw new Error("Failed! to Submit, Try Again"); // Throw an error if response is not ok
-        } 
-        else {
-          navigate("/InvestorNavbar", { state: { jsondata } });
+    try {
+      const investorResponse = await fetch(
+        `http://localhost:8080/get-investor?username=${username}&password=${password}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-        
-      } catch (error) {
-        console.error("Error:", error);
-        toast.error("Failed!  to Sign-in, Try Again", {
-          position: "top-center",
-          autoClose: 3000,
-        });
+      );
+
+      if (!investorResponse.ok) {
+        console.log("inevstor object not get!!");
+        throw new Error("Investor not found");
+      }
+
+      const investorData = await investorResponse.json();
+      console.log("Investor Data:", investorData);
+
+      if (Object.keys(investorData).length === 0) {
+        throw new Error("Invalid username or password");
+      }
+
+      const startupsResponse = await fetch(
+        "http://localhost:8080/invested-startups",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }), // Object shorthand notation
+        }
+      );
+
+      if (!startupsResponse.ok) {
+        throw new Error("Failed to fetch startups");
+      }
+
+      const jsondata = await startupsResponse.json(); // Parse response JSON
+      console.log(jsondata);
+
+      if (jsondata.length === 0) {
+        setShowAlert(true); // Show alert if no data is returned
         setUsername("");
         setPassword("");
+      } else {
+        navigate("/InvestorNavbar", { state: { jsondata } });
       }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Failed to Sign-in, Try Again", {
+        position: "top-center",
+        autoClose: 3000,
+      });
+
+      setUsername("");
+      setPassword("");
     }
-    fun();
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false); // Close the alert
   };
 
   return (
     <div className="login-root-div">
+      {/* <AlertLoginComp/> */}
       <ToastContainer />
-      <h3>Investor Log-in</h3>
+      {showAlert && <AlertLoginComp onClose={handleCloseAlert}/>}
+      <h3 id="login-heading">Investor Log-in</h3>
 
       <div className="overlayy"></div>
       <img className="back-img" src="/business-02png.png" alt="" />
@@ -151,6 +243,7 @@ function Login() {
           </div>
         </div>
       </div>
+     
     </div>
   );
 }

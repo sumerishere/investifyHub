@@ -32,7 +32,7 @@ h2{
 }
 
 .fcont {
-    width: 40%;
+    width: 41%;
     height: max-content;
     padding-bottom: 3px;
     /* border: 2px solid black; */
@@ -244,7 +244,18 @@ h2{
     color: rgb(93, 89, 89);
 }
 
+
+
 .cmc {
+    margin-bottom: 35px;
+    text-shadow: 1px 2px 3px rgb(0,0,0,0.3);
+    color: #185c65;
+    border-radius: 30px;
+    margin-left: -30px;
+}
+
+.h3-company-title{
+    margin-bottom: 20px;
     text-shadow: 1px 2px 3px rgb(0,0,0,0.3);
     color: #185c65;
     border-radius: 30px;

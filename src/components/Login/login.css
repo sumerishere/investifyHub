@@ -1,8 +1,10 @@
 
-
-h3 {
+#login-heading {
   color: rgba(238, 225, 225, 0.877);
   text-align: start;
+  /* margin-top: 4%; */
+  top: 12%;
+  position: absolute;
   margin-left: 16%;
   padding-top: 45px;
   margin-bottom: 8px;
@@ -36,6 +38,7 @@ h3 {
 
 .login-root-div {
   /* margin-top: 8%; */
+  position: relative;
 
 }
 
@@ -57,7 +60,7 @@ h3 {
 
 .form {
   /* border: 1px solid rgb(196, 196, 178); */
-  margin-top: 5%;
+  margin-top: 14%;
   width: 30%;
   margin-right: 57%;
   flex-direction: column;

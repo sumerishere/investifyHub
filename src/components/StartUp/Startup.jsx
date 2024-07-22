@@ -27,7 +27,7 @@ function Startup() {
             <div className="fcont">
               
               <p className='cmc'>{`Get The Piece Of ${arr.companyName}`}</p>
-              <h3 className='cmc'>{`${arr.title}`}</h3>
+              <h3 className='h3-company-title'>{`${arr.title}`}</h3>
               <p className='common'>{`${arr.desc}`}</p>
             </div>
             <div className="fcont1">
