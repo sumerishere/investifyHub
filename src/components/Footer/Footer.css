@@ -1,4 +1,5 @@
 .main-div{
+  /* margin-top: 20%; */
   background-color: rgb(99, 98, 98);
 }
 
@@ -119,7 +120,7 @@
 
 }
 
-#inp-btn{
+#input-subs-btn{
   margin-top: 10%;
   margin-left: 19%;
   padding: 4px;

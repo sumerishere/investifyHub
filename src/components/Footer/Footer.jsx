@@ -52,7 +52,7 @@ const Footer = () => {
       <div className="main-div-bottem">
         <div className="main-div-bottem-container">
 
-          <input id="inp-btn" placeholder="Enter Your Email" type="text" name="" />
+          <input id="input-subs-btn" placeholder="Enter Your Email" type="text" name="" />
           <button id="subscribe-btn">Subscribe</button>
 
           <ul id="bottem-ul">

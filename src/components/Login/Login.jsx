@@ -8,65 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import AlertLoginComp from "./AlertLogin";
 
-// function Login() {
-
-//   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [showAlert, setShowAlert] = useState(false); // State to handle alert visibility
-
-//   const navigate = useNavigate();
-
-//   const handleSignIn = () => {
-//     console.log("In Sign in");
-
-//     async function fun() {
-
-
-//       try {
-//         const response = await fetch(
-//           "http://localhost:8080/invested-startups",
-//           {
-//             method: "POST",
-//             headers: {
-//               "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({ username, password }), // Object shorthand notation
-//           }
-//         );
-//         const jsondata = await response.json(); // Parse response JSON
-//         console.log(jsondata);
-
-//         if (!response.ok) {
-//           throw new Error("Failed! to Submit, Try Again"); // Throw an error if response is not ok
-//         } 
-//         else if(jsondata.length === 0){
-//           setShowAlert(true); // Show alert if no data is returned
-//         }
-//         else {
-//           navigate("/InvestorNavbar", { state: { jsondata } });
-//         }
-        
-//       } 
-//     catch (error) {
-//         console.error("Error:", error);
-//         toast.error("Failed!  to Sign-in, Try Again", {
-//           position: "top-center",
-//           autoClose: 3000,
-//         });
-       
-//         setUsername("");
-//         setPassword("");
-//       }
-//     }
-//     fun();
-
-//     const handleCloseAlert = () => {
-//       setShowAlert(false); // Close the alert
-//     };
-//   };
-
-
-
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

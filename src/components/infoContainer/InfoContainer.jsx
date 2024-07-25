@@ -24,6 +24,12 @@ const InfoContainer = () => {
             crowdfunding! platform.
           </p>
         </div>
+
+        
+      </div>
+
+      <div className="startup-signing-text-div">
+          <p id = "startup-signing-text">Start funding for your startup today by signing up with <span id="title-span-p">investifyHub📈</span> and unleash your creativity! </p>
       </div>
     </div>
   );
